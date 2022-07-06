@@ -8,7 +8,7 @@
 
 
 
-### init
+## init
 
 - `git init`으로 저장소 생성
 
@@ -20,9 +20,8 @@
 
   
 
-  
 
-#### 기본 흐름
+### 기본 흐름
 
 1.  Working directory에서 작업하면
 2. `git add`를 통해 Stagting Area에 모아서
@@ -32,7 +31,7 @@
 
 
 
-### add
+## add
 
 - `git add 파일명`
 
@@ -44,7 +43,7 @@
 
 
 
-### commit
+## commit
 
 - `git commit -m '커밋 메시지'` 
 
@@ -56,7 +55,7 @@
 
   
 
-#### commit message
+### commit message
 
 > 의미있는 저장 ( SW가 반드시 작동 가능한 상태)
 
@@ -66,7 +65,7 @@
 
 
 
-#### 기본 흐름
+### 기본 흐름
 
 - Git은 파일을 modified, staged, committed로 관리
 
@@ -78,7 +77,7 @@
 
     
 
-### log
+## log
 
 - `git log`
 
@@ -92,7 +91,7 @@
 
   
 
-### status
+## status
 
 - `git status`
 
@@ -110,22 +109,23 @@
 
     
 
-#### 파일 라이프 사이클
+### 파일 라이프 사이클
 
 - `Untracked` : 한번도 커밋x -> `git add`를 통해 ` Staged`로 한번에 감
+
 - `Unmodified` : 커밋이 되었음, 수정 X -> 수정하면 `Modified`
 
 - `Modified` : `Unmodified`를 수정한것, `git add`하면 `Staged` 됨
 
 - `Staged` : 임시공간에 있는 파일, 커밋하면 `Unmodified` 됨
 
+  > `status`를 통해 확인 가능하다.
+
+  - 초록 : `staged`
 
 
-> `status`를 통해 확인 가능하다.
+  - 빨강 : `Untracked`, `Modified` (add 해야할 것)
 
-- 초록 : `staged`
-
-- 빨강 : `Untracked`, `Modified` (add 해야할 것)
 
 
 

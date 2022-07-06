@@ -58,8 +58,6 @@ print('hello')
 
 - [링크이름\](url)
 
-[실라버스 링크](https://syllaverse.com/courses/3)
-
 
 
 ## 이미지

@@ -69,7 +69,7 @@
 
 #### push 실패 경우
 
-![git push error](GitHub.assets/git push error.png)
+![git push error](GitHub.assets/git_push_error.png)
 
 > 로컬과 원격 저장소의 커밋 이력이 다른 경우 발생한 것이다.
 
