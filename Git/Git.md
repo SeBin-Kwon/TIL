@@ -7,7 +7,6 @@
 ## 디렉토리 관리
 
 - `pwd` (print working directory) 현재 디렉토리 출력
-
 - `cd` (change directory) 디렉토리 이동
   - `.` : 현재 디렉토리, `..` : 상위 디렉토리
   - `cd ..` 뒤로 돌아가기, 상위 디렉토리 이동
@@ -19,6 +18,7 @@
 - `rm -rf` 삭제
 - 띄어쓰기는 띄어쓰기앞에 `\`역슬래쉬 하기
 - `clear`, cmd+l : 터미널 깨끗하게 만들기
+- ctrl + c : 프로그램 작업 중단
 
 
 
@@ -37,6 +37,12 @@
 - `git init`으로 저장소 생성
 
   - (master)라는 표기를 확인 할 수 있음
+
+- git 으로 버전관리를 하겠다.
+
+- 모든 버전을 지우고 싶다면 `.git` 폴더 삭제하기(주의!)
+
+  
 
   
 
@@ -71,6 +77,16 @@
 - SHA-1 해시를 사용하여 40자 길이의 체크섬을 생성하고, 이를 통해 고유한 커밋을 표기
 
 - **커밋 메시지는 변경 사항을 나타낼 수 있도록 명확하게 작성해야 함**
+
+  
+
+#### commit message
+
+> 의미있는 저장 ( SW가 반드시 작동 가능한 상태)
+
+- **의미를 담아서 커밋 메시지 작성해야함**
+
+- 원격 저장소에 보내면 오류를 발견했을 시 수정하기 복잡함
 
 
 
@@ -120,20 +136,51 @@
 
 #### 파일 라이프 사이클
 
-- Status로 확인할 수 있는 파일의 상태
-  - Tracked : 이전부터 버전으로 관리되고 있는 파일
-    - Unmodified : git status에 나타나지 않음
-    - Modified : Changes not staged for commit
-    - Staged : Changes to be committed
+- `Untracked` : 한번도 커밋x -> `git add`를 통해 ` Staged`로 한번에 감
+- `Unmodified` : 커밋이 되었음, 수정 X -> 수정하면 `Modified`
 
-- Untracked : 버전으로 관리된 적 없는 파일 (파일을 새로 만든 경우)
+- `Modified` : `Unmodified`를 수정한것, `git add`하면 `Staged` 됨
+
+- `Staged` : 임시공간에 있는 파일, 커밋하면 `Unmodified` 됨
+
+
+
+> `status`를 통해 확인 가능하다.
+
+- 초록 : `staged`
+
+- 빨강 : `Untracked`, `Modified` (add 해야할 것)
+
+
+
+## 추가 명령어
+
+- `git reset HEAD^`
+
+  가장 최근의 커밋 내역 한개 삭제
+
+- `git reset HEAD~2`
+
+  최근 2개의 커밋 내역 삭제 (숫자 변경 가능)
+
+- `git log -p`
+
+  로그 상세히 보기
+
+
+
+## .gitkeep
+
+> 빈 데이터 파일
+
+1. 빈 폴더는 status에 나타나지 않는다.
+2. 빈 데이터 파일을 관용적으로 사용하고 싶을 때, .gitkeep 파일을 생성한다
 
 
 
 ## 기타
 
 - `head -> master`는 해당 커밋이 master 브랜치의 마지막 커밋이라는 뜻
-
 - `git log` 후 end 나오면 `q`누르면 된다.
 
 
