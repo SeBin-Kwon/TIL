@@ -1,8 +1,12 @@
-# 📗Git
+# 🗂 Git / GitHub
 
 
 
-## 📜목차
+## 📜 Index
 
-- [CLI & Git](./Git)
-- [GitHub](./GitHub)
+- [CLI](./CLI.md)
+
+- [Git](./Git.md)
+
+- [GitHub](./GitHub.md)
+

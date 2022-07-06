@@ -1,8 +1,10 @@
-# 📕 TIL
+# 📚 TIL
 
 
 
-## 📜 목차
+## 📜 Index
 
-- [Markdown](./Markdown/Markdown)
-- [Git](./git)
+- [Markdown](./Markdown/markdown.md)
+
+- [Git / GitHub](./Git)
+
