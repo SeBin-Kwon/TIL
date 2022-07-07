@@ -60,6 +60,7 @@
 > 의미있는 저장 ( SW가 반드시 작동 가능한 상태)
 
 - **의미를 담아서 커밋 메시지 작성해야함**
+  - 각 파일, 폴더별 설정이라기 보다 **이번의 작업에 대한 전반적인 설명을 함축 (요약)해야 한다.**
 
 - 원격 저장소에 보내면 오류를 발견했을 시 수정하기 복잡함
 
@@ -111,20 +112,22 @@
 
 ### 파일 라이프 사이클
 
-- `Untracked` : 한번도 커밋x -> `git add`를 통해 ` Staged`로 한번에 감
+1. `Untracked` : 한번도 커밋x -> `git add`를 통해 ` Staged`로 한번에 감
 
-- `Unmodified` : 커밋이 되었음, 수정 X -> 수정하면 `Modified`
+2. `Staged` : 임시공간에 있는 파일, 커밋하면 `Unmodified` 됨
 
-- `Modified` : `Unmodified`를 수정한것, `git add`하면 `Staged` 됨
-
-- `Staged` : 임시공간에 있는 파일, 커밋하면 `Unmodified` 됨
-
-  > `status`를 통해 확인 가능하다.
+- > `status`를 통해 확인 가능하다.
 
   - 초록 : `staged`
 
 
-  - 빨강 : `Untracked`, `Modified` (add 해야할 것)
+    - 빨강 : `Untracked`, `Modified` (add 해야할 것)
+
+3. `Unmodified` : 커밋이 되었음, 수정 X -> 수정하면 `Modified`
+
+4. `Modified` : `Unmodified`를 수정한것, `git add`하면 `Staged` 됨
+
+
 
 
 
@@ -142,6 +145,14 @@
 - `git log -p`
 
   로그 상세히 보기
+
+ - `git checkout 해시 값`
+
+   해당 해시 값인 log로 이동
+
+ - `git checkout master`
+
+   가장 최근 log로 이동
 
 
 
@@ -164,6 +175,9 @@
 ## 주의 사항
 
 1. **(master) 있는 곳에서는 git init을 하지 않는다.**
+   1. 원격 저장소안에 또 원격 저장소를 만들면 안된다.
+
 2. **git 명령어를 입력할 때에는 항상 경로를 잘 보자. ex)~/Desktop/…**
 3. **git init을 잘못했을 경우, 해당 경로에서 .git 파일을 삭제하자**
+4. **커밋한 모든 내용은 다시 되돌릴 수 있지만, 커밋하지 않은 모든 내용은 되돌릴 수 없다!**
 
