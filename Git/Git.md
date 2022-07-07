@@ -41,6 +41,10 @@
 
   모든 변경 내용 추가
 
+- `git restore 파일명`
+
+  Working directory에 있는 파일의 변경 사항 지우기
+
 
 
 ## commit
@@ -53,6 +57,10 @@
 
 - **커밋 메시지는 변경 사항을 나타낼 수 있도록 명확하게 작성해야 함**
 
+- `git restore —staged 파일명`
+
+  Stagting Area에 있는 파일을 Working directory로 옮기기
+  
   
 
 ### commit message
@@ -119,9 +127,8 @@
 - > `status`를 통해 확인 가능하다.
 
   - 초록 : `staged`
-
-
-    - 빨강 : `Untracked`, `Modified` (add 해야할 것)
+  
+  - 빨강 : `Untracked`, `Modified` (add 해야할 것)
 
 3. `Unmodified` : 커밋이 되었음, 수정 X -> 수정하면 `Modified`
 
@@ -176,8 +183,8 @@
 
 1. **(master) 있는 곳에서는 git init을 하지 않는다.**
    1. 원격 저장소안에 또 원격 저장소를 만들면 안된다.
-
 2. **git 명령어를 입력할 때에는 항상 경로를 잘 보자. ex)~/Desktop/…**
 3. **git init을 잘못했을 경우, 해당 경로에서 .git 파일을 삭제하자**
 4. **커밋한 모든 내용은 다시 되돌릴 수 있지만, 커밋하지 않은 모든 내용은 되돌릴 수 없다!**
+4. **터미널 메시지를 꼼꼼히 읽기**
 
