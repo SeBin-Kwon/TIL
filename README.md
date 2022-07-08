@@ -2,9 +2,14 @@
 
 
 
-## 📜 Index
+## ✒️ Markdown
 
-- [Markdown](./Markdown/markdown.md)
+- [Syntax](./Markdown/markdown.md)
 
-- [Git / GitHub](./Git)
+## 🖥 Git / GitHub
+
+- [CLI](./Git/CLI.md)
+- [Git](./Git/Git.md)
+- [GitHub](./Git/GitHub.md)
+- [Git branch](./Git/Git_Branch.md)
 
