@@ -1,4 +1,4 @@
-# 📘 Git branch
+# 🌳 Git branch
 
 >독립적으로 작업을 진행하기 위한 개념. 필요에 의해 만들어지는 각각의 브랜치는 다른 브랜치의 영향을 받지 않기 때문에, 여러 작업을 동시에 진행할 수 있다.
 
@@ -96,86 +96,81 @@ $ git init
 
 
 
-## branch 병합 시나리오
+## branch 병합 상황
 
-### 상황 1. fast-foward
+### 1. fast-foward
 
 > fast-foward는 feature 브랜치 생성된 이후 master 브랜치에 변경 사항이 없는 상황
 
-
-
-1. feature/home branch 생성 및 이동
+1. feature branch 생성 및 이동
 
    ```bash
-   (master) $ git branch feature/home
-   (master) $ git checkout feature/home
+   (master) $ git branch feature
+   (master) $ git checkout feature
    ```
 
 2. 작업 완료 후 commit
 
    ```bash
-   (feature/home) $ touch home.txt
-   (feature/home) $ git add .
-   (feature/home) $ git commit -m 'Add home.txt'
+   (feature) $ touch home.txt
+   (feature) $ git add .
+   (feature) $ git commit -m 'Add home.txt'
    ```
 
 
 3. master 이동
 
    ```bash
-   (feature/home) $ git checkout master
+   (feature) $ git checkout master
    ```
 
 4. master에 병합
 
    ```bash
-   (master) $ git merge feature/home 
+   (master) $ git merge feature
    ```
 
 5. 결과 : fast-foward
 
    ```bash
    (master) $ git log --oneline
-   b534a34 (HEAD -> master, feature/home) Complete Home!!!!
-   e89616a Init
+   b534a34 (HEAD -> master, feature)
    ```
-
+   
 6. branch 삭제
 
    ```bash
-   (master) $ git branch -d feature/home 
+   (master) $ git branch -d feature 
    ```
 
    
 
 ---
 
-### 상황 2. merge commit
+### 2. merge commit
 
 > 서로 다른 이력(commit)을 병합(merge)하는 과정에서 **다른 파일이 수정**되어 있는 상황
 >
 > git이 auto merging을 진행하고, **commit이 발생된다.**
 
-
-
-1. feature/about branch 생성 및 이동
+1. feature/a branch 생성 및 이동
 
    ```bash
-   (master) $ git checkout -b feature/about
+   (master) $ git checkout -b feature/a
    ```
 
 2. 작업 완료 후 commit
 
    ```bash
-   (feature/about) $ touch about.txt
-   (feature/about) $ git add .
-   (feature/about) $ git commit -m 'Add about.txt'
+   (feature/a) $ touch about.txt
+   (feature/a) $ git add .
+   (feature/a) $ git commit -m 'Add about.txt'
    ```
 
 3. master 이동
 
    ```bash
-   (feature/about) $ git checkout master
+   (feature/a) $ git checkout master
    ```
 
 4. master에 추가 commit을 발생시키기
@@ -191,7 +186,7 @@ $ git init
 5. master에 병합
 
    ```bash
-   (master) $ git merge feature/about
+   (master) $ git merge feature/a
    ```
 
 6. 결과 -> **자동으로 *merge commit 발생***
@@ -200,26 +195,20 @@ $ git init
 
    ```bash
    $ git log --oneline --graph
-   *   582902d (HEAD -> master) Merge branch 'feature/about'
-   |\
-   | * 5e1f6de (feature/about) 자기소개 페이지 완료!
-   * | 98c5528 마스터 작업....
-   |/
-   * b534a34 Complete Home!!!!
-   * e89616a Init
+   *   582902d (HEAD -> master) Merge branch 'feature/a'
    ```
-
+   
 8. branch 삭제
 
    ```bash
-   $ git branch -d feature/about 
+   $ git branch -d feature/a 
    ```
 
    
 
 ---
 
-### 상황 3. merge commit 충돌
+### 3. merge commit 충돌
 
 > 서로 다른 이력(commit)을 병합(merge)하는 과정에서 **같은 파일의 동일한 부분이 수정**되어 있는 상황
 >
@@ -228,8 +217,6 @@ $ git init
 > 해당 파일의 위치에 표준형식에 따라 표시 해준다.
 >
 > 원하는 형태의 코드로 직접 수정을 하고 직접 commit을 발생 시켜야 한다.
-
-
 
 1. feature/test branch 생성 및 이동
 
@@ -326,17 +313,6 @@ $ git init
    ```bash
    (master) $ git log --oneline --graph
    *   bc1c0cd (HEAD -> master) Merge branch 'feature/test'
-   |\  
-   | * 95fad1c (feature/test) README 수정하고 test 작성하고
-   * | 2ecad28 리드미 수정
-   |/  
-   *   582902d Merge branch 'feature/about'
-   |\  
-   | * 5e1f6de 자기소개 페이지 완료!
-   * | 98c5528 마스터 작업....
-   |/  
-   * b534a34 Complete Home!!!!
-   * e89616a Init
    ```
 
 
