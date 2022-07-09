@@ -1,4 +1,4 @@
-# 📚 TIL
+# 📚 TIL⚡️
 
 
 
@@ -13,4 +13,14 @@
 - [GitHub](./Git/GitHub.md)
 - [Git branch](./Git/Git_Branch.md)
 - [Git Summary](./Git/git_summary.md)
+
+## 🌈 JavaScript
+
+- [JavaScript Deep Dive](./JavaScript/Deepdive)
+
+## 📘Python
+
+
+
+
 
