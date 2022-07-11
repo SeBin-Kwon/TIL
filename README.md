@@ -18,11 +18,16 @@
 
 - [JavaScript Deep Dive](./JavaScript/Deepdive)
 
-## 📘Python
+## 📘 Python
 
-## ⚙️ Baekjoon
+- [Python basics](./Python/python_basics.md)
 
-- [Python](./Baekjoon)
+## ⚙️ Algorithm
+
+- [Codeup](./Codeup)
+- [Baekjoon](./Baekjoon)
+
+## 🔩 CS
 
 
 
