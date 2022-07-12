@@ -390,10 +390,19 @@
 
 - 문자열 안에 변수 넣기, 문자열을 변수를 활용하여 만드는 법
 
+  ```python
+  # 문자열 안에 변수 넣기
+  score = 100
+  
+  # 내 점수는 100이야.
+  # 숫자와 문자는 더할 수가 없어서.. 직접 문자열으로 변환!
+  print('내 점수는 ' + str(score) + '이야.')
+  ```
+
   - %-formatting
 
     ```python
-     name = 'Kim' score = 4.5
+    name = 'Kim' score = 4.5
     print('Hello, %s' % name) print('내 성적은 %d' % score) print('내 성적은 %f' % score)
     # Hello, Kim
     # 내 성적은 4
@@ -405,12 +414,13 @@
     - 앞에 소문자 f를 붙이고 변수를 {}로 감싼다.
 
     ```python
-     name = 'Kim'
+    name = 'Kim'
     score = 4.5
     print(f'Hello, {name}! 성적은 {score}') 
     # Hello, Kim! 성적은 4.5
     pi = 3.141592
-    print(f'원주율은 {pi:.3}. 반지름이 2일때 원의 넓이는 {pi*2*2}') # '원주율은 3.14. 반지름이 2일때 원의 넓이는 12.566368'
+    print(f'원주율은 {pi:.3}. 반지름이 2일때 원의 넓이는 {pi*2*2}') 
+    # 원주율은 3.14. 반지름이 2일때 원의 넓이는 12.566368
     ```
 
 - **문자열과 숫자를 더할 수 없다. 같은 타입끼리 더할 수 있다.**
@@ -485,136 +495,294 @@
 
 ### 리스트 (List)
 
-값들의 나열
+- 변경 가능한 값들의 나열된 자료형
+- 순서를 가지며, 서로 다른 타입의 요소를 가질 수 있음
+- 변경 가능하며(mutable), 반복 가능함(iterable)
+- 항상 대괄호 형태로 정의하며, 요소는 콤마로 구분
 
-인덱스 순서로 접근
+### 생성과 접근
 
-students = ['동현', '효근', '수경', '나영', '다겸', '예지']
-
-print(students[0]) # 동현
-
-print(students[-1]) # 예지
-
-
-
-students_1 = ['동현', '효근']
-
-students_2 = ['수경', '나영']
-
-students_3 = ['다겸', '예지']
-
-students = [['동현', '효근'], ['수경', '나영'], ['다겸', '예지']]
-
-
-
-딕셔너리
-
-키와 값의 쌍으로 이뤄짐
-
-키로 접근함
+- 리스트는 대괄호([]) 혹은 `list()` 를 통해 생성
+- 순서가 있는 시퀀스로 인덱스를 통해 접근 가능
+  - 값에 대한 접근은 `list[i]`
 
 ```python
+# 생성
+my_list = [] another_list = list() type(my_list)
+# <class 'list'> type(another_list)
+# <class 'list'>
+
+ # 값 접근
+a = [1, 2, 3] print(a[0]) #1
+# 값 변경
+a[0] = '1' print(a)
+# ['1', 2, 3]
+```
+
+### 리스트 값 추가/삭제
+
+- 값 추가는 `.append()`를 활용하여 추가하고자 하는 값을 전달
+
+```python
+even_numbers = [2, 4, 6, 8] 
+even_numbers.append(10) 
+even_numbers # [2, 4, 6, 8, 10]
+```
+
+- 값 삭제는 `.pop()`을 활용하여 삭제하고자 하는 인덱스를 전달
+
+```python
+even_numbers = [2, 4, 6, 8]
+even_numbers.pop(0)
+even_numbers # [4, 6, 8]
+```
+
+#### 예제
+
+```python
+#리스트
+students = ['동현', '효근', '수경', '나영', '다겸', '예지']
+print(students[0]) # 동현
+print(students[-1]) # 예지
+
+students_1 = ['동현', '효근']
+students_2 = ['수경', '나영']
+students_3 = ['다겸', '예지']
+students = [['동현', '효근'], ['수경', '나영'], ['다겸', '예지']]
+
+#딕셔너리
 students = {
 	'1회차' : ['동현', '효근']
 	'2회차' : ['수경', '나영']
 	'3회차' : ['다겸', '예지']
 }
-print(['1회차'])
+print(['1회차']) # 키로 접근
+```
+
+```python
+numbers = [1, 100, 20, 50]
+
+print(numbers[1]) # 100, 인덱스는 항상 0부터 시작!
+# print([1, 100, 20, 50][1])
+print(numbers[2:3]) # 20
+# print([1, 100, 20, 50][2:3])
+print([1, 2] + [3]) # [1, 2, 3]
+print(len(numbers)) # 4
+print(sum(numbers)) # 171
+print(max(numbers)) # 100
+print(min(numbers)) # 1
+```
+
+### 튜플(Tuple)
+
+- **불변한 값들의 나열**
+- 순서를가지며,서로다른타입의요소를가질수있음
+- **변경 불가능하며(immutable)**, 반복 가능함(iterable)
+- 항상 소괄호 형태로 정의하며, 요소는 콤마로 구분
+
+### 생성과 접근
+
+- 소괄호(()) 혹은 `tuple()`을 통해 생성
+- 값에 대한 접근은 리스트와 동일하게 인덱스로 접근
+- 값 변경은 불가능하여 추가/삭제도 불가능함
+
+### 레인지(Range)
+
+- **숫자의 시퀀스를 나타내기 위해 사용**
+- 기본형 : `range(n)`
+  - 0부터 n-1까지의 숫자의 시퀀스
+- 범위 지정 : `range(n, m)`
+  - n부터 m-1까지의 숫자의 시퀀스
+- 범위 및 스텝 지정 : `range(n, m, s)`
+  - n부터 m-1까지 s만큼 증가시키며 숫자의 시퀀스
+- **변경 불가능하며(immutable), 반복 가능함(iterable)**
+
+#### 예제
+
+```python
+range(3) # 0, 1, 2
+range(1,4) # 1, 2, 3 / 1이상, 4미만
+range(1, 5, 2) # 1, 3
+
+range(4) # range(0, 4) 
+list(range(4)) # [0, 1, 2, 3] 
+type(range(4)) # <class 'range'>
+
+# step 활용 
+list(range(1, 5, 2)) # [1, 3]
+
+# 역순
+list(range(6, 1, -1)) # [6, 5, 4, 3, 2]
+list(range(6, 1, 1)) # []
+```
+
+```python
+# 로또
+import random 
+numbers = range(1, 46)
+result = random.sample(numbers, 6)
+print(result)
 ```
 
 
 
-numbers = [1, 100, 20, 50]
-
-print(numbers[1]) 100
-
-print(numbers[2:3]) 20
-
-print(numbers[0:3:-1]) 없음 그냥 머릿속에서 지우기 <- <0 1 2> 3
-
-print([1,2] + [3]) [1, 2, 3] 리스트를 합쳐줌
-
-print(len(numbers)) 4
-
-print(sum(numbers)) 171
-
-print(max(numbers)) 100
-
-print(min(numbers)) 1
 
 
+## 비시퀀스형 컨테이너 (Associative Container)
 
-리스트(List)
+### 세트(Set)
 
-- 변경 가능한 값들의 나열된 자료형
-- 변경 가능하며()값을 바꿔치기 가능함
-
-인덱스가 0에 해당하는 값을 -1로 바꾼다.
-
-[-1,1]
-
-### 리스트 값 추가 / 삭제
-
-.append()
-
-.pop()
-
-
-
-### 튜플(Tuple)
-
-- **변경 불가능하며**
-
-리스트랑 다 똑같은데 변경만 안됨
-
-
-
-### 레인지(Range)
-
-range(3) -> 0, 1, 2
-
-range(1,4) - > 1, 2, 3 / 1이상, 4미만
-
-range (1, 5, 2) -> 1, 3
-
-## 비시퀀스
-
-### 세트(Set)집합
-
-- **유일한 값들의 모음**
+- **유일한 값들의 모음 (collection)**
 - 순서가 없고 중복된 값이 없음
-  - {3, 1, 2, 3} -> {3,1,2}
+  - 수학에서의 집합과 동일한 구조를 가지며, 집합 연산도 가능
 
-셋 활용
-
-아래의 리스트에서 고유한 지역의 개수는?
-
-locations = [서울,,]
-
-print(set(locations))
-
-print(len(set(locations))) -> 6
+- 변경 가능하며(mutable), 반복 가능함(iterable)
+  - 단, 세트는 순서가 없어 반복의 결과가 정의한 순서와 다를 수 있음
 
 
+### 세트(Set) 생성
 
-### 딕셔너리
+- 중괄호({}) 혹은 `set()`을 통해 생성
+  - 빈 Set를 만들기 위해서는 `set()`을 반드시 활용해야 함
+- 순서가 없어 별도의 값에 접근할 수 없음
 
-**키 - 값**
+```python
+{1, 2, 3, 1, 2} # {1, 2, 3} 중복 값 제거
+type({1, 2, 3}) # <class 'set'> blank_set = set()
+{'hi', 1, 2} # {1, 2, 'hi'} 순서가 없음
+{1, 2, 3}[0] # 순서가 없어 인덱스 접근 등 특정 값에 접근할 수 없음
+TypeError Traceback (most recent call last) <ipython-input-95-0c8fa4a2ff15> in <module> ----> 1 {1, 2, 3}[0]
+TypeError: 'set' object is not subscriptable
+```
 
-리스트를 키로 할 수는 없다.
+### 세트(Set) 추가/삭제
 
-.pop()은 값을 안없애지만 키를 삭제함
+- 값 추가는 `.add()`를 활용하여 추가하고자 하는 값을 전달
+- 값 삭제는 `.remove()`를 활용하여 삭제하고자 하는 값을 전달
 
-키가 없으니 해당 값 출력은 오류가 뜸
+```python
+numbers = {1, 2, 3} 
+numbers.add(5) 
+numbers # {1, 2, 3, 5}
+numbers.add(1) 
+numbers # {1, 2, 3, 5} 중복되지 않음
 
-input은 모두 string으로 저장된다. 따라서, 숫자로 활용하기 위해서는 항상 int로 변환해야 한다.
+numbers = {1, 2, 3} 
+numbers.remove(1) 
+numbers # {2, 3} 
+numbers.remove(5)
+# Traceback (most recent call last): # File "<stdin>", line 1, in <module> #KeyError: 5
+```
 
+### 세트(Set) 활용
+
+- 세트를 활용하면 다른 컨테이너에서 중복된 값을 쉽게 제거할 수 있음
+  - 단, 이후 순서가 무시되므로 순서가 중요한 경우 사용할 수 없음
+
+```python
+# 아래의 리스트에서 고유한 지역의 개수는?
+my_list = ['서울', '서울', '대전', '광주', '서울', '대전', '부산', '부산’]
+len(set(my_list))
+#4
+set(my_list)
+# {'광주', '대전', '부산', '서울'}
+```
+
+
+
+### 딕셔너리 (Dictionary)
+
+-  **키-값(key-value) 쌍으로 이뤄진 모음(collection), 자료구조**
+  - 키(key)
+    - key는 변경 불가능한 데이터(immutable)만 활용 가능
+      - string, integer, float, boolean, tuple, range
+      - List, Dictionary 등은 key로 할 수 없다.
+  - 값(values)
+    - value는 모든 값으로 설정 가능 (List, Dictionary등), 어떠한 형태든 관계 없음
+- 키와 값은 `:` 로 구분됨. 개별 요소는 `,`로 구분됨.
+- 변경 가능하며(mutable), 반복 가능함(iterable)
+  - 딕셔너리는 반복하면 키가 반환.
+
+### 딕셔너리(Dictionary) 생성
+
+```python
+students = {'홍길동': 30, '김철수': 25}
+students['홍길동'] # 30
+
+dict_c = {[1, 2, 3]: 'hi’} # list를 key로 사용할 수 없다.
+TypeError Traceback (most recent call last) ----> 1 dict_c = {[1, 2, 3]: 'hi’} TypeError: unhashable type: 'list'
+```
+
+### 딕셔너리(Dictionary) 접근
+
+```python
+movie = {
+'title': '설국열차',
+'genres': ['SF', '액션', '드라마'], 'open_date': '2013-08-01', 'time': 126,
+'adult': False,
+}
+movie['genres']
+# ['SF', '액션', '드라마']
+movie['actors’]
+Traceback (most recent call last): File "<stdin>", line 1, in <module> KeyError: 'actors'
+```
+
+### 딕셔너리(Dictionary) 키-값 추가 및 변경
+
+- 딕셔너리에 키와 값의 쌍을 추가할 수 있으며,
+- 이미 해당하는 키가 있다면 기존 값이 변경된다.
+
+```python
+students = {'홍길동': 100, '김철수': 90} 
+students['홍길동'] = 80 # {'홍길동': 80, '김철수': 90} 
+students['박영희'] = 95 # {'홍길동': 80, '김철수': 90, '박영희': 95}
+```
+
+### 딕셔너리(Dictionary) 키-값 삭제
+
+- 키를 삭제하고자하면 `.pop()`을 활용하여 삭제하고자 하는 키를 전달
+  - `.pop()`은 값을 삭제하지 않고 키를 삭제함
+
+```python
+students = {'홍길동': 30, '김철수': 25} 
+students.pop('홍길동')
+students
+# {'김철수': 25}
+```
+
+- 키가 없는 경우는 KeyError 발생
+
+```python
+students = {'홍길동': 30, '김철수': 25} 
+students.pop('jane')
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module> KeyError: 'jane'
+```
+
+
+
+## 기타
+
+#### input()
+
+- input은 모두 `string`으로 저장된다. 따라서, 숫자로 활용하기 위해서는 항상 `int`로 변환해야 한다.
+
+#### split()
+
+- 문자열을 특정 단위로 쪼개줌, 리스트로
+
+``` python
 a = '1 2 3'
-
 print(a.split())
+# ['1', '2', '3']
+```
 
--> ['1', '2', '3']
+#### sep
 
-문자열을 특정 단위로 쪼개줌, 리스트로
+- sep(seperator)를 작성하면 값 사이에 해당 문자를 넣어준다.
+  - `sep = '문자'`
 
-sep(seperator)를 작성하면 값 사이에 해당 문자르 넣어준다.
+
+
+
+
