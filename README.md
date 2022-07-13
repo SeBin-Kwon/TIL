@@ -22,6 +22,7 @@
 
 - [Python basics](./Python/python_basics.md)
 - [Control statements](./Python/py_control_statements.md)
+- [Function](./Python/py_function.md)
 
 ## ⚙️ Algorithm
 
