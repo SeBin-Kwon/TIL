@@ -23,6 +23,8 @@
 - [Python basics](./Python/python_basics.md)
 - [Control statements](./Python/py_control_statements.md)
 - [Function](./Python/py_function.md)
+- [Data Structure](./Python/py_data_str)
+- [Python training](./Python/training)
 
 ## ⚙️ Algorithm
 
