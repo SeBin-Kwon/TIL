@@ -176,8 +176,6 @@ numbers = ' '.join(map(str,[10, 20, 100]))
   print(msg.upper()) # HI! EVERYONE.
   print(msg.lower()) # hi! everyone.
   print(msg.swapcase()) # Hi! eVERYONE.
-  
-      
   ```
 
   - 문자열은 `inmutable`이기 때문에(ex: 튜플, 레인지) 스스로 바뀌는 경우가 없다.

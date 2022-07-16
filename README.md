@@ -24,11 +24,12 @@
 - [Control statements](./Python/py_control_statements.md)
 - [Function](./Python/py_function.md)
 - [Data Structure](./Python/py_methods.md)
-- [Python training](./Python/training)
+- [Module](./Python/py_module.md)
 
 ## ⚙️ Algorithm
 
 - [Codeup](./Codeup)
+- [Python training](./Python/training)
 - [Baekjoon](./Baekjoon)
 
 ## 🔩 CS
