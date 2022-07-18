@@ -1,14 +1,20 @@
-# 모듈 (module)
+# 📋 모듈 (module)
 
-> 합, 평균, 표준편차, ... 여러 함수, 기능들
->
-> => 다양한 기능을 하나의 파일로 (모듈, module)
->
-> => 다양한 파일을 하나의 폴더로 (패키지, package)
->
-> => 다양한 패키지를 하나의 묶음으로 (라이브러리, library)
->
-> => 패키지, 라이브러리를 관리하는 관리자 (pip)
+### 모듈
+
+> 다양한 기능을 하나의 파일로 (모듈, module)
+
+### 패키지
+
+> 다양한 파일을 하나의 폴더로 (패키지, package)
+
+### 라이브러리
+
+> 다양한 패키지를 하나의 묶음으로 (라이브러리, library)
+
+### pip
+
+> 패키지, 라이브러리를 관리하는 관리자 (pip)
 
 
 
@@ -16,12 +22,24 @@
 
 - 모듈
   - 특정 기능을 하는 코드를 파이썬 파일(.py) 단위로 작성한 것
+- 패키지
+  - 특정 기능과 관련된 여러 모듈의 집합
+  - 패키지 안에는 또 다른 서브 패키지를 포함
+
 
 ### 파이썬 표준 라이브러리
 
 - 파이썬에 기본적으로 설치된 모듈과 내장 함수
 
 ```python
+import datetime
+
+now = datetime.datetime123.now()
+print(now, type(now))
+
+# from datetime import datetime123
+# now = datetime.now() 
+
 import random
 
 random.sample([1, 2, 3],2)
@@ -40,7 +58,22 @@ for i in range(n):
 	  print(numbers, type(numbers))              
 ```
 
+
+
+## 파일 입출력
+
+- `'r'` : read (읽기 전용)
+
+- `'w'` : write (쓰기 전용 - 덮어씀)
+
+- `'a'` : append (쓰는데 파일 있으면 이어서 씀)
+
 ```python
+with open('test.txt', 'w', encoding='utf-8') as f:
+    f.write('Happy Hacking!\n')
+    for i in range(1, 6):
+        f.write(f'{i} 번째!\n')
+
 # 파일명, 어떤 모드로 열지,
 # 인코딩을 설정
 with open('students.txt', 'r', encoding='utf-8') as f:
@@ -57,9 +90,13 @@ with open('students.txt', 'r', encoding='utf-8') as f:
   print(cnt)
 ```
 
-
-
 ```python
+with open('students.txt', 'r', encoding='utf-8') as f:
+    for line in f:
+        print(line, end='')
+    # lines = f.readline()
+    # print(lines, type(lines))
+
 with open('students.txt', 'r', encoding='utf-8') as f:
   # lines = f.readline() 줄단위로 한줄씩 출력
   for line in f:
@@ -69,6 +106,8 @@ with open('students.txt', 'r', encoding='utf-8') as f:
 
 
 ## JSON
+
+> - JavaScript Object Notation라는 의미의 축약어로 데이터를 저장하거나 전송할 때 많이 사용되는 **경량의 DATA 교환 형식**
 
 ```python
 import json
@@ -86,24 +125,23 @@ result = {
   'stockName': samsung.get('stockName'),
   'closePrice': 
 }
+print(result)
+
+from pprint import pprint
+
+samsung = {
+        "stockEndType": "stock",
+        "itemCode": "005930",
+        "reutersCode": "005930",
+        "stockName": "삼성전자",
+        "sosok": "0",
+        "closePrice": "58,800",
+        "compareToPreviousClosePrice": "1,300",
+        "compareToPreviousPrice": {
+          "code": "2",
+          "text": "상승",
+          "name": "RISING"
+        }}
+pprint(samsung)
+print(samsung)
 ```
-
-### 프로젝트
-
-### 5번
-
-for a in genre_ids
-
-a => {'id:'28', 'name':...}
-
-if a['id'] == id
-
-g_names.append(a.get)
-
-### 6번
-
-5번 코드 복붙 후 반복문 또 돌리기
-
-for movie in movies
-
-(if문으로 중복제거 연습)
