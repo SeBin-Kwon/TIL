@@ -25,11 +25,12 @@
 - [Function](./Python/py_function.md)
 - [Data Structure](./Python/py_methods.md)
 - [Module](./Python/py_module.md)
+- [Error / Exception Handling](./Python/py_error.md)
 
 ## ⚙️ Algorithm
 
-- [Codeup](./Codeup)
 - [Python training](./Python/training)
+- [Codeup](./Codeup)
 - [Baekjoon](./Baekjoon)
 
 ## 🔩 CS
