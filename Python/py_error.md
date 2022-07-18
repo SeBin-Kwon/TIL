@@ -323,25 +323,25 @@ https://docs.python.org/ko/3/library/exceptions.html#exception-hierarchy
 numbers = input('숫자를 입력해주세요: ')
 print(numbers)
 try:
-		if int(numbers) == 5:
-  		print('오오~')
-		else:
-  		print('오가 아닙니다.')
+    if int(numbers) == 5:
+        print('오오~')
+    else:
+        print('오가 아닙니다.')
 except:
     print('숫자를 입력하지 않았습니다.')
     
 # 100을 사용자가 입력한 숫자로 나눠서 결과를 출력
 number = input()
 try:
-		print(100/int(number))
+    print(100/int(number))
 except ZeroDivisionError as err : 
 # except (ValueError, ZeroDivisionError:) 한꺼번에 묶어서 예외처리 가능
-		print(err)
-		print('0으로 나눌 수는 없습니다.')
+    print(err)
+    print('0으로 나눌 수는 없습니다.')
 except ValueError:
     print('숫자 형식을 입력해주세요.')
 except Exception:
-		print('오류') # 상위의 개념이므로 하단부에 작성해야 한다.
+    print('오류') # 상위의 개념이므로 하단부에 작성해야 한다.
 ```
 
 - 파일을 열고 읽는 코드를 작성하는 경우
@@ -356,29 +356,29 @@ except Exception:
   try:
       f = open('nooofile.txt')
   except FileNotFoundError:
-  		print('해당 파일이 없습니다.') # 실행
+      print('해당 파일이 없습니다.') # 실행
   else:
-  		print('파일을 읽기 시작합니다.') 
+      print('파일을 읽기 시작합니다.') 
       print(f.read())
-  		print('파일을 모두 읽었습니다.') 
+      print('파일을 모두 읽었습니다.') 
       f.close()
   finally:
-  		print('파일 읽기를 종료합니다.') # 모두 실행
+      print('파일 읽기를 종료합니다.') # 모두 실행
       
    
   
   파일이 있는 경우 
   try:
-  		f = open('file.txt') 
+      f = open('file.txt') 
   except FileNotFoundError:
-  		print('해당 파일이 없습니다.') 
+      print('해당 파일이 없습니다.') 
   else:
-    	print('파일을 읽기 시작합니다.') # 실행
+      print('파일을 읽기 시작합니다.') # 실행
       print(f.read())
-  		print('파일을 모두 읽었습니다.') 
+      print('파일을 모두 읽었습니다.') 
       f.close()
   finally:
-  		print('파일 읽기를 종료합니다.') # 모두 실행
+      print('파일 읽기를 종료합니다.') # 모두 실행
   ```
 
 
