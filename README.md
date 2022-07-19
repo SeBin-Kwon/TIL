@@ -26,6 +26,7 @@
 - [Data Structure](./Python/py_methods.md)
 - [Module](./Python/py_module.md)
 - [Error / Exception Handling](./Python/py_error.md)
+- [OOP](./Python/py_oop.md)
 
 ## ⚙️ Algorithm
 
