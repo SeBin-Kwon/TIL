@@ -33,7 +33,7 @@
 
 - [Python training](./Python/training)
 - [Codeup](./Codeup)
-- [Baekjoon](./Baekjoon)
+- [Baekjoon](./백준)
 - [SWEA](./SWEA)
 
 ## 🔩 CS
