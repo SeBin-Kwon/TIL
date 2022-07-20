@@ -27,6 +27,8 @@
 - [Module](./Python/py_module.md)
 - [Error / Exception Handling](./Python/py_error.md)
 - [OOP](./Python/py_oop.md)
+  - [Class](./Python/py_oop2.md)
+
 
 ## ⚙️ Algorithm
 
