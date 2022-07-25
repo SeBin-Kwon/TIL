@@ -28,14 +28,17 @@
 - [Error / Exception Handling](./Python/py_error.md)
 - [OOP](./Python/py_oop.md)
 - [OOP 2](./Python/py_oop2.md)
-- [Advanced python](./Python/py_advanced)
+- [Advanced python](./Python/py_advanced.md)
+- [API](./Python/py_api)
 
 ## ⚙️ Algorithm
 
+- [Algorithm](./Python/algorithm.md)
 - [Python training](./Python/training)
 - [Codeup](./Codeup)
 - [Baekjoon](./백준)
 - [SWEA](./SWEA)
+- [Programmers](./Programmers)
 
 ## 🔩 CS
 

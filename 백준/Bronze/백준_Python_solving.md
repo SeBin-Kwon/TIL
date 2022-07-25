@@ -1,4 +1,4 @@
-# 백준 Python 단계별 문제 1~2
+# 백준 Python 문제 풀이
 
 ## 1000번 A+B
 
@@ -106,3 +106,27 @@ else:
 
 ---
 
+## 2577번 숫자의 개수
+
+```python
+d = list(str(a*b*c))
+for i in range(10):
+    print(d.count(str(i)))
+```
+
+1. 입력값 문자열, 리스트로 변형
+
+2. 10번 반복해서 프린트 하는데 
+
+3. `.count()`로 리스트안에 ()값이 있으면 그 개수를 셈
+
+## 2908번 상수
+
+```python
+a, b = input().split()
+print(max(int(a[::-1]),int(b[::-1])))
+
+#print(max(int(''.join(reversed(a))), int(''.join(reversed(b)))))
+```
+
+문자열로 입력값을 받고 인덱싱으로 거꾸로해서 정수 변환 후 최대값 구하기
