@@ -29,7 +29,7 @@
 - [OOP](./Python/py_oop.md)
 - [OOP 2](./Python/py_oop2.md)
 - [Advanced python](./Python/py_advanced.md)
-- [API](./Python/py_api)
+- [API](./Python/py_api.md)
 
 ## ⚙️ Algorithm
 
