@@ -120,6 +120,8 @@ for i in range(10):
 
 3. `.count()`로 리스트안에 ()값이 있으면 그 개수를 셈
 
+<br>
+
 ## 2908번 상수
 
 ```python
@@ -130,3 +132,30 @@ print(max(int(a[::-1]),int(b[::-1])))
 ```
 
 문자열로 입력값을 받고 인덱싱으로 거꾸로해서 정수 변환 후 최대값 구하기
+
+<br>
+
+## 8958번  OX 퀴즈
+
+```python
+T = int(input())
+O = 'O' # 변수명에 저장하면 오타났을 때 금방 알 수 있음
+X = 'X'
+
+for i in range(T):
+    ox = input()
+    count_o = 0 # 연속된 0의 개수
+    sum_ = 0 # 점수의 총합
+  
+  for answer in ox:
+      if answer == O:
+          count_o += 1 
+          # 연속된 0의 개수 1 증가
+          sum_ count_o + sum_
+      if answer == X:
+      # else: # O or X
+          count_o = 0 
+          # 연속된 0의 개수를 초기화
+    print(sum_)
+```
+

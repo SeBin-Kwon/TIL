@@ -33,12 +33,17 @@
 
 ## ⚙️ Algorithm
 
-- [Algorithm](./Python/algorithm.md)
+- [Algorithm & coding test](./Algorithm/algorithm.md)
+- [Time complexity](./Algorithm/time_complexity.md)
+- [List](./Algorithm/list.md)
+
+## 📝 Coding test
+
 - [Python training](./Python/training)
 - [Codeup](./Codeup)
 - [Baekjoon](./백준)
 - [SWEA](./SWEA)
-- [Programmers](./Programmers)
+- [Programmers](./프로그래머스)
 
 ## 🔩 CS
 

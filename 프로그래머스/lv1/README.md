@@ -16,3 +16,15 @@ def solution(numbers):
 - 파이썬 기본 라이브러리인 itertools의 `combinations` 라는 내장함수를 사용하여 **인자값에 따라 해당 요소로 구할수 있는 모든 조합을 리턴한다.**
 - ex) `combinations(numbers, 2)`는 numbers 리스트 안에 2개의 요소로 구할 수 있는 모든 조합을 반환
 
+```python
+set_ = set()
+for i in range(len(numbers)):
+  for j in range(i+1,len(numbers)):
+    n1 = numbers[i]
+    n2 = numbers[j]
+    sum_ = n1 + n2
+    set_.add(sum_)
+list_ = list(set_)
+answer = sorted(list_)
+```
+

@@ -1,0 +1,63 @@
+# 가장 기본이 되는 자료구조: 스택과 큐
+
+## 스택 자료구조
+
+- 먼저 들어 온 데이터가 나중에 나가는 형식(선입후출)의 자료구조
+- **입구와 출구가 동일한 형태**로 스택을 시각화할 수 있다.
+- 파이썬에서 스택 자료구조를 이용하기 위해선 리스트를 사용하면 된다.
+
+```python
+stack = []
+
+stack.append(5) # 삽입
+stack.append(2)
+stack.append(3)
+stack.append(7)
+stack.pop() # 삭제
+stack.append(1)
+stack.append(4)
+stack.pop() 
+
+print(stack[::-1]) # 최상단 원소부터 출력
+print(stack) # 최하단 원소부터 출력
+
+# [1, 3, 2, 5]
+# [5, 2, 3, 1]
+```
+
+## 큐 자료구조
+
+- 먼저 들어 온 데이터가 먼저 나가는 형식(선입선출)의 자료구조
+- 큐는 **입구와 출구가 모두 뚫려 있는 터널과 같은 형태**로 시각화 할 수 있다.
+- 파이썬에서는 꼭 deque 라이브러리를 사용하도록 하자
+  - 리스트로 구현할 수는 있지만 시간복잡도가 더 높아서 비효율적임.
+
+```python
+from collections import deque
+
+# 큐(Queue) 구현을 위해 deque 라이브러리 사용
+queue = deque()
+
+queue.append(5) # 삽입
+queue.append(2)
+queue.append(3)
+queue.append(7)
+queue.popleft() # 삭제
+queue.append(1)
+queue.append(4)
+queue.popleft()
+
+print(queue) # 먼저 들어온 순서대로 출력
+queue.reverse() # 역순으로 바꾸기
+print(queue) # 나중에 들어온 원소부터 출력
+
+deque([3, 7, 1, 4])
+deque([4, 1, 7, 3])
+```
+
+
+
+## 우선순위 큐(Priority Queue)
+
+- 우선순위 큐는 우선순위가 가장 높은 데이터를 가장 먼저 삭제하는 자료구조
+- 
