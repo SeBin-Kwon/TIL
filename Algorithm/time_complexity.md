@@ -128,3 +128,6 @@ print(get_total(1000000000))
 > for문이 1번이라고 해서 무조건 O(n)인 것은 아님. for문 안에 O(n)의 `내장 함수`를 사용했다면 사실상 **이중 for문**과 다를 것이 없기 때문.
 
 [[참고] Big-O Cheatsheet](https://wiki.python.org/moin/TimeComplexity)
+
+- 이중 for문이 아닌 for문 다음 for문을 쓰게되면 `O(n^2)`이 아닌 `O(2N`)이 된다.
+- `max()함수`를 for문 안에 쓰는 것과 for문 밖에 쓰는 것은 시간 복잡도가 다르다.

@@ -1,4 +1,4 @@
-# 백준 Python 문제 풀이
+# 백준 Python 문제 풀이 Bronze
 
 ## 1000번 A+B
 
@@ -157,5 +157,117 @@ for i in range(T):
           count_o = 0 
           # 연속된 0의 개수를 초기화
     print(sum_)
+```
+
+<br>
+
+## 2846번 오르막길
+
+```python
+# N : 리스트 길이
+# 높이 리스트 입력
+list_ = list(map(int,input().split()))
+# 누적합 저장 변수
+sum_ = 0
+# 누적합들을 저장할 리스트
+sum_list = []
+
+# 오르막길을 찾기 위해서 인덱싱
+for i in range(1,len(list_)):
+    # 오르막길을 현재 값 > 이전 값
+    if list_[i] > list_[i-1]:
+        # 오르막길의 전체 길이는 부분 오르막길 길이의 누적합
+        sum_ += list[i] - list[i-1] # 누적합
+        # 기존 가장 긴 길이와 현재 길이를 비교해서 긴 길이를 저장
+        max_sum = max(max_sum,sum_)
+        
+        # 오르막길일 때마다 누적합을 저장
+        # sum_list.append(sum_)
+        
+    # 오르막길이 아니면
+    else:
+        # sum_list.append(sum_)
+        sum_ = 0
+# 남은 누적합을 저장
+# sum_list.append(sum_)
+
+# 만약 오르막길이 없으면 0을 출력
+if len(sum_list) == 0:
+    print(0)
+# 만약 오르막길이 있다면 가장 긴 길이 출력
+else:
+    print(max(sum_list))
+
+# print(max(sum_list))
+```
+
+- 파이썬 리스트는 `index[-1]`를 할 경우 맨 끝으로 가게됨.
+  - 문법상 맞기 때문에 에러가 뜨지 않는다. 그래서 음수 인덱싱을 할 때엔 주의해야 한다.
+
+- 작은 수과 큰수를 구해서 한번에 빼는건 좀 어려움
+  - 앞뒤의 차이를 계속 더해나가서 최종 합친 값을 구하는게 좀더 수월함
+
+<br>
+
+## 2231번 분해합
+
+```python
+# 숫자 N 입력
+N = int(input())
+
+# 가장 작은 생성자 변수
+answer = 0
+
+# 1부터 N 사이의 모든 수의 분해합을 탐색
+for number in range(1,N):
+    # 분해합 저장 변수
+    split_sum = 0
+    
+    # 각 자리수의 합
+    for digit in str(number):
+        split_sum = split + int(digit)
+      
+    # 각 자리수의 합 + 수의 합 => 분해합
+    split_sum = split_sum + number
+    
+    # 구한 분해합과 입력 N이 같으면 number는 N의 생성자
+    if N == split_sum:
+        print(number)
+        # number_list.append(number)
+        break # 가장 작은 생성자 탐색
+# for-else
+# break를 만나지 않으면
+else:
+    print(0)
+```
+
+- 1~n-1까지 모든 경우의 수를 탐색해야함
+  - 범위가 정해져 있기 때문에 for문 활용
+
+<br>
+
+## 2851번 슈퍼 마리오
+
+```python
+# 왜 안되는지?
+n = []
+sum_ = 0
+for t in range(10):
+    n.append(int(input()))
+
+for i in n:
+    sum_ += i
+
+    if sum_ == 100:
+        print(100)
+        break
+
+    if sum_ > 100:        
+        if sum_ - 100 > 100 - (sum_ - i):
+            print(sum_ - i)
+            break
+        else:
+            break
+print(sum_)
 ```
 

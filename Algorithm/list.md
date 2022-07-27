@@ -61,6 +61,7 @@
 
   - 리스트를 오름차순으로 **정렬**
   - `reverse = True` 옵션을 통해 내림차순으로 정렬 가능
+  - 리턴 값이 없기 때문에 변수에 따로 저장해도 `None`이 출력
 
 - `.reverse()` => `O(N)`
 
@@ -80,6 +81,33 @@
 - `min(iterable)` => `O(N)`
   - 리스트의 원소 중 **최소값**을 반환
 - `sorted(iterable)` => `O(NlogN)`
-  - 오름차순으로 정렬된 새로운 리스트 반환 원본 리스트는 변화 없음
+  - 오름차순으로 정렬된 새로운 리스트 반환
+    - 변수에 새로 할당해서 출력해야함
+  - 원본 리스트는 변화 없음
+  - 리스트 2개를 메모리에 저장하기 때문에 `.sort()` 보다는 공간을 좀 더 차지함.
 - `reversed(iterable)` => `O(N)`
   - 리스트의 순서를 거꾸로 뒤집은 새로운 객체 반환 원본 리스트는 변화 없음
+
+<br>
+
+## 리스트 컴프리헨션 (List Comprehension)
+
+> 코드 **한 줄**만으로 새로운 리스트를 만드는 방법
+
+```python
+numbers = []
+for i in range(5):
+    numbers.append(i)
+print(numbers)
+# [0, 1, 2, 3, 4]
+
+# 리스트 컴프리헨션
+numbers = [i for i in range(5)]
+print(numbers)
+# [0, 1, 2, 3, 4]
+
+# if문으로 필터링도 가능
+odd_numbers = [i for i in range(10) if i % 2 == 1]
+print(odd_numbers)
+# [1, 3, 5, 7, 9]
+```
