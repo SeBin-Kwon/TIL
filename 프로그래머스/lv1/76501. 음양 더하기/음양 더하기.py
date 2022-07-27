@@ -4,6 +4,6 @@ def solution(absolutes, signs):
         if signs[i] == True:
             continue
         elif signs[i] == False:
-            absolutes[i] += absolutes[i] * -2
+            absolutes[i] = -absolutes[i]
             answer = sum(absolutes)
     return answer
