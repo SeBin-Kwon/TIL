@@ -36,6 +36,8 @@
 - [Algorithm & coding test](./Algorithm/algorithm.md)
 - [Time complexity](./Algorithm/time_complexity.md)
 - [List](./Algorithm/list.md)
+- [String](./Algorithm/string.md)
+- [Dictionary](./Algorithm/dictionary.md)
 
 ## 📝 Coding test
 

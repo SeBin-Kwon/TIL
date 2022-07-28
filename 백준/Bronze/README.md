@@ -271,3 +271,91 @@ for i in n:
 print(sum_)
 ```
 
+- 누적합을 이용한다.
+
+- **누적 점수와 100의 절대값 차이가 작으면 작을수록 100에 가깝다**
+
+  - 절대값 함수 abs()
+
+- 가장 작은 차이를 기록해 나간다.
+
+  ```python
+  for 점수 in 점수리스트:
+      누적점수 += 점수
+      차이 = 
+  ```
+
+- 같은 차이일 경우 큰 수를 기록해야하는데
+
+  - if 차이 <= 가장작은차이: 이렇게만 해주면 차이는 똑같지만 누적점수는 계속 누적되기 때문에 더 큰 점수가 기록된다.
+
+- 가장 작은 차이를 기록하기 위해 기본 값을 가장 큰 수로 지정한다.
+
+  - `10e9` : 10의 9승
+  - `float('inf')` : 무한대
+
+<br>
+
+## 23825번 SASA 모형을 만들어보자
+
+```python
+print(min(map(int, input().split())) // 2)
+```
+
+<br>
+
+## 3052번 나머지
+
+```python
+# 내 코드
+number = []                 # 입력값 담을 리스트
+for _ in range(10):         # 수 10개 받기
+    n = int(input())
+    number.append(n)        # 입력값 리스트에 추가
+
+result = []                 # 나머지들 담을 결과값 리스트
+for i in number:            # 입력값을 하나씩 꺼내서 연산할 반복문
+    result.append(i % 42)   # 입력값을 42로 나눈 나머지 구하고 결과값 리스트에 추가
+result = len(set(result))   # 중복 없애고 개수를 셈
+print(result)
+
+#
+
+b = [int(input())%42 for i in range(10)]
+print(len(set(b)))
+
+#
+
+s = set()
+for i in range(10):
+    s.add(int(input())%42)
+print(len(s))
+```
+
+
+
+<br>
+
+
+
+## 1292번 쉽게 푸는 문제
+
+```python
+a,b = map(int,input().split())
+ 
+arr = [0]
+for i in range(46):
+    for j in range(i):
+        arr.append(i)
+print(sum(arr[a:b+1]))
+
+#
+
+number_list = []
+for i in range(1, 46):
+    number_list += [i] * i
+    
+A, B = map(int, input().split())
+print(sum(number_list[A-1:B]))
+```
+

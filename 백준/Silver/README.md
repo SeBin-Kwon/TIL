@@ -17,6 +17,8 @@ for x1, y1 in S:
     print(result, end =' ')
 ```
 
+
+
 <br>
 
 ## 1065번 한수
