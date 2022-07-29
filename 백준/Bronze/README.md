@@ -332,11 +332,7 @@ for i in range(10):
 print(len(s))
 ```
 
-
-
 <br>
-
-
 
 ## 1292번 쉽게 푸는 문제
 
@@ -359,3 +355,39 @@ A, B = map(int, input().split())
 print(sum(number_list[A-1:B]))
 ```
 
+```python
+수열 = []
+N = 1
+
+while len(수열) < B:
+    for i in range(N):
+        수열.append(N)
+    숫자 += 1
+
+```
+
+- B번째 숫자까지의 합을 구하면 되므로 수열의 길이는 B보다 크면 된다.
+  - 수열의 길이 < B 때 까지 계속 더해라
+    - while 문
+- 수열 문제는 조건을 확실히 잡고 시작하자
+- for문을 while문으로 바꾸는 연습하자
+
+<br>
+
+## 5622번 다이얼
+
+```python
+dict_ {
+  'A':2,'B':2,'C':2,'D:3'...
+}
+time_ = 0
+
+string
+for key in string:
+    number = dict_[key]
+    time_ += number + 1
+print(time_)
+```
+
+- 딕셔너리 사용하면 쉽게 풀수 있다.
+- 근데 초기값은 다 써야함
