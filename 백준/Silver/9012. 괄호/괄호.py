@@ -8,12 +8,10 @@ for t in range(T):
     for i in ps:
         if i == '(':
             vps.append(i)
-
-        if i == ')':
-            if '(' in vps:
-                vps.pop()
-            else:
-                break
+        elif '(' in vps and i == ')':
+            vps.pop()
+        else:
+            break
 
     else:
         if len(vps) == 0:
