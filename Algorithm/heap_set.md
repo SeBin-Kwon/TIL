@@ -14,11 +14,13 @@
 
 #### Priority Queue
 
-⬅️ **가장 우선순위가 높은 데이터**				 **가장 최신의 데이터** ⬅️
+- ⬅️ **가장 우선순위가 높은 데이터**
 
-큐의 맨 앞 데이터를 가져오는 행위			  큐의 맨 뒤에 데이터를 삽입하는 행위
+  큐의 맨 앞 데이터를 가져오는 행위 `dequeue`
 
-`dequeue`												 `enqueue`
+- **가장 최신의 데이터** ⬅️
+
+  큐의 맨 뒤에 데이터를 삽입하는 행위 `enqueue`
 
 <br>
 
@@ -85,15 +87,15 @@
 
 - **Queue**
 
-  ⬅️ 가장 오래된 데이터			가장 최신의 데이터 ⬅️
+  ⬅️ 가장 오래된 데이터 `dequeue`
 
-  `dequeue`							    `enqueue`
+  가장 최신의 데이터 ⬅️ `enqueue`
 
 - **Heap (min)**
 
-  ⬅️ 가장 작은 데이터		    	가장 큰 데이터 ⬅️
+  ⬅️ 가장 작은 데이터 `heapq.heappop()`
 
-  `heapq.heappop()`			   `heapq.heappush()`
+  가장 큰 데이터 ⬅️ `heapq.heappush()`
 
 <br>
 
