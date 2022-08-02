@@ -126,3 +126,74 @@ print(sorted(result)[0])
 ```python
 ```
 
+<br>
+
+## 23253번 자료구조는 정말 최고야
+
+```python
+# sys.stdin.readline() : 빠르다.
+# input() : 느리다.
+
+answer = 'Yes'
+stack_list = [[12, 4, 1], [6, 2], [9, 3, 7], [11, 10 ,8, 5]]
+
+for stack in stack_list:
+    # stack = [11, 10, 8, 5]
+    # stack = [5, 1, 4, 3]
+    # 비교값을 pop을 통해서 스택에서 꺼내온다.
+    # 5
+    comparison = stack.pop()
+
+    # 스택이 비어있지 않을 때 까지
+    while len(stack) != 0
+        # top comparison 비교
+        if stack[-1] > comparison:
+            # pop을 사용해서 comparison 값을 갱신
+            comparison = stack.pop()
+        else:
+            answer = 'No'
+            break
+print(answer)
+```
+
+- 맨 위에 있는 값을 pop해서 comparison 변수에 할당, 현재 가장 위에 있는 top과 비교한다.
+- 만약 top이 더 크면 pop해서 comparison 변수에 할당
+- while문으로 스택이 비어있을 때 까지 비교하고 빼낸다.
+
+<br>
+
+## 9012번 괄호
+
+```python
+LEFT = '('
+RIGHT = ')'
+
+brackets = ["(", "(", ")", ")", "(", ")", ")"]
+left_stack = []
+right_stack = []
+
+for bracket in brackets:
+    # 괄호가 좌괄호이면
+    if bracket == LEFT:
+        # left stack push
+        left_stack.append(bracket)
+    # 괄호가 우괄호이면
+    if bracket == RIGHT:
+        # 좌괄호 스택의 길이가 0이 아닐 때
+        # 좌괄호 스택이 비어있지 않을 때
+        if len(left_stack) != 0:
+            left_stack.pop()
+        # 우괄호를 우괄호 스택에 push
+        else:
+            right_stack.append(bracket)
+if len(left_stack) == 0 and len(right_stack) == 0:
+    print('Yes')
+else:
+    print('No')
+```
+
+- 왼쪽 스택에 왼쪽 괄호를 넣고 오른쪽 괄호가 나오면 비어있지 않았을 때 pop해줌
+- 오른쪽 괄호가 남고 왼쪽 스택이 비어있을 때, 오른쪽 스택에 넣어줌
+- 왼쪽과 오른쪽 스택이 모두 길이가 0일 때 'Yes', 아니면 'No'
+
+<br>

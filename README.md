@@ -33,11 +33,13 @@
 
 ## ⚙️ Algorithm
 
-- [Algorithm & coding test](./Algorithm/algorithm.md)
+- [Algorithm & Coding test](./Algorithm/algorithm.md)
 - [Time complexity](./Algorithm/time_complexity.md)
 - [List](./Algorithm/list.md)
 - [String](./Algorithm/string.md)
 - [Dictionary](./Algorithm/dictionary.md)
+- [Stack & Queue](./Algorithm/stack_queue.md)
+- [Heap & Set](./Algorithm/heap_set.md)
 
 ## 📝 Coding test
 
