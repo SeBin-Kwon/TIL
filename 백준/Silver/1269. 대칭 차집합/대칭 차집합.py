@@ -1,9 +1,6 @@
 a, b = map(int,input().split())
-a_elem = list(map(int,input().split()))
-b_elem = list(map(int,input().split()))
-
-a_set = set(a_elem)
-b_set = set(b_elem)
+a_set = set(map(int,input().split()))
+b_set = set(map(int,input().split()))
 
 for i in list(a_set):
     if i in b_set:
