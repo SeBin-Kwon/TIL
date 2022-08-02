@@ -102,17 +102,19 @@ print(12)
 
 - **Queue**
 
-  ⬅️ 가장 오래된 데이터			가장 최신의 데이터 ⬅️
+  ⬅️ 가장 오래된 데이터 `dequeue`
 
-  `dequeue`							    `enqueue`
+  가장 최신의 데이터 ⬅️ `enqueue`							    
 
 - **List**
 
-  A[0]										A[-1]
+  A[0]										
 
-  ⬅️ 가장 오래된 데이터		    가장 최신의 데이터 ⬅️
+  ⬅️ 가장 오래된 데이터 `pop()`
 
-  `pop()`			  					 `append()`
+  A[-1]
+  
+  가장 최신의 데이터 ⬅️ `append()`
 
 <br>
 
@@ -134,11 +136,17 @@ print(12)
 
 **Deque**
 
-​						A[0]							A[-1]
+- A[0]
 
-`appendleft()` ➡️ 		  			   ⬅️ `append()`
+  `appendleft()` ➡️
 
-​	  `popleft()` ⬅️			  			➡️  `pop()`
+  `popleft()` ⬅️
+
+- A[-1]
+
+  ⬅️ `append()`
+
+  ➡️  `pop()`
 
 <br>
 
