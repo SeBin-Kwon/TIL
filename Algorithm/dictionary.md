@@ -1,4 +1,4 @@
-# 딕셔너리 (Dictionary)
+# 📔 딕셔너리 (Dictionary)
 
 ## 1. 해시 테이블
 

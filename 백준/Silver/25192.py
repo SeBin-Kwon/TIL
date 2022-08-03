@@ -4,19 +4,24 @@ sys.stdin = open('25192.txt', 'r')
 import sys
 input = sys.stdin.readline
 
-N = int(input())
-name = []
+dict = {}
 cnt = 0
+N = int(input())
 
 for _ in range(N):
-    n = input()
+    n = input().strip('\n')
     
     if n == 'ENTER':
-        cnt += len(name)
-        name = []
+        for v in dict.values():
+            if v == 1:
+                cnt += 1
+        dict = {}
 
-    elif n not in name:
-        name.append(n)
+    elif n not in dict:
+        dict[n] = 1
 
-print(cnt+len(name))
+for v in dict.values():
+    if v == 1:
+        cnt += 1
+print(cnt)
 

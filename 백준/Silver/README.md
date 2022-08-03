@@ -47,16 +47,25 @@ print(han)
 ```python
 N = int(input())
 logs = dict()
-for i in range(N)
-    key, valus = input().split()
-    logs[key] = value
+for i in range(N):
+    # 공백으로 나눠진 두개의 단어
+    # print(input().split())
+    key, value = input().split()
+    logs[key] = value 
+
+
+# print(logs)
 
 list_ = []
 for key in logs:
-    if logs[key] == 'enter':
-      list_.append(key)
-      
+    # print(key) 
+    # value가 enter인 key를 찾아서 리스트에 저장
+    if logs[key] == "enter":
+        list_.append(key)
+
+# print(list_)
 list_.sort(reverse=True)
+# print(list_)
 for name in list_:
     print(name)
 ```
@@ -124,6 +133,22 @@ print(sorted(result)[0])
 ## 1764번 듣보잡
 
 ```python
+n,m,*l=open(0).read().split()
+n=int(n)
+s=sorted(set(l[:n])&set(l[n:]))
+print(len(s),*s,sep='\n')
+
+
+import sys
+n, m = map(int, input().split())
+nameList = sys.stdin.read().splitlines()
+hearset = set(nameList[:n])
+seeset = set(nameList[n:])
+ret = list(hearset & seeset)
+ret.sort()
+print(len(ret))
+for i in ret:
+    print(i)
 ```
 
 <br>
@@ -195,5 +220,73 @@ else:
 - 왼쪽 스택에 왼쪽 괄호를 넣고 오른쪽 괄호가 나오면 비어있지 않았을 때 pop해줌
 - 오른쪽 괄호가 남고 왼쪽 스택이 비어있을 때, 오른쪽 스택에 넣어줌
 - 왼쪽과 오른쪽 스택이 모두 길이가 0일 때 'Yes', 아니면 'No'
+
+<br>
+
+## 11286번 절댓값 힙
+
+```python
+from heapq import *
+N = 18
+heap = []
+X = [1, -1, 0, 0, 0, 1, 1, -1, -1, 2, -2, 0, 0]
+
+# heappop 값을 뺄 때
+root = heappop(heap)
+print(root[1])
+
+# heappush 값을 넣을 때
+heappush(heap,[abs(x),x])
+```
+
+- heappush는 인자로 여러개의 값을 가진 리스트나 튜플로 들어왔을 때 첫번째 값을 기준으로 먼저 정렬하게 된다.
+
+- ```python
+  root = heappop(heap)
+  print(root[1])
+  ```
+
+<br>
+
+## 25192번 인사성 밝은 곰곰이
+
+```python
+N = 7
+gom = 0
+log_list = [
+    "ENTER",
+    "pjshwa",
+    "chansol",
+    "chogahui05",
+    "ENTER",
+    "pjshwa",
+    "chansol",
+]
+list_ = list()
+set_ = set()
+for log in log_list:
+    if log == "ENTER":
+        list_.clear()
+
+    else:
+        # 닉네임 = log
+        # 리스트에서 중복을 탐색할 때는 N 만큼의 시간이 필요합니다.
+        # 셋에서 중복을 탐색할 때는 1 만큼의 시간이 필요합니다.
+        if log not in list_:
+            list_.add(log)
+            gom += 1
+
+print(gom)
+```
+
+- 중복이 있는지 없는지 판별하는 문제
+
+  - `set`으로 풀기
+    - 리스트에서 중복을 탐색할 때는 N만큼의 시간이 필요
+    - 셋에서는 1만큼의 시간이 필요
+
+- `set.clear()`
+
+  셋을 깨끗하게 지워주기
 
 <br>

@@ -1,10 +1,4 @@
-9
+3
 ENTER
-pjshwa
-chansol
-chogahui05
 lms0806
-pichulia
-r4pidstart
-swoon
-tony9402
+lms0806
