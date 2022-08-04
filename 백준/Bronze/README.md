@@ -391,3 +391,89 @@ print(time_)
 
 - 딕셔너리 사용하면 쉽게 풀수 있다.
 - 근데 초기값은 다 써야함
+
+<br>
+
+## 5533번 유니크
+
+```python
+열_리스트 = []
+for x in range(3):
+    열 = []
+    for y in range(5):
+        열.append(리스트[y][x])
+    열_리스트.append(열)
+    
+    
+from pprint import pprint
+
+list_ = [[100, 99, 98],
+         [100, 97, 92],
+         [63, 89, 63],
+         [99, 99, 99],
+         [89, 97, 98]]
+
+# pprint(list_)
+col_list = []
+# 리스트를 90도 회전
+for x in range(3):
+    col = []
+    for y in range(5):
+        col.append(list_[y][x])
+
+    col_list.append(col)
+
+# 친구들의 점수 리스트
+score_list = [0] * 5
+for x in range(3):
+    col = col_list[x]
+    for y in range(5):
+        # 친구의 점수
+        score = col[y]
+        # 친구의 점수가 리스트에서 1개일 때
+        if col.count(score) == 1:
+            # 친구의 점수가 증가합니다.
+            score_list[y] += score
+print(score_list)
+"""
+0
+92
+215
+198
+89
+"""
+```
+
+<br>
+
+## 2167번 2차원 배열의 합
+
+```python
+list_ = [[1, 2, 4],
+         [8, 16, 32]]
+
+i, j, x, y = 1, 1, 2, 2
+
+i -= 1
+j -= 1
+x -= 1
+y -= 1
+
+sum_ = 0
+# 이중 반복문
+# i -> x
+for r in range(i, x+1):
+    # j -> y
+    for c in range(j, y+1):
+        sum_ += list_[r][c] 
+
+print(sum_)
+
+# 파이썬 제출
+# python3 : 메모리 사용이 적고, 속도가 느려요.
+# pypy3 : 메모리 사용이 많은데 속도가 빨라요. 
+```
+
+- 인덱스에 맞춰서 -1씩 해준다.
+
+<br>
