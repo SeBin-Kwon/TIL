@@ -311,7 +311,7 @@ print(min_value)
 
 ## 전치
 
-> **전치(transpose)**란 행렬의 행과 열을 서로 맞바꾸는 것을 의미한다.
+> **전치(transpose)** 란 행렬의 행과 열을 서로 맞바꾸는 것을 의미한다.
 
 ```python
 matrix = [
