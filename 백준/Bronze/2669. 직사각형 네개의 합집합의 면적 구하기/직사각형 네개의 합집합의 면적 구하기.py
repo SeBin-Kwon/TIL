@@ -7,7 +7,4 @@ for _ in range(4):
         for j in range(y1,y2):
             area[i][j] = 1
 
-
-result = sum(map(sum, area))
-
-print(result)
+print(sum(map(sum, area)))
