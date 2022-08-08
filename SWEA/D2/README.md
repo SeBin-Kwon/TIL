@@ -21,7 +21,7 @@ for test_case in range(1, T + 1):
 > - 주석처리 하면서 풀거나
 > - 공책에 적으면서 풀기
 
-
+<br>
 
 # SWEA D2 1288
 
@@ -44,4 +44,6 @@ for test_case in range(1,t+1):
         n += n1 # 등차수열 이용, n*cnt OK, while문 멈추면서 더하지 않는다.
     print(f'#{test_case} {n}')
 ```
+
+<br>
 

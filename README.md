@@ -41,6 +41,7 @@
 - [Stack & Queue](./Algorithm/stack_queue.md)
 - [Heap & Set](./Algorithm/heap_set.md)
 - [2D List](./Algorithm/2Dlist.md)
+- [Exhaustive Search](./Algorithm/exhaustive_search.md)
 
 ## 📝 Coding test
 
