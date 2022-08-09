@@ -1,5 +1,5 @@
 n =''
-v = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']
+v = 'aeiouAEIOU'
 
 
 while n != '#':
