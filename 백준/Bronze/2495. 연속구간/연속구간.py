@@ -9,7 +9,5 @@ for _ in range(3):
             result.append(cnt)
         else:
             cnt = 0
-    if result == 0:
-        print('1')
-    else:
-        print(max(result)+1)
+
+    print(max(result)+1)
