@@ -550,3 +550,174 @@ print(이동거리)
 - 열을 기준으로 아래에서 위로, 역행으로 탐색
 
 - `and`나 `or`은 첫번째 조건부터 만족하는지 확인함
+
+<br>
+
+## 1371번 가장 많은 글자
+
+```python
+"""
+가장 많은 문자를 출력한다. 만약 여러개라면 사전순으로 출력해라.
+"""
+
+
+# 문자를 카운팅하는 로직
+dict_ = {}
+# 입력의 개수가 정해져있지 않기 때문에 while 사용
+while True:
+    """
+    예외 처리 try ~ except ~
+    try : 정상적으로 실행될 때 (오류 X)
+    except : 오류가 발생할 때 실행되는 코드 블럭
+    """
+    # 정상적인 경우, 에러가 없는 경우
+    try:
+        input_ = input()
+        input_ = input_.replace(" ", "")
+
+        # 문자 개수 카운팅
+        for char in input_:
+            # 문자가 딕셔너리의 key 중 하나가 아니라면 value로 1 할당
+            # 딕셔너리의 key 중 하나라면 value += 1
+            if char not in dict_:
+                dict_[char] = 1
+            else:
+                dict_[char] += 1
+    except:
+        break
+# print(dict_.items())
+# x는 dict_.itmes() 에의해 만들어진 각 튜플
+
+# 파이썬 딕셔너리 정렬
+sorted_dict = sorted(dict_.items(), key=lambda x: (-x[1], x[0]))
+
+# print(sorted_dict)
+max_ = sorted_dict[0][1]
+for char, count in sorted_dict:
+    # print(char, count)
+    if max_ == count:
+        print(char)
+```
+
+<br>
+
+## 1526번 가장 큰 금민수
+
+```python
+"""
+N 이하, 4 또는 7로 이루어진 수 중 가장 큰 수를 찾아라.
+자릿수를 탐색, 4 와 7로만 이루어져있는 확인
+"""
+
+# 숫자 N 입력
+N = int(input())
+
+# 초기 가장 큰 값 N은 4 이상
+max_ = 4
+
+for number in range(N + 1):
+    # 숫자를 문자열로 변환
+    string_number = str(number)
+
+    # 각 숫자의 자릿수 값 확인
+    for char_number in string_number:
+        # 각 자릿수가 4 또는 7로만 이루어져있는 확인
+        # 각 자릿수가 4 또는 7로만 이러어져있지 않으면 반복을 멈추면 된다. break
+        if not (char_number == "4" or char_number == "7"):
+            break
+
+    # for ~ else ~
+    # for이 정상적으로 다 완료되면 else가 실행된다.
+    # break를 만나지 않으면 else가 실행된다.
+    else:
+        # 최댓값을 갱신, 비교 X
+        # 숫자는 계속해서 커지기 때문에 비교 X
+        max_ = int(string_number)
+
+print(max_)
+```
+
+<br>
+
+## 2897번 몬스터 트럭
+
+```python
+# 우 우하 하
+# x+1 ,(y+1,x+1), y+1
+dr = [0, 1, 1]
+dc = [1, 1, 0]
+BUILDING = "#"
+CAR = "X"
+VOID = "."
+
+# 숫자가 공백으로 나뉘어져있는 입력
+R, C = list(map(int, input().split()))
+
+list_ = []
+
+# R 줄 만큼의 리스트를 입력
+for _ in range(R):
+    # 숫자 X 문자 O
+    # 공백 X
+    temp_list = list(input())
+    list_.append(temp_list)
+
+# 부순 횟수를 저장할 리스트
+# 0개 1개 2개 3개 4개 부순횟수를 저장
+break_count_list = [0] * 5
+
+# 이중 반복문
+for r in range(R):
+    for c in range(C):
+        # 차를 부순 횟수는 탐색을 할 때마다 초기화(0)
+        break_count = 0
+        
+        # 조건 1. 기준 좌표가 빌딩(#)이면 안된다.
+        if list_[r][c] == BUILDING:
+            # 이 다음 반복문의 코드들을 무시하고, 다음 값을 탐색
+            continue
+
+        # 성립이 안되는 조건들은 continue로 지나가고,
+        # 조건이 성립될 때만 정상적인 코드를 실행한다.
+
+        # 조건 2. 기준 좌표가 차라면 부순 횟수 + 1
+        if list_[r][c] == CAR:
+            break_count += 1
+
+        """
+        델타탐색을 하는 로직
+        """
+        for d in range(3):
+            next_r = r + dr[d]
+            next_c = c + dc[d]
+
+            # 조건 1. 범위를 벗어나면 안된다.
+            if not (-1 < next_r < R and -1 < next_c < C):
+                break
+
+            # 조건 2. 탐색 좌표에 빌딩이 있으면 안된다.
+            if list_[next_r][next_c] == BUILDING:
+                break
+
+            # 조건 3. 탐색 좌표에 차가 있으면 부순 횟수를 + 1
+            if list_[next_r][next_c] == CAR:
+                break_count += 1
+
+        # break를 만나지 않고 for문이 끝났다면
+        # 혜빈이가 정상적으로 주차를 했다는 소리
+        else:
+            break_count_list[break_count] += 1
+
+# print(break_count_list)
+# 정답 출력
+for count in break_count_list:
+    print(count)
+```
+
+- 2x2는 우, 하, 우하 3방향만 탐색하면 된다.
+
+  - 나머지 방향은 결국 중복된다.
+
+- 조건을 하나씩 세워서 `continue`로 지나가준다.
+
+  

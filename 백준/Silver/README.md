@@ -518,3 +518,189 @@ if answer == 0:
 - 육목 판별
   - 기준 좌표 뒤쪽에 같은 색 돌이 있는지 확인해야함
     - 애초에 카운트 시작을 2번째 돌부터 시작하게되면 카운트는 5지만 육목이 될 수 있음
+
+<br>
+
+## 2644번 촌수계산
+
+```python
+import sys
+
+
+def pprint(arr):
+    for i in range(len(arr)):
+        print(i, arr[i])
+
+
+sys.stdin = open("_촌수계산.txt")
+
+n = int(input())
+start, end = list(map(int, input().split()))
+
+m = int(input())
+
+# 빈 리스트를 (n+1)개를 가진 이차원 리스트
+# _ : 값을 사용하지않겠다는 의미
+graph = [[] for _ in range(0, n + 1)]
+
+for _ in range(m):
+    # 공백을 기준으로 2개의 숫자가 입력되기 떄문에
+    x, y = list(map(int, input().split()))
+
+    # 무방향 인접 그래프라서
+    graph[x].append(y)
+    graph[y].append(x)
+
+# 방문 표시를 할 리스트
+visited = [False] * (n + 1)
+
+# dfs를 시작하기위해서 기본값 설정
+# 스택에 값을 추가할 때 촌수도 같이 추가한다.
+# stack = [start]
+stack = []
+stack.append((start, 0))
+visited[start] = True
+
+# 장답을 출력할 변수
+answer = -1
+
+# 스택이 비어있지 않으면 반복
+while len(stack) != 0:
+    # LIFO, 스택의 가장 위에 있는 값을 저장
+    # 번호와 촌수를 같이 pop
+    number, count = stack.pop()
+
+    # pop을 한 값이 우리가 원하는 값(end)
+    # 촌수가 연결이 안되어있으면 line50~line52 실행 X
+    if number == end:
+        answer = count
+        break
+
+    # 해당하는 값의 인접 그래프를 저장
+    adj_graph = graph[number]
+
+    # print(number, adj_graph)
+
+    # 인접하는 값들을 탐색
+    for adj_number in adj_graph:
+        # 방문한적이 없을 때만 스택에 값을 append
+        if not visited[adj_number]:
+            # 인접 번호와 촌수 + 1를 같이 append
+            stack.append((adj_number, count + 1))
+            # 인접 값을 방문 표시
+            visited[adj_number] = True
+
+# 그래서 촌수는 어떻게 계산을 해야될까?
+# 촌수 출력
+print(answer)
+```
+
+- (사람번호, 촌수)를 튜플 형태로 dfs에 넣어준다.
+  - (7,0) => (2,0+1) => (8,0+1+1)
+
+<br>
+
+## 1063번 킹
+
+```python
+input = sys.stdin.readline
+
+# 포지션의 인덱스를 이용해 ord, chr를 위한 리스트
+position = [0, 1, 2, 3, 4, 5, 6, 7, 8]
+
+# 각 커맨드 당 8방향
+commands = {'R': [0, 1], 'L': [0, -1], 'B': [1, 0], 'T' : [-1, 0], 'RT' : [-1, 1], 'LT' : [-1, -1], 'RB' : [1, 1], 'LB': [1, -1]}
+
+# 킹의 위치, 스톤의 위치, 명령의 개수
+king, stone, n = input().rstrip().split()
+
+# 위치 조작
+kx, ky = 8 - int(king[1]), position[ord(king[0]) - 65]
+sx, sy = 8 - int(stone[1]), position[ord(stone[0]) - 65]
+
+for _ in range(int(n)):
+    command = input().rstrip()
+    dx, dy = commands[command]
+
+    nx = kx + dx
+    ny = ky + dy
+    # 킹 와 스톤의 위치가 범위 내에 있는지 파악
+    if 0 <= nx < 8 and 0 <= ny < 8 and 0 <= sx < 8 and 0 <= sy < 8:
+        # 만약 킹이 움직일려고 하는 위치가 스톤의 위치라면
+        if nx == sx and ny == sy:
+            # 만약 스톤의 위치에서 델타 값 을 더한 위치가 범위내 있는지 파악
+            if 0 <= sx + dx < 8 and 0 <= sy + dy < 8:
+                sx, sy = sx + dx, sy + dy
+                kx, ky = nx, ny
+            # 범위가 벗어나면 다음 명령어
+            else:
+                continue
+        else:
+            kx, ky = nx, ny
+
+result1, result2 = "", ""
+
+result1 += chr(position[ky] + 65) + str(8 - kx)
+result2 += chr(position[sy] + 65) + str(8 - sx)
+
+print(result1)
+print(result2)
+```
+
+<br>
+
+## 1926번 그림
+
+```python
+import sys
+from collections import deque
+
+input = sys.stdin.readline
+
+dx = [0, 0, 1, -1]
+dy = [1, -1, 0, 0]
+
+def bfs(a, b):
+    queue = deque()
+    queue.append((a, b))
+    visit[a][b] = True
+    cnt = 1
+
+    while queue:
+        x, y = queue.popleft()
+
+        for i in range(4):
+            nx = x + dx[i]
+            ny = y + dy[i]
+
+            if 0 <= nx < n and 0 <= ny < m and not visit[nx][ny]:
+                if maps[nx][ny] == 1:
+                    cnt += 1
+                    visit[nx][ny] = True
+                    queue.append((nx, ny))
+    return cnt
+n ,m = map(int, input().split())
+maps = [list(map(int, input().split())) for _ in range(n)]
+visit = [[False] * m for _ in range(n)]
+land = 0
+
+answer = []
+for i in range(n):
+    for j in range(m):
+        if maps[i][j] == 1 and not visit[i][j]:
+            answer.append(bfs(i, j))
+            land += 1
+print(land)
+print(max(answer))
+```
+
+<br>
+
+## 1926번 그림
+
+```python
+```
+
+
+
+- 이차원 리스트 DFS 문제
