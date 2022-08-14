@@ -16,7 +16,8 @@
 
 ## 🌈 JavaScript
 
-- [JavaScript Deep Dive](./JavaScript/Deepdive)
+- [Mordern JavaScript Tutorial](./JavaScript/js_tutorial)
+- [Mordern JavaScript Deep Dive](./JavaScript/Deepdive)
 
 ## 📘 Python
 
