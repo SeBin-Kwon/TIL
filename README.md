@@ -14,11 +14,6 @@
 - [Git branch](./Git/Git_Branch.md)
 - [Git Summary](./Git/git_summary.md)
 
-## 🌈 JavaScript
-
-- [Mordern JavaScript Tutorial](./JavaScript/js_tutorial)
-- [Mordern JavaScript Deep Dive](./JavaScript/Deepdive)
-
 ## 📘 Python
 
 - [Python basics](./Python/python_basics.md)
@@ -45,6 +40,15 @@
 - [Exhaustive Search](./Algorithm/exhaustive_search.md)
 - [Graph](./Algorithm/graph.md)
 - [DFS](./Algorithm/dfs.md)
+
+## 🗄 Database
+
+- [Database / SQLite](./Database/database.md)
+
+## 🌈 JavaScript
+
+- [Mordern JavaScript Tutorial](./JavaScript/js_tutorial)
+- [Mordern JavaScript Deep Dive](./JavaScript/Deepdive)
 
 ## 📝 Coding test
 

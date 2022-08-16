@@ -3,22 +3,31 @@ sys.stdin = open('4949.txt', 'r')
 
 # while 점 하나 오면 종료
 
-n = ''
-small = []
-large = []
-
-while n != '.' :
+while True:
     n = input()
+    if n == '.':
+        break
+    g = []
+
     for i in n:
-        if i == '(':
-            small.append(i)
+        if i == '(' or i == '[':
+            g.append(i)
         elif i == ')':
-            if len(small) != 0: 
-                small.pop()
-                print('yes')
+            if len(g) != 0 and g[-1] == '(':
+                g.pop()
             else:
-                print('no')
+                g.append(i)
+                break
+        elif i == ']':
+            if len(g) != 0 and g[-1] == '[':
+                g.pop()
+            else:
+                g.append(i)
                 break
 
+    if len(g) != 0:
+        print('no')
+    else:
+        print('yes')
 
 
