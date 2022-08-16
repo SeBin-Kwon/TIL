@@ -158,7 +158,8 @@ console.log(foo); // 100
 ```javascript
 // 변수 선언문 및 할당문
 var foo = 10; // undefined
-var x = var foo = 10;	// Error가 발생하기 때문에 완료값이다.
+// 조건문
+if (true) {} // undefined
 
 //표현식 문: 표현식은 평가된 값을 반환한다.
 100 + num; // 110
