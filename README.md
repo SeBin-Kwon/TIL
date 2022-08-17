@@ -35,6 +35,7 @@
 ## 🗄 Database
 
 - [Database / SQLite](./Database/database.md)
+- [SQLite 2](./Database/db2.md)
 
 ## ⚙️ Algorithm
 

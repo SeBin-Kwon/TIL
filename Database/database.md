@@ -242,6 +242,10 @@ DROP TABLE (테이블 명);
 
 ## CRUD
 
+> CREATE, READ, UPDATE, DELETE
+
+<br>
+
 ### CREATE
 
 #### `INSERT`
@@ -330,10 +334,60 @@ DROP TABLE (테이블 명);
 
 ### DELETE
 
-```sqlite
-DELETE FROM classmates WHERE rowid = 5;
-```
+- 테이블에서 행을 제거
+
+- 데이터 삭제
+
+  ```sqlite
+  DELETE FROM 테이블 이름 WHERE 조건;
+  ```
+
+  - 중복 불가능한(UNIQUE) 값인 rowid를 기준으로 삭제하기
+
+  ```sqlite
+  DELETE FROM classmates WHERE rowid = 5;
+  ```
 
 - `drop`은 다 지우는 것
 
 - `delete`는 레코드 하나를 지우는 것
+
+#### `AUTOINCREMENT`
+
+- SQLite가 사용되지 않은 값이나 이전에 삭제된 행의 값을 재사용하는 것을 방지
+
+```sqlite
+CREATE TABLE students(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL
+);
+INSERT INTO students VALUES 
+(1, '홍길동'),
+(2, '김철수'),
+(3, '이호영'),
+(4, '박민희'), 
+(5, '최혜영');
+
+DELETE FROM members WHERE rowid=5;
+INSERT INTO members (name) VALUES ('이민호');
+SELECT * FROM members;
+id name
+-- ----
+1 홍길동
+2 김철수
+3 이호영
+4 박민희
+6 이민호
+```
+
+<br>
+
+### UPDATE
+
+- 기존 행의 데이터를 수정
+
+- **SET** clause에서 테이블의 각 열에 대해 새로운 값을 설정
+
+  ```sqlite
+  UPDATE 테이블 이름 SET 컬럼1=값1, 컬럼2=값2,... WHERE 조건;
+  ```
