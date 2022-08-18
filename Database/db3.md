@@ -123,7 +123,7 @@
 1. FROM 테이블을 대상으로
 2. WHRE 제약조건에 맞춰서 뽑아서
 3. GROUP BY 그룹화한다.
-4. HAVING그룹중에조건과맞는것만을
+4. HAVING 그룹 중에 조건과 맞는 것 만을
 5. SELECT 조회하여
 6. ORDER BY 정렬하고
 7. LIMIT/OFFSET 특정 위치의 값을 가져온다.
