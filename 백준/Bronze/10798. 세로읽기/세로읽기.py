@@ -1,14 +1,9 @@
 result = ''
-word = []
-leng = []
 
-for _ in range(5):
-    a = input()
-    word.append(a)
-    leng.append(len(a))
+word = [input() for _ in range(5)]
 
-for i in range(max(leng)):
+for i in range(15):
     for j in range(5):
-        if i < leng[j] :
+        if i < len(word[j]) :
             result += word[j][i]
 print(result)
