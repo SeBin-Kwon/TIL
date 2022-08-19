@@ -88,7 +88,7 @@ UPDATE users
 SET balance = (SELECT AVG(balance) FROM users);
 ```
 
-```sqlite
+```sql
 -- 다중행 서브쿼리
 -- users에서 이은정과 같은 지역에 사는 사람의 수는?
 SELECT COUNT(*)
@@ -100,7 +100,7 @@ WHERE country IN (
 );
 ```
 
-```sqlite
+```sql
 -- 다중칼럼 서브쿼리
 -- 특정 성씨에서 가장 어린 사람들의 이름과 나이
 SELECT
