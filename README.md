@@ -35,8 +35,9 @@
 ## 🗄 Database
 
 - [Database / SQLite](./Database/database.md)
-- [SQLite WHERE, Operators](./Database/db2.md)
-- [SQLite functions, GROUP BY](./Database/db3.md)
+- [WHERE, Operators](./Database/db2.md)
+- [Functions, GROUP BY](./Database/db3.md)
+- [CASE, Sub query](./Database/db4.md)
 - [SQLite practice](./Database/practice)
 
 ## ⚙️ Algorithm
