@@ -2,7 +2,7 @@
 
 #### Table users 생성
 
-```sqlite
+```sql
 CREATE TABLE users ( 
     first_name TEXT NOT NULL, 
     last_name TEXT NOT NULL, 
@@ -15,7 +15,7 @@ CREATE TABLE users (
 
 #### csv파일 정보를 테이블에 적용하기
 
-```sqlite
+```sql
 .mode csv
 .import users.csv users
 .tables
@@ -24,7 +24,7 @@ classmates examples users
 
 #### 특정 조건으로 데이터 조회하기
 
-```sqlite
+```sql
 SELECT * FROM 테이블이름 WHERE 조건;
 ```
 
@@ -46,7 +46,7 @@ SELECT * FROM 테이블이름 WHERE 조건;
 
 ### 🚨 주의!
 
-```sqlite
+```sql
 -- 1. 키가 175이거나, 키가 183이면서 몸무게가 80인 사람
 WHERE HEIGHT = 175 OR HEIGHT = 183 AND WEIGHT = 80
 
@@ -64,7 +64,7 @@ WHERE (HEIGHT = 175 OR HEIGHT = 183) AND WEIGHT = 80
 
   - 값1과 값2 사이의 비교 (값1 <= 비교값 <= 값2)
 
-  ```sqlite
+  ```sql
   SELECT COUNT(*) FROM healthcare WHERE height BETWEEN 160 AND 170;
   ```
 
@@ -87,7 +87,7 @@ WHERE (HEIGHT = 175 OR HEIGHT = 183) AND WEIGHT = 80
   - ~와 같지 않다. (`NOT 칼럼명=`)
   - ~보다 크지 않다. (`NOT 칼럼명>`)
 
-  ```sqlite
+  ```sql
   WHERE 칼럼명1 != 비교값1
   AND 칼럼명2 ^= 비교값2
   AND 칼럼명3 <> 비교값3
@@ -124,7 +124,7 @@ WHERE (HEIGHT = 175 OR HEIGHT = 183) AND WEIGHT = 80
 
 - 그룹의 항목 수를 가져옴, 레코드의 개수 조회
 
-  ```sqlite
+  ```sql
   SELECT COUNT(컬럼) FROM 테이블이름;
   SELECT COUNT(*) FROM users;
   ```
@@ -147,7 +147,7 @@ WHERE (HEIGHT = 175 OR HEIGHT = 183) AND WEIGHT = 80
 
 > `AVG`, `SUM`, `MIN`, `MAX` 함수들은 기본적으로 해당 컬럼이 **숫자(INTEGER)** 일 때만 사용 가능
 
-```sqlite
+```sql
 SELECT AVG(컬럼) FROM 테이블이름; 
 SELECT SUM(컬럼) FROM 테이블이름; 
 SELECT MIN(컬럼) FROM 테이블이름; 
@@ -169,7 +169,7 @@ SELECT MAX(컬럼) FROM 테이블이름;
 
 - LIKE statement : 패턴을 확인하여 해당하는 값을 조회하기
 
-  ```sqlite
+  ```sql
   SELECT * FROM 테이블이름 WHERE 컬럼 LIKE '패턴';
   ```
 
@@ -208,7 +208,7 @@ SELECT MAX(컬럼) FROM 테이블이름;
   - `ASC` – 오름차순 (**default**)
   - `DESC` - 내림차순
 
-  ```sqlite
+  ```sql
   SELECT * FROM 테이블이름 ORDER BY 컬럼 ASC; 
   SELECT * FROM 테이블이름 ORDER BY 컬럼 DESC;
   ```
@@ -217,7 +217,7 @@ SELECT MAX(컬럼) FROM 테이블이름;
 
 ### 예시
 
-```sqlite
+```sql
 -- SQLite
 
 -- 테이블 생성

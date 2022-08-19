@@ -27,7 +27,7 @@
 
 - `+`, `-`, `*`, `/` 와 같은 산술 연산자와 우선 순위를 지정하는 `()` 기호를 연산에 활용할 수 있음
 
-  ```sqlite
+  ```sql
   SELECT age+1 FROM users;
   ```
 
@@ -41,13 +41,13 @@
 
   - 변수처럼 사용 가능
 
-  ```sqlite
+  ```sql
   SELECT last_name 성 FROM users;
   SELECT last_name AS 성 FROM users;
   SELECT last_name AS 성 FROM users WHERE 성='김';
   ```
 
-  ```sqlite
+  ```sql
   SELECT id, 10000 * weight / (height*height) AS BMI FROM healthcare WHERE smoking = 3 ORDER BY BMI DESC LIMIT 5;
   ```
 
@@ -68,7 +68,7 @@
 
 - **문장에 `WHERE` 절이 포함된 경우 반드시 `WHERE` 절 뒤에 작성해야 함**
 
-  ```sqlite
+  ```sql
   SELECT * FROM 테이블이름 GROUP BY 컬럼1, 컬럼2;
   ```
 
@@ -76,13 +76,13 @@
 
 - **집계 함수와 활용하였을 때 의미가 있음**
 
-  ```sqlite
+  ```sql
   SELECT * FROM users GROUP BY last_name;
   ```
 
   - 그냥 중복이 제거되었을 뿐 의미가 없다.
 
-  ```sqlite
+  ```sql
   SELECT last_name, COUNT(*) FROM users GROUP BY last_name;
   ```
 
@@ -110,7 +110,7 @@
 
 - **집계 결과에서 조건에 맞는 값을 따로 활용하기 위해서 `HAVING`을 활용**
 
-  ```sqlite
+  ```sql
   SELECT * FROM 테이블이름 GROUP BY 컬럼1, 컬럼2 HAVING 그룹조건;
   ```
 
@@ -130,7 +130,7 @@
 
 ### 작성 순서
 
-```sqlite
+```sql
 SELECT 칼럼명
 FROM 테이블명
 WHERE 조건식
@@ -146,28 +146,28 @@ LIMIT 숫자 OFFSET 숫자;
 
 - 테이블 이름 변경
 
-  ```sqlite
+  ```sql
   ALTER TABLE table_name
   RENAME TO new_name;
   ```
 
 - 새로운 column 추가
 
-  ```sqlite
+  ```sql
   ALTER TABLE table_name
   ADD COLUMN column_definition;
   ```
 
 - column 이름 수정
 
-  ```sqlite
+  ```sql
   ALTER TABLE table_name
   RENAME COLUMN current_name TO new_name;
   ```
 
 - column 삭제
 
-  ```sqlite
+  ```sql
   ALTER TABLE table_name
   DROP COLUMN column_name;
   ```
@@ -178,11 +178,11 @@ LIMIT 숫자 OFFSET 숫자;
 
 - **`NOT NULL` 형태의 컬럼은 추가가 불가능하다.**
 
-```sqlite
+```sql
 ALTER TABLE 테이블이름 ADD COLUMN 컬럼이름 데이터타입설정;
 ```
 
-```sqlite
+```sql
 ALTER TABLE news ADD COLUMN created_at TEXT NOT NULL;
 
 -- Error: Cannot add a NOT NULL colmn with default value NULL
@@ -190,7 +190,7 @@ ALTER TABLE news ADD COLUMN created_at TEXT NOT NULL;
 
 - **기본 값 (DEFAULT)** 설정하자
 
-  ```sqlite
+  ```sql
   ALTER TABLE news ADD COLUMN created_at TEXT NOT NULL DEFAULT '소제목';
   ```
 
@@ -198,7 +198,7 @@ ALTER TABLE news ADD COLUMN created_at TEXT NOT NULL;
 
 ### 예시
 
-```sqlite
+```sql
 SELECT * FROM users LIMIT 1;
 
 -- pipe sign 엔터 위에 있어요 보통

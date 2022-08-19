@@ -146,13 +146,13 @@
 
 #### SQLite3 실행하기
 
-```sqlite
+```sql
 sqlite3
 ```
 
 #### 특정 데이터베이스 실행하기
 
-```sqlite
+```sql
 sqlite3 tutorial.sqlite3
 ```
 
@@ -160,13 +160,13 @@ sqlite3 tutorial.sqlite3
 
 ### 데이터베이스 생성하기
 
-```sqlite
+```sql
 .database
 ```
 
 ### csv 파일을 table로 만들기
 
-```sqlite
+```sql
 .mode csv
 .import (csv명).csv (테이블 명)
 .tables
@@ -174,7 +174,7 @@ sqlite3 tutorial.sqlite3
 
 ### SELECT 확인하기
 
-```sqlite
+```sql
 SELECT * FROM (테이블 명)
 ```
 
@@ -185,7 +185,7 @@ SELECT * FROM (테이블 명)
 
 #### 터미널 view 변경하기
 
-```sqlite
+```sql
 .headers on
 .mode column
 ```
@@ -194,7 +194,7 @@ SELECT * FROM (테이블 명)
 
 ### 테이블 생성
 
-```sqlite
+```sql
 CREATE TABLE (테이블 명) (
   (열) (데이터 타입) (제약 조건)
 );
@@ -202,19 +202,19 @@ CREATE TABLE (테이블 명) (
 
 ### 테이블 확인
 
-```sqlite
+```sql
 .tables
 ```
 
 ### 특정 테이블의 schema 조회
 
-```sqlite
+```sql
 .schema (테이블 명)
 ```
 
 ### 테이블 삭제
 
-```sqlite
+```sql
 DROP TABLE (테이블 명);
 ```
 
@@ -252,13 +252,13 @@ DROP TABLE (테이블 명);
 
 - 테이블에 단일 행 삽입
 
-  ```sqlite
+  ```sql
   INSERT INTO 테이블_이름 (컬럼1, 컬럼2) VALUES (값1, 값2);
   ```
 
 - 테이블에 정의된 모든 컬럼에 맞춰 순서대로 입력
 
-  ```sqlite
+  ```sql
   INSERT INTO 테이블_이름 VALUES (값1, 값2, 값3);
   ```
 
@@ -268,7 +268,7 @@ DROP TABLE (테이블 명);
 
   - 첫번째 방법
 
-    ```sqlite
+    ```sql
     INSERT INTO classmates VALUES (1,'홍길동',30,'서울');
     ```
 
@@ -276,7 +276,7 @@ DROP TABLE (테이블 명);
 
   - 두번째 방법
 
-    ```sqlite
+    ```sql
     INSERT INTO classmates (name, age, address) VALUES ('홍길동',30,'서울');
     ```
 
@@ -298,7 +298,7 @@ DROP TABLE (테이블 명);
 
 - 특정 행부터 시작해서 조회하기 위해 `OFFSET` 키워드와 함께 사용하기도 함
 
-  ```sqlite
+  ```sql
   SELECT 컬럼1, 컬럼2 ... FROM 테이블명 LIMIT 숫자;
   ```
 
@@ -317,14 +317,14 @@ DROP TABLE (테이블 명);
 
   - 문자열 'abced'’ 에서 문자 'c'는 시작점 'a'에서 2의 OFFSET을 지님
 
-  ```sqlite
+  ```sql
   SELECT * FROM MY_TABLE LIMIT 10 OFFSET 5
   ```
 
   - 6번째 행 부터 10개 행을 조회 (6번째 행부터 10개를 출력)
   - 0 부터 시작함
 
-  ```sqlite
+  ```sql
   SELECT rowid, name FROM classmates LIMIT 1 OFFSET 2;
   ```
 
@@ -338,13 +338,13 @@ DROP TABLE (테이블 명);
 
 - 데이터 삭제
 
-  ```sqlite
+  ```sql
   DELETE FROM 테이블 이름 WHERE 조건;
   ```
 
   - 중복 불가능한(UNIQUE) 값인 rowid를 기준으로 삭제하기
 
-  ```sqlite
+  ```sql
   DELETE FROM classmates WHERE rowid = 5;
   ```
 
@@ -356,7 +356,7 @@ DROP TABLE (테이블 명);
 
 - SQLite가 사용되지 않은 값이나 이전에 삭제된 행의 값을 재사용하는 것을 방지
 
-```sqlite
+```sql
 CREATE TABLE students(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT NOT NULL
@@ -388,6 +388,6 @@ id name
 
 - **SET** clause에서 테이블의 각 열에 대해 새로운 값을 설정
 
-  ```sqlite
+  ```sql
   UPDATE 테이블 이름 SET 컬럼1=값1, 컬럼2=값2,... WHERE 조건;
   ```
