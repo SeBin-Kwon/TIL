@@ -2,16 +2,21 @@ import sys
 sys.stdin = open('2979.txt', 'r')
 
 m = list(map(int,input().split()))
-time = []
+table = [0]*100
 total = 0
-k = 0
+time = []
 
 for _ in range(3):
-    time.append(list(map(int,input().split())))
-
-s_time = sorted(time, key=lambda x : (x[0], x[1]))
-
-for i in range(3):
-    p = s_time[i][1] - s_time[i][0]
-    total += p * m[2-i]
+    a, b = map(int,input().split())
+    time.append(b)
+    for i in range(a,b):
+        table[i] += 1
+        
+for i in range(max(time)):
+    if table[i] == 1:
+        total += m[0]*1
+    if table[i] == 2:
+        total += m[1]*2
+    if table[i] == 3:
+        total += m[2]*3
 print(total)
