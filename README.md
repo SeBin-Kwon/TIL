@@ -42,6 +42,7 @@
 - [JOIN](./Database/db5.md)
 - [DB Modeling](./Database/db모델링.md)
 - [ORM](./Database/db_orm.md)
+- [QuerySet API](./Database/qs_api.md)
 
 ## ⚙️ Algorithm
 
