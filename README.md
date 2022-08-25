@@ -57,6 +57,7 @@
 - [Exhaustive Search](./Algorithm/exhaustive_search.md)
 - [Graph](./Algorithm/graph.md)
 - [DFS](./Algorithm/dfs.md)
+- [Coding test 2](./Algorithm/codingtest2.md)
 
 ## 📝 Coding test
 
