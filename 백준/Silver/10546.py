@@ -15,3 +15,5 @@ for k,v in runner.items():
     if v % 2 != 0:
         print(k)
         break
+
+    # runner[name] = runner.get(runner[name], 0) + 1
