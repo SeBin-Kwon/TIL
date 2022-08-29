@@ -462,3 +462,17 @@ p { color: red; text-decoration: underline; }
   </body>
 </html>
 ```
+
+---
+
+<br>
+
+### 참고 사이트
+
+[브라우저 동작 원리](https://d2.naver.com/helloworld/59361)
+
+[MDN HTML 자습서](https://developer.mozilla.org/ko/docs/Web/HTML)
+
+[MDN CSS 자습서](https://developer.mozilla.org/ko/docs/Web/CSS)
+
+[TCP HTML 태그 레퍼런스](http://www.tcpschool.com/html-tags/intro)
