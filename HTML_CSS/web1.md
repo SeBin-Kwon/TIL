@@ -44,7 +44,7 @@
 
 - 웹 브라우저 크롬에서 제공하는 개발과 관련된 다양한 기능을 제공
   - 주요기능
-    - Elements–DOM탐색및CSS확인및변경
+    - Elements – DOM 탐색 및 CSS 확인 및 변경
       - Styles – 요소에 적용된 CSS 확인
       - Computed – 스타일이 계산된 최종 결과
       - Event Listeners – 해당 요소에 적용된 이벤트 (JS)
@@ -145,7 +145,7 @@
 - elements : 해당 요소의 HTML 태그
   - 마우스 포인터 모양 버튼 : 원하는 요소를 선택할 수 있음 (복잡한 형태의 경우 Elements에서 HTML 구조를 추가 탐색)
 
-![스크린샷 2022-08-29 오후 2.08.13](web.assets/스크린샷 2022-08-29 오후 2.08.13.png)
+![스크린샷 2022-08-29 오후 2.08.13](web1.assets/스크린샷 2022-08-29 오후 2.08.13.png))
 
 <br>
 
@@ -476,3 +476,4 @@ p { color: red; text-decoration: underline; }
 [MDN CSS 자습서](https://developer.mozilla.org/ko/docs/Web/CSS)
 
 [TCP HTML 태그 레퍼런스](http://www.tcpschool.com/html-tags/intro)
+
