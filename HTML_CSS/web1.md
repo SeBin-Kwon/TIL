@@ -462,15 +462,3 @@ p { color: red; text-decoration: underline; }
   </body>
 </html>
 ```
-
----
-
-<br>
-
-## 웹 접근성
-
-[네이버 웹 접근성 체험](https://nax.naver.com/index)
-
-### 느낀점
-
-그동안 당연시 여겼던 것들을 다시 한번 생각해볼 수 있었습니다. 웹 개발을 할 땐 다방면으로 고민하여 웹 접근성을 높여야한다는 것을 깨달았습니다.
