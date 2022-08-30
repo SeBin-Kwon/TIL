@@ -17,6 +17,7 @@
 ## 👚 HTML / CSS
 
 - [HTML & CSS](./HTML_CSS/web1.md)
+- [HTML & CSS parctice](./HTML_CSS/practice)
 
 ## 🌈 JavaScript
 

@@ -1,0 +1,53 @@
+body {
+  background-color: rgb(252, 252, 252);
+}
+.small-title {
+  font-size: 12px;
+  text-align: center;
+}
+.title {
+  text-align: center;
+  margin-top : 5px;
+}
+.total-card {
+  width: 900px;
+  text-align: center;
+  margin: auto;
+
+}
+.card{
+  background-color:white;
+  display: inline-block;
+  box-sizing: border-box;
+  width: 330px;
+  height: 420px;
+  box-shadow: 6px 8px 10px 6px rgba(29, 29, 30, 0.137);
+  margin: 0 10px;
+  border-radius: 1rem;
+  padding: 8px;
+}
+
+.card-img {
+  margin: 7px;
+  width: 300px;
+  border-radius: 1rem;
+}
+.text{
+  margin: 0 1em;
+  text-align: left;
+}
+.small{
+  font-size: 12px;
+  color: gray;
+}
+.name{
+  font-weight: 550;
+  margin-top: 3px;
+}
+.content{
+  font-size: 9px;
+  color: hsl(0,0%,60%);
+  font-weight: 350;
+  margin-top: 8px;
+  line-height: 16px;
+}
