@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+body {
+  background-color: rgb(252, 252, 252);
+  margin: 0;
+}
+.menu{
+  display: flex;
+  position: sticky;
+  align-items: center;
+  padding: 0 30px;
+  top: 0;
+  height: 65px;
+  text-align: center;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 15px;
+  background-color: white;
+  border-bottom: solid 1px rgb(214, 214, 214);
+  box-shadow: 0px 3px 10px 6px rgba(29, 29, 30, 0.04);
+}
+.logo{
+  flex: 1;
+  margin-right: 40px;
+  text-align: left;
+  font-size: 28px;
+  font-weight: bold;
+  
+}
+.menu-text{
+  flex: 1;
+}
+.login{
+  flex: 1;
+  margin-left: 40px;
+  text-align: right;
+}
+.top-btn{
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  bottom: 50px;
+  right: 50px;
+  background-color: white;
+  font-size: 20px;
+  font-weight: 300;
+  box-shadow: 3px 6px 10px 6px rgba(29, 29, 30, 0.206);
+}
+.titles{
+  display: block;
+  margin: 60px 0px 40px 0px;
+  text-align: center;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+.small-title {
+  font-size: 15px;
+  font-weight: 500;
+  color: rgb(170, 170, 170);
+}
+.title {
+  margin: 3px 0px;
+  font-size: 35px;
+  font-weight: 400;
+  color:rgb(60, 60, 60);
+}
+.total-card {
+  display: flex;
+  justify-content: center;
+  width: 900px;
+  text-align: center;
+  margin: auto;
+
+}
+.card{
+  background-color:white;
+  display: inline-block;
+  box-sizing: border-box;
+  width: 330px;
+  height: 420px;
+  box-shadow: 6px 8px 10px 6px rgba(29, 29, 30, 0.137);
+  margin: 32px 14px;
+  border-radius: 1rem;
+  padding: 8px;
+}
+
+.card-img {
+  margin: 7px;
+  width: 300px;
+  border-radius: 1rem;
+}
+.text{
+  margin: 0 1em;
+  text-align: left;
+}
+.small{
+  font-size: 12px;
+  color: gray;
+}
+.name{
+  font-weight: 550;
+  margin-top: 3px;
+}
+.content{
+  font-size: 9px;
+  color: hsl(0,0%,60%);
+  font-weight: 350;
+  margin-top: 8px;
+  line-height: 16px;
+}
