@@ -19,6 +19,7 @@
 - [HTML & CSS](./HTML_CSS/web1.md)
 - [HTML & CSS parctice](./HTML_CSS/practice)
 - [CSS basics](./HTML_CSS/css1.md)
+- [CSS flaxbox](./HTML_CSS/css_flex.md)
 
 ## 🌈 JavaScript
 
