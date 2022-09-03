@@ -6,7 +6,7 @@ for i in range(len(s)):
         l.pop()
         l.pop()
         l.pop()
-if l == ['P','P','A','P'] or l == ['P']:
+if l == ['P']:
     print('PPAP')
 else:
     print('NP')
