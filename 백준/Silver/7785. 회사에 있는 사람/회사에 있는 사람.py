@@ -1,13 +1,11 @@
 n = int(input())
-dict = {}
-for i in range(n):
-    name = input().split()
-    dict[name[0]] = name[1]
+dic = {}
+for _ in range(n):
+    name, log = input().split()
+    dic[name] = log
 
-l = []
-
-for key in dict:
-    if dict[key] == 'enter':
-        l.append(key)
-l.sort(reverse=True)
-print('\n'.join(l))
+result = []
+for k,v in dic.items():
+    if v == 'enter':
+        result.append(k)
+print(*sorted(result, reverse=True),sep='\n')
