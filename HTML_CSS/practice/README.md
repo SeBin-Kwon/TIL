@@ -23,3 +23,9 @@
 ## 실습5
 
 <img src="./README.assets/7.png" >
+
+## 실습6
+
+<img src="./README.assets/8.png" >
+
+<img src="./README.assets/9.png" >
