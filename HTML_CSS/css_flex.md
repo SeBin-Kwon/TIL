@@ -256,3 +256,5 @@
 >- inline-block 간 4px 공백이 존재한다.
 >- text-align는 파란색 영역 (컨텐츠 영역) 안에서만 적용된다.
 >- 보통 모든 것에 마진을 없애고 border-box를 적용한다. [참고](https://gist.github.com/marharyta/b83a3683085eb42867bbcefb34687af8)
+>- 플렉스는 인라인처럼 콘텐츠 영역이 줄어든다.
+>   - width를 늘리면 간격이 벌어진다.

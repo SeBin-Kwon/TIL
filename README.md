@@ -20,7 +20,9 @@
 - [HTML & CSS parctice](./HTML_CSS/practice)
 - [CSS basics](./HTML_CSS/css1.md)
 - [CSS flaxbox](./HTML_CSS/css_flex.md)
+- [Semantic tag](./HTML_CSS/semantic.md)
 - [Bootstrap](./HTML_CSS/bootstrap.md)
+- [Bootstrap component](./HTML_CSS/bootstrap2.md)
 
 ## 🌈 JavaScript
 
