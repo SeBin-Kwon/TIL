@@ -155,6 +155,12 @@
 - hidden input을 활용하여 사용자 입력을 받지 않고 서버에 전송되어야 하는 값을 설정
   - `hidden` : 사용자에게 보이지 않는 input
 
+>input 태그에 required 속성을 사용하면 입력란을 작성하라는 안내 메시지가 뜬다.
+>
+>input에 name을 꼭 쓰기. 서버에 전송할 데이터이기 때문
+>
+>input type file은 사용자가 첨부할 파일의 형식도 지정 가능하다.
+
 <br>
 
 ## Bootstrap
