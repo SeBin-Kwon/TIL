@@ -29,6 +29,7 @@
 
 - [Mordern JavaScript Tutorial](./JavaScript/js_tutorial)
 - [Mordern JavaScript Deep Dive](./JavaScript/Deepdive)
+- [JavaScript DOM](./JavaScript/js.md)
 
 ## 📘 Python
 
