@@ -209,6 +209,21 @@
 - getElementsByTagName(name)
 - getElementsByClassName(names)
 
+```html
+<script>
+    // 선택자를 활용해 선택할 때 
+    // 하나를 선택한다. => querySelector
+    // 모든 결과를 선택한다. => querySelectorAll
+
+    console.log(document.querySelector('#title'))
+    // <h1 id="title">JS 기초</h1>
+    console.log(document.querySelectorAll('.text'))
+    // NodeList(2) [p.text, p.text]
+    console.log(document.querySelector('.text'))
+    // <p class="text">querySelector</p>
+  </script>
+```
+
 #### querySelector(), querySelectorAll()을 사용하는 이유
 
 - id, class 그리고 tag 선택자 등을 모두 사용 가능하므로, 더 구체적이고 유연하게 선택 가능
@@ -354,3 +369,91 @@
    - appendChild() ...
 
 > 주석은 `//`로 한다.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <!-- JS 코드를 작성하는 영역 -->
+  <script>
+    console.log('hello, js!')
+    // h1 요소(element)를 만들고
+    const title = document.createElement('h1')
+    // 텍스트를 추가하고
+    title.innerText = 'JS 기초' 
+    // 선택자로 body태그를 가져와서
+    const body = document.querySelector('body')
+    // body태그에 자식 요소로 추가
+    body.appendChild(title)
+  </script>
+</body>
+</html>
+```
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .red { 
+      color: red;
+    }
+    .blue {
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="red text-center my-5">안녕하세요</h1>
+  <script>
+    // a tag 조작
+    const a = document.createElement('a')
+    a.innerText = '실라버스'
+    const body = document.querySelector('body')
+    body.appendChild(a)
+    a.setAttribute('href', 'https://syllaverse.com')
+    console.log(a.getAttribute('href'))
+
+    // h1 tag 조작 (클래스)
+    const h1 = document.querySelector('h1')
+    console.log(h1.classList)
+  </script>
+</body>
+</html>
+```
+
+<br>
+
+#### Event
+
+```html
+<script>
+    // btn1
+    const btn1 = document.querySelector('#btn1')
+    // btn1이 클릭되면 함수실행
+    btn1.addEventListener('click', function() {
+      // h1 태그를 잡아서
+      const h1 = document.querySelector('h1')
+      // 클래스 blue를 토글하자. 
+      h1.classList.toggle('blue')
+    })
+
+    // input
+    const input = document.querySelector('input')
+    input.addEventListener('input', function(e) {
+      console.log(e.target.value)
+    })
+</script>
+```
+
