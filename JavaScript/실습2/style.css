@@ -1,0 +1,16 @@
+.ball {
+  width: 12vw;
+  height: 12vw;
+  border-radius: 50%;
+  margin: 0 1rem 0 ;
+  text-align: center;
+  line-height: 12vw;
+  font-size: xx-large;
+  font-weight: bold;
+}
+.ball-list {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  
+}
