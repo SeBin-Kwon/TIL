@@ -45,6 +45,12 @@
 - [Advanced python](./Python/py_advanced.md)
 - [API](./Python/py_api.md)
 
+## 🪐 Django
+
+- [Django basics](./Django/django.md)
+- [Django practice](./Django/practice)
+- [DTL Syntax](./Django/django2.md)
+
 ## 🗄 Database
 
 - [Database / SQLite](./Database/database.md)
