@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class='text-center mt-5 mb-4 fw-light' style="font-size: 3rem; color: rgb(179, 179, 179);">계산기</h1>
+<div  class="text-center" style="font-size: 4rem;">
+<h2 class="fw-light" style="font-size: 4rem; color: gray;">{{ num1 }} + {{ num2 }} = {{ a }}</h2>
+<h2 class="fw-light" style="font-size: 4rem; color: gray;">{{ num1 }} - {{ num2 }} = {{ b }}</h2>
+<h2 class="fw-light" style="font-size: 4rem; color: gray;">{{ num1 }} * {{ num2 }} = {{ c }}</h2>
+<h2 class="fw-light" style="font-size: 4rem; color: gray;">{{ num1 }} // {{ num2 }} = {{ d }}</h2>
+</div>
+{% endblock %}

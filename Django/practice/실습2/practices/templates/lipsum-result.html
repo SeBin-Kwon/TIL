@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>입숨</h1>
+{% for lip in lipsum %}
+  {%for l in lip%}
+    <span>{{ l }}</span>
+  {% endfor %}
+  <br><hr>
+{% endfor %}
+{% endblock %}

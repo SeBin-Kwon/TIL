@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1 class='text-center mt-5 mb-4 fw-light' style="font-size: 3rem; color: rgb(179, 179, 179);">전생 게임</h1>
+  <div class="container">
+  <form action="/result">
+    <div class="row g-2 justify-content-center">
+      <div class="col-3 text-end"><p class="m-0">이름을 입력해주세요:</p></div>
+      <div class="col-5"><input class="form-control" type="text" name="query"></div>
+      <div class="col-1 justify-content-end"><input class="btn btn-primary" type="submit"></div>
+    </div>
+  </form>
+</div>
+{% endblock %}
