@@ -1,15 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-</head>
+{% extends 'base.html' %}
+
+{% block content %}
 <body style="font-family:'Noto';">
 
   <div class="container row my-5 mx-auto justify-content-center">
@@ -21,7 +12,7 @@
           <div class="col-8">
             <div class="input-group mb-3">
               <span class="bg-white fw-light input-group-text" id="todolist">할 일</span>
-              <input type="text" name="content" class="form-control" aria-label="todo" aria-describedby="todolist" maxlength="80">
+              <input value="{{ todo.content }}" type="text" name="content" class="form-control" aria-label="todo" aria-describedby="todolist" maxlength="80">
             </div>
           </div>
         {# 우선 순위 #}
@@ -67,7 +58,8 @@
           <th class="fw-light" scope="col">생성 날짜</th>
           <th class="fw-light" scope="col">마감 기한</th>
           <th class="fw-light" scope="col">진행 상태</th>
-          <th class="fw-light" scope="col">상태 변경</th>
+          <th class="fw-light" scope="col">체크</th>
+          <th class="fw-light" scope="col">수정</th>
           <th class="fw-light" scope="col">삭제</th>
         </tr>
       </thead>
@@ -77,28 +69,78 @@
           {% if todo.completed == False %}
           <th scope="row">{{ todo.priority }}</th>
           <td>{{ todo.content }}</td>
-          <td>{{ todo.created_at|date:"Y-m-d" }}</td>
-          <td>{{ todo.deadline|date:"Y-m-d" }}</td>
+          <td>{{ todo.created_at.month }}월 {{ todo.created_at.day }}일</td>
+          <td>{{ todo.deadline.month }}월 {{ todo.deadline.day }}일</td>
           <td class="opacity-50">미완</td>
           {% else %}
           <th class="opacity-50 text-decoration-line-through" scope="row">{{ todo.priority }}</th>
           <td class="opacity-50 text-decoration-line-through">{{ todo.content }}</td>
-          <td class="opacity-50 text-decoration-line-through">{{ todo.created_at|date:"Y-m-d" }}</td>
-          <td class="opacity-50 text-decoration-line-through">{{ todo.deadline|date:"Y-m-d" }}</td>
+          <td class="opacity-50 text-decoration-line-through">{{ todo.created_at.month }}월 {{ todo.created_at.day }}일</td>
+          <td class="opacity-50 text-decoration-line-through">{{ todo.deadline.month }}월 {{ todo.deadline.day }}일</td>
           <td class="text-primary fw-bold">완료!</td>
           {% endif %}
-          <td><a class="btn btn-outline-success btn-sm my-1" href="{% url 'todos:update' todo.pk %}">✓</a></td>
+          {# 체크 #}
+          <td><a class="btn btn-outline-success btn-sm my-1" href="{% url 'todos:update' todo.pk %}">⎷</a></td>
+          {# 수정 #}
+          <td>
+            <a href="{% url 'todos:edit' todo.pk %}" class="btn btn-outline-warning btn-sm my-1" data-bs-toggle="modal" data-bs-target="#modal{{ todo.pk }}" data-bs-whatever="@mdo">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+              </svg>
+            </a>
+          </td>
+          {# 수정 모달 #}
+          <div class="modal fade" id="modal{{ todo.pk }}" tabindex="-1" aria-labelledby="modal{{ todo.pk }}Label" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modal{{ todo.pk }}Label">Edit</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form action="{% url 'todos:editUpdate' todo.pk %}">
+                    {# 할 일 #}
+                    <div class="input-group mb-3">
+                      <span class="bg-white fw-light input-group-text" id="todolist">할 일</span>
+                      <input value="{{ todo.content }}" type="text" name="content" class="form-control" aria-label="todo" aria-describedby="todolist" maxlength="80">
+                    </div>
+                    {# 우선 순위 #}
+                      <div class="input-group mb-3">
+                        <label class="bg-white fw-light input-group-text" for="inputGroupSelect01">우선 순위</label>
+                        <select class="form-select" id="inputGroupSelect01" name="priority">
+                          <option value="{{ todo.priority }}" selected  hidden>{{ todo.priority }}</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                        </select>
+                      </div>
+                      {# 마감 기한 #}
+                      <div class="input-group mb-3">
+                        <span class="bg-white fw-light input-group-text" id="basic-addon1">마감 기한</span>
+                        <input value="{{todo.deadline|date:'Y-m-d'}}" type="date" class="form-control" name="deadline" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                      </div>
+                      <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">수정 완료</button>
+                      </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            </div>
+
+          {# 삭제 #}
           <td><a class="btn btn-outline-danger btn-sm my-1" href="{% url 'todos:delete' todo.pk %}">✕</a></td>
         </tr>
         {% endfor %}
       </tbody>
     </table>
-  </div>
-  </div>
+
   <footer class="position-sticky bottom-0">
     <div class="py-3 fw-light text-center text-secondary">project by Sebin Kwon</div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 </body>
-</html>
+{% endblock content %}
