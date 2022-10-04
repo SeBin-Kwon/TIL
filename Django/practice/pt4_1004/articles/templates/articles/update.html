@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>수정 하기</h1>
+<form action="" method="POST">
+  {% csrf_token %}
+  {{ article_form.as_p }}
+<input class="btn btn-primary" type="submit" value="수정 완료">  
+</form>
+{% endblock %}

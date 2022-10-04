@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="fw-light mb-4">게시글 연습하자 연습</h1>
+{% for article in articles %}
+<h3>제목: <a href="{% url 'articles:detail' article.pk %}">{{ article.title }}</a></h3>
+  <div class="mb-4">
+    <span>생성 시간: {{ article.created_at }} | 수정 시간: {{ article.updated_at }}</span>
+  </div>
+  {% endfor %}
+  <div>
+    <a class="btn btn-primary" href="{% url 'articles:create' %}">글 작성하기</a>
+  </div>
+{% endblock %}

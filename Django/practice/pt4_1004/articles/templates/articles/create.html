@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="fw-light">글 작성하기</h1>
+<form action="" method="POST">
+  {% csrf_token %}
+  {{ article_form.as_p }}
+  <input class="btn btn-primary" type="submit" value="작성 완료">
+</form>
+{% endblock %}

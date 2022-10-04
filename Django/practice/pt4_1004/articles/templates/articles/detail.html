@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{article.title}}</h1>
+<p>{{article.content}}</p>
+<a class="btn btn-primary" href="{% url 'articles:index' %}">목록</a>
+<a class="btn btn-success" href="{% url 'articles:update' article.pk %}">수정</a>
+<a class="btn btn-danger" href="{% url 'articles:delete' article.pk %}">삭제</a>
+{% endblock %}
