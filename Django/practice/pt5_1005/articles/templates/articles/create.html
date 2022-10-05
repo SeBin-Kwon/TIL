@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load django_bootstrap5 %}
+
+
+{% block content %}
+<h1>작성</h1>
+<form action="" method="POST">
+  {% csrf_token %}
+  {% bootstrap_form form %}
+  {# article_form.as_p #}
+
+  <input class="btn btn-primary" type="submit" value="작성 완료">
+</form>
+{% endblock %}

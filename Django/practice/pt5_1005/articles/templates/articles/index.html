@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load django_bootstrap5 %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'style.css' %}">
+{% endblock %}
+
+{% block content %}
+<h1 class="">hello</h1>
+
+{% for article in articles %}
+  <a href="{% url 'articles:detail' article.pk %}"><h3>{{ article.title }}</h3></a>
+  <p>{{ article.created_at }} | {{ article.updated_at }}</p>
+{% endfor %}
+<a class="btn btn-primary" href="{% url 'articles:create' %}">글 작성</a>
+{% endblock %}
