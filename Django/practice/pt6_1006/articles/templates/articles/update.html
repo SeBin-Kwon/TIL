@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load django_bootstrap5 %}
+
+
+
+
+{% block content %}
+<h1 class="fw-light mt-5 mb-3">수정</h1>
+<form action="" method="POST">
+{% csrf_token %}
+{% bootstrap_form form %}
+<div class="text-end">
+  <input class="btn btn-primary mt-3" type="submit" value="완료">
+</div>
+</form>
+
+{% endblock %}

@@ -23,12 +23,3 @@ for i in range(n):
         # 테이프 개수 늘리기
         cnt += 1
 print(cnt)
-
-# 처음엔 이 위치들의 차이를 이용해서 풀려고 했더니 잘 안됬고
-# 단순히 위치가 아니라 숫자로 봐서 숫자들의 범위로 바라봐야 풀렸다.
-    # len_ = 0
-    # len_ += abs(pipe[i] - pipe[i+1])
-    # if len_ <= l:
-    #     cnt += 1
-    # else:
-    #     continue

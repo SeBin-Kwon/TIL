@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load django_bootstrap5 %}
+
+
+
+
+{% block content %}
+<h1 class="my-5 fw-light">영화 둘러보기</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">pk</th>
+      <th scope="col">영화 제목</th>
+      <th scope="col">러닝 타임</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for article in articles %}
+    <tr>
+      <th scope="row">{{ article.pk }}</th>
+      <td><a class="text-black text-decoration-none" href="{% url 'articles:detail' article.pk %}">{{ article.title }}</a></td>
+      <td>{{ article.running_time }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
