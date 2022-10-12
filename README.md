@@ -50,6 +50,7 @@
 - [Django basics](./Django/django.md)
 - [Django practice](./Django/practice)
 - [DTL Syntax](./Django/django2.md)
+- [Sign up & Login system](./Django/django_logic.md)
 
 ## 🗄 Database
 
