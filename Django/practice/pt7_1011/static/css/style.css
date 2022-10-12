@@ -1,0 +1,24 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+}
+
+.start {
+  width: 25rem;
+  height: 20rem;
+  background-color: white;
+}
+
+.title {
+  margin-bottom: 2rem;
+}
+
+.register {
+  width: 50rem;
+  background-color: white;
+}
+
+.mb-3 {
+  margin-bottom: 3rem;
+}

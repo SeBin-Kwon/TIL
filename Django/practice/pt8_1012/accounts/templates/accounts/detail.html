@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% load static %}
+{% block content %}
+<h1 class="mb-4" style="font-weight: 600;">{{ user.username }}'s profile</h1>
+<p>Name: {{ user.username }}</p> 
+<p>E-mail: {{ user.email }}</p>
+<a class="btn btn-outline-secondary" href="{% url 'accounts:index' %}">Back</a>
+{% endblock %}

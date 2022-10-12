@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% load static %}
+{% block content %}
+<h1>index</h1>
+{% for user in users %}
+<p>{{ user.pk }} <a href="{% url 'accounts:detail' user.pk %}">{{ user.username }}</a> {{ user.email }}</p>
+{% endfor %}
+{% endblock %}

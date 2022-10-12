@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% load static %}
+{% block content %}
+<div class="container d-flex justify-content-center align-items-center">
+  <div class="register  d-flex flex-column shadow rounded-4 p-5">
+    <h1 class="title fw-light" style="font-size: 40px;"">회원 가입</h1>
+    <form action="" method="POST" class="form">
+      {% csrf_token %}
+      {% bootstrap_form form %}
+      <a class="btn btn-secondary" href="{% url 'accounts:main' %}">취소</a>
+      <input class="btn btn-primary" type="submit" value="완료">
+    </form>
+  </div>
+</div>
+{% endblock %}

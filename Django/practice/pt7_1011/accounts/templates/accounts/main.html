@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% load static %}
+{% block content %}
+<div class="container d-flex justify-content-center align-items-center">
+<div class="start rounded-4 shadow d-flex justify-content-center flex-column p-5">
+  <h1 class="title fw-light text-center" style="font-size: 35px;">회원가입 연습</h1>
+  <a class="btn btn-outline-primary mb-3" href="{% url 'accounts:signup' %}">회원 가입</a>
+  <a class="btn btn-outline-success" href="{% url 'accounts:index' %}">회원 목록</a>
+</div>
+</div>
+{% endblock %}

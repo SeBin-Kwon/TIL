@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% load static %}
+{% block content %}
+<h1>detail</h1>
+<h3>{{ user.username }}의 프로필</h3>
+<a class="btn btn-primary" href="{% url 'accounts:index' %}">메인으로</a>
+{% endblock %}
