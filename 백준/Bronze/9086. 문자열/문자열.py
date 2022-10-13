@@ -1,5 +1,3 @@
-T = int(input())
-for t in range(T):
-    word = input()
-    len_ = len(word)
-    print(word[0],word[len_-1], sep='')
+for _ in range(int(input())):
+    a = input()
+    print(a[0]+a[-1])
