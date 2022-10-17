@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% load static %}
+
+{% block content %}
+<h1>{{ user.username }}'s profile</h1>
+<p>Name: {{ user.full_name }}</p>
+{% if request.user == user %}
+  <a class="btn btn-outline-primary" href="{% url 'accounts:update' user.pk %}">Edit</a>
+  <a class="btn btn-outline-secondary" href="{% url 'accounts:index' %}">Back</a>
+{% else %}
+  <a class="btn btn-outline-secondary" href="{% url 'accounts:index' %}">Back</a>
+{% endif %}
+{% endblock %}

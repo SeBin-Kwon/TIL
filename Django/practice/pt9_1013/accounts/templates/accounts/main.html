@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% load static %}
+
+{% block content %}
+{% if request.user.is_authenticated %}
+  <h1>hello, <a href="{% url 'accounts:detail' user.pk %}">{{ user }}!</a></h1>
+  <a class="btn btn-outline-primary" href="{% url 'accounts:index' %}">User list</a>
+  <a class="btn btn-outline-danger" href="{% url 'accounts:logout' %}">logout</a>
+{% else %}
+  <h1>Welcome!</h1>
+  <a class="btn btn-outline-primary" href="{% url 'accounts:signup' %}">Sign up</a>
+  <a class="btn btn-outline-primary" href="{% url 'accounts:login' %}">login</a>
+{% endif %}
+{% endblock %}

@@ -50,6 +50,8 @@
 - [Django basics](./Django/django.md)
 - [Django practice](./Django/practice)
 - [DTL Syntax](./Django/django2.md)
+- [Variable routing](./Django/Variable_routing.md)
+- [App URL mapping](./Django/URL_mapping.md)
 - [Sign up & Login system](./Django/django_logic.md)
 
 ## 🗄 Database

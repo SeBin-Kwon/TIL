@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% load static %}
+
+{% block content %}
+<h1>User List</h1>
+{% for user in users %}
+  <p><a href="{% url 'accounts:detail' user.pk %}">{{ user.username }}</a></p>
+  {% endfor %}
+  <a class="btn btn-outline-secondary" href="{% url 'accounts:main' %}">Back</a>
+{% endblock %}
