@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% load static %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center">
+  <h1>Selog</h1>
+  <a class="btn btn-outline-primary" href="{% url 'articles:create' %}">글 작성</a>
+</div>
+<div class="row">
+  {% for article in articles %}
+  {% if article.thumbnail %}
+  <div class="col-12 col-md-6 col-lg-3 my-4 gx-4">
+    <a class="text-black text-decoration-none" href="{% url 'articles:detail' article.pk %}">
+      <div class="card">
+        <img src="{{ article.thumbnail.url }}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{ article.title }}</h5>
+        </div>
+      </div>
+    </a>
+  </div>
+  {% else %}
+  <div class="col-12 col-md-6 col-lg-3 my-4 gx-4">
+    <a class="text-black text-decoration-none" href="{% url 'articles:detail' article.pk %}">
+      <div class="card">
+        <div class="card-body ">
+          <h5 class="card-title">{{ article.title }}</h5>
+        </div>
+      </div>
+    </a>
+  </div>
+  {% endif %}
+  {% endfor %}
+</div>
+{% endblock %}

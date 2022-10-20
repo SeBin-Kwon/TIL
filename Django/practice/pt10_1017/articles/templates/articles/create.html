@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% load static %}
+
+{% block content %}
+<h1>글 작성하기</h1>
+<form method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+  {% bootstrap_form form %}
+  <a class="btn btn-outline-secondary" href="{% url 'articles:index' %}">뒤로</a>
+  <input class="btn btn-outline-primary" type="submit" value="완료">
+</form>
+{% endblock %}
