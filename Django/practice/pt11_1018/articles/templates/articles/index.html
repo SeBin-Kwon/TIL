@@ -8,21 +8,23 @@
 {% if article.image %}
 <div class="col-12 col-md-6 col-lg-3">
     <a class="text-black text-decoration-none" href="{% url 'articles:detail' article.pk %}">
-    <div class="card">
+    <div class="card" style="backdrop-filter: blur(15px);">
       <img src="{{ article.image.url }}" class="card-img-top" alt="...">
       <div class="card-body">
         <h3 class="card-text">{{ article.title }}</h3>
+        <span>{{ article.comment_set.count }} {{ article.user }}</span>
       </div>
     </div>
     </a>
 </div>
 {% else %}
-<div class="col-12 col-md-8 col-lg-3">
+<div class="col-12 col-md-6 col-lg-3">
   <a class="text-black text-decoration-none" href="{% url 'articles:detail' article.pk %}">
   <div class="card">
-    <img src="{% static 'images/1.png' %}" class="card-img-top" alt="...">
+    <img src="{% static 'images/1.png' %}" class="card-img-top" alt="..." >
     <div class="card-body">
       <h3 class="card-text">{{ article.title }}</h3>
+      <span>{{ article.comment_set.count }} {{ article.user}}</span>
     </div>
     </div>
     </a>

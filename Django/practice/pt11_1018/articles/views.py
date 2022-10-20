@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Article, Comment
 from .forms import ArticleForm, CommentForm
-
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 def index(request):
@@ -11,11 +11,14 @@ def index(request):
     }
     return render(request, 'articles/index.html', context)
 
+@login_required
 def create(request):
     if request.method == 'POST':
         form = ArticleForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            article = form.save(commit=False)
+            article.user = request.user
+            article.save()
             return redirect('articles:index')
     else:
         form = ArticleForm()
@@ -34,16 +37,19 @@ def detail(request, pk):
     }
     return render(request, 'articles/detail.html', context)
 
+@login_required
 def delete(request, pk):
     Article.objects.get(pk=pk).delete()
     return redirect('articles:index')
 
+@login_required
 def comments(request, pk):
     article = Article.objects.get(pk=pk)
     comments_forms = CommentForm(request.POST)
     if comments_forms.is_valid():
         comment = comments_forms.save(commit=False)
         comment.article = article
+        comment.user = request.user
         comment.save()
     return redirect('articles:detail', article.pk)
 

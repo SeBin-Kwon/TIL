@@ -20,20 +20,29 @@
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
+          {% if user.is_authenticated %}
           <li class="nav-item">
             <a class="btn btn-outline-primary me-3 my-2" href="{% url 'articles:create' %}">write</a>
           </li>
           <li class="nav-item me-3 my-2">
-            <a class="btn btn-primary" href="#">Log in</a>
+            <a class="btn btn-primary" href="{% url 'accounts:detail' user.pk %}">{{ user }}</a>
+          </li>
+          <li class="nav-item me-3 my-2">
+            <a class="btn btn-primary" href="{% url 'accounts:logout' %}">Log out</a>
+          </li>
+          {% else %}
+          <li class="nav-item me-3 my-2">
+            <a class="btn btn-primary" href="{% url 'accounts:login' %}">Log in</a>
           </li>
           <li class="nav-item my-2">
-            <a class="btn text-primary" href="#">Sing up</a>
+            <a class="btn text-primary" href="{% url 'accounts:signup' %}">Sing up</a>
           </li>
+          {% endif %}
         </ul>
       </div>
     </div>
   </nav>
-  <div class="container mt-5">
+  <div class="container d-flex justify-content-center mt-5">
   {% block content %}
   {% endblock %}
   {% bootstrap_javascript %}

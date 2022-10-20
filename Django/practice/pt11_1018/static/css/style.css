@@ -3,9 +3,20 @@
 .body {
   font-family: 'Montserrat', sans-serif;
   font-family: 'Noto Sans KR', sans-serif;
+  height: 100vh;
+  width: 100vw;
+  background-image: url('../images/2.jpg');
+  background-repeat : no-repeat;
+  background-size : cover;
 }
 
 .logo{
   font-size: 28px;
   font-family: 'Pacifico', cursive;
+}
+
+.detail {
+  background-color: white;
+  width: 40rem;
+  backdrop-filter: blur(15px);
 }
