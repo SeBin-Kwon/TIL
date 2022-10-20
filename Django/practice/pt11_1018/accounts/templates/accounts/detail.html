@@ -3,16 +3,32 @@
 {% load static %}
 
 {% block content %}
-<h1>{{ user.username }}'s profile</h1>
-<p>Name: {{ user.full_name }}</p>
-<p class="text-muted">{{ user.article_set.count }}개를 작성하였습니다.</p>
-{% for article in user.article_set.all %}
-  <a href="{% url 'articles:detail' article.pk %}">{{ article.title }}</a>
-{% endfor %}
-
-{% for comment in user.comment_set.all %}
-  <a href="{% url 'articles:detail' comment.article.pk %}">{{ comment.content }}</a>
-{% endfor %}
-<a class="btn btn-outline-secondary" href="{% url 'articles:index' %}">Back</a>
+<div>
+  <h1><span class="detailName">{{ user.username }}'s</span> profile</h1>
+  <p>Name: {{ user.first_name }} {{ user.last_name }}</p>
+  <p>email: {{ user.email }}</p>
+  <div class="d-flex flex-row">
+    <div class="me-4">
+      <h3 class="fw-light">My articles</h3>
+      <p class="text-muted">{{ user.article_set.count }}개를 작성하였습니다.</p>
+      <ul>
+      {% for article in user.article_set.all %}
+       <li><a href="{% url 'articles:detail' article.pk %}">{{ article.title }}</a></li>
+      {% endfor %}
+      </ul>
+    </div>
+    <div>
+      <h3 class="fw-light">My comments</h3>
+      <p class="text-muted">{{ user.comment_set.count }}개를 작성하였습니다.</p>
+      <ul>
+      {% for comment in user.comment_set.all %}
+      <li><a href="{% url 'articles:detail' comment.article.pk %}">{{ comment.content }}</a></li>
+      {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <a class="btn btn-outline-secondary" href="{% url 'articles:index' %}">Back</a>
+  <a class="btn btn-outline-success" href="{% url 'accounts:update' user.pk %}">Edit</a>
+</div>
 {% endblock %}
 

@@ -3,12 +3,11 @@
 {% load static %}
 
 {% block content %}
-<h1>write</h1>
-<form method="POST" enctype="multipart/form-data">
+<h1>Edit</h1>
+<form method="POST">
   {% csrf_token %}
   {% bootstrap_form form %}
+  <a class="btn btn-outline-secondary" href="{% url 'accounts:detail' user.pk %}">Back</a>
   <input class="btn btn-outline-primary" type="submit" value="Submit">
-  <a class="btn btn-outline-secondary" href="{% url 'articles:index' %}">Back</a>
 </form>
-
 {% endblock %}

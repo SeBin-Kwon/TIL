@@ -3,7 +3,7 @@
 .body {
   font-family: 'Montserrat', sans-serif;
   font-family: 'Noto Sans KR', sans-serif;
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   background-image: url('../images/2.jpg');
   background-repeat : no-repeat;
@@ -16,7 +16,17 @@
 }
 
 .detail {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.294);
   width: 40rem;
   backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.39);
+  box-shadow: 3px 18px 27px 8px rgba(9, 1, 17, 0.101);
+}
+
+.card {
+  box-shadow: 12px 18px 12px 3px rgba(9, 1, 17, 0.101);
+}
+
+.detailName {
+  font-family: 'Pacifico', cursive;
 }

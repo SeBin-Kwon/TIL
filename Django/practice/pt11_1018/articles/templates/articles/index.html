@@ -8,7 +8,7 @@
 {% if article.image %}
 <div class="col-12 col-md-6 col-lg-3">
     <a class="text-black text-decoration-none" href="{% url 'articles:detail' article.pk %}">
-    <div class="card" style="backdrop-filter: blur(15px);">
+    <div class="card" style="background-color: rgba(255, 255, 255, 0.379); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.534)">
       <img src="{{ article.image.url }}" class="card-img-top" alt="...">
       <div class="card-body">
         <h3 class="card-text">{{ article.title }}</h3>
@@ -20,8 +20,8 @@
 {% else %}
 <div class="col-12 col-md-6 col-lg-3">
   <a class="text-black text-decoration-none" href="{% url 'articles:detail' article.pk %}">
-  <div class="card">
-    <img src="{% static 'images/1.png' %}" class="card-img-top" alt="..." >
+  <div class="card" style="background-color: rgba(255, 255, 255, 0.379); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.534)">
+    <img src="{% static 'images/1.png' %}" class="card-img-top opacity-25" alt="blank">
     <div class="card-body">
       <h3 class="card-text">{{ article.title }}</h3>
       <span>{{ article.comment_set.count }} {{ article.user}}</span>

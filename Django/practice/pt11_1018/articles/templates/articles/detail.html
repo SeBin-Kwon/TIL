@@ -4,32 +4,41 @@
 
 {% block content %}
 <div class="d-flex flex-column">
-<div class="detail rounded-3 shadow p-5">
+<div class="detail text-center rounded-3 p-5">
   {% if article.image %}
   <img src="{{ article.image.url }}">
   {% endif %}
-  <h1 class="fw-light">{{article.title}}</h1>
-  <p>{{ article.content }}</p>
-  <p>{{ article.created_at }}</p>
-  <a class="btn btn-outline-danger" href="{% url 'articles:delete' article.pk %}">Delete</a>
+  <div class="d-flex">
+    <h1 class="fw-light">{{article.title}}</h1>
+    <p>{{ article.created_at }}</p>
+  </div>
+    <p>{{ article.content }}</p>
+  {% if request.user == article.user %}
+    <a class="btn btn-outline-danger" href="{% url 'articles:delete' article.pk %}">Delete</a>
+    <a class="btn btn-outline-success" href="{% url 'articles:update' article.pk %}">Edit</a>
+  {% endif %}
 </div>
 
 <div class="comment">
+  <a class="btn btn-outline-secondary" href="{% url 'articles:index' %}">Back</a>
   <h2>댓글</h2>
   <p>{{ comments|length }}</p>
+  {% if request.user.is_authenticated %}
   <form action="{% url 'articles:comments' article.pk %}" method="POST">
     {% bootstrap_form comments_form %}
     {% csrf_token %}
     <input class="btn btn-outline-primary" type="submit" value="Submit">
-    <a class="btn btn-outline-secondary" href="{% url 'articles:index' %}">Back</a>
   </form>
-
+  {% endif %}
+  
   {% for comment in comments %}
-    <p>{{ comment.user.username }} {{ comment.content }}</p>
-    <form action="{% url 'articles:comment_delete' article.pk comment.pk %}" method="POST"> 
-      {% csrf_token %}
-      <input class="btn btn-outline-danger" type="submit" value="DELETE">
-    </form>
+  <p>{{ comment.user.username }} {{ comment.content }}</p>
+  {% if request.user == comment.user %}
+  <form action="{% url 'articles:comment_delete' article.pk comment.pk %}" method="POST"> 
+    {% csrf_token %}
+    <input class="btn btn-outline-danger" type="submit" value="Delete">
+  </form>
+  {% endif %}
     {% empty %}
     <p>댓글이 없어요..</p>
   {% endfor %}
