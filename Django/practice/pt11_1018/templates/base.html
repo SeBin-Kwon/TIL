@@ -1,0 +1,42 @@
+{% load django_bootstrap5 %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <title>Document</title>
+  {% bootstrap_css %}
+</head>
+<body class="body bg-light">
+  <!-- 네브바 -->
+  <nav class="shadow-sm navbar navbar-expand-lg bg-white border-bottom">
+    <div class="container">
+      <a class="navbar-brand" href="{% url 'articles:index' %}"><h1 class="logo">Binstagram</h1></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="btn btn-outline-primary me-3 my-2" href="{% url 'articles:create' %}">write</a>
+          </li>
+          <li class="nav-item me-3 my-2">
+            <a class="btn btn-primary" href="#">Log in</a>
+          </li>
+          <li class="nav-item my-2">
+            <a class="btn text-primary" href="#">Sing up</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container mt-5">
+  {% block content %}
+  {% endblock %}
+  {% bootstrap_javascript %}
+  </div>
+</body>
+</html>

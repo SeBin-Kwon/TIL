@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% load static %}
+
+{% block content %}
+<h1>{{article.title}}</h1>
+{% if article.image %}
+  <img src="{{ article.image.url }}">
+  <p>{{ article.content }}</p>
+  <p>{{ article.created_at }}</p>
+{% else %}
+  <p>{{ article.content }}</p>
+  <p>{{ article.created_at }}</p>
+{% endif %}
+
+<div>
+  <h2>댓글</h2>
+  <form action="{% url 'articles:comments' article.pk %}" method="POST">
+    {% bootstrap_form comments_form %}
+    {% csrf_token %}
+    <input class="btn btn-outline-primary" type="submit" value="Submit">
+    <a class="btn btn-outline-secondary" href="{% url 'articles:index' %}">Back</a>
+    <a class="btn btn-outline-danger" href="{% url 'articles:delete' article.pk %}">Delete</a>
+  </form>
+
+  {% for comment in comments %}
+    <p>{{ comment.content }}</p>
+    <form action="{% url 'articles:comment_delete' article.pk comment.pk %}" method="POST"> 
+      {% csrf_token %}
+      <input class="btn btn-outline-danger" type="submit" value="DELETE">
+    </form>
+  {% endfor %}
+</div>
+{% endblock %}

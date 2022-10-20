@@ -1,5 +1,5 @@
 import sys
-
+import heapq
 sys.stdin = open('11000.txt', 'r')
 input = sys.stdin.readline
 
@@ -9,11 +9,14 @@ for i in range(n):
     lecture.append(list(map(int,input().split())))
 lecture.sort()
 
-cnt = 0
-for i in range(n-1):
-    if lecture[i][1] <= lecture[i+1][0]:
+room = []
+heapq.heappush(room, lecture[0][1])
+
+for i in range(1, n):
+    if lecture[i][0] < room[0]:
+        heapq.heappush(room, lecture[i][1])
         continue
     else:
-        cnt += 1
-    print(lecture)
-    print(cnt)
+        heapq.heappop(room)
+        heapq.heappush(room, lecture[i][1])
+print(len(room))
