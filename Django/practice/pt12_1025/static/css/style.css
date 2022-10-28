@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Pacifico&display=swap');
+
+.body {
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
+  min-height: 100vh;
+  width: 100vw;
+  background-image: url('../images/2.jpg');
+  background-repeat : no-repeat;
+  background-size : cover;
+}
+
+.logo{
+  font-size: 28px;
+  font-family: 'Pacifico', cursive;
+}
+
+.detail {
+  background-color: rgba(255, 255, 255, 0.294);
+  width: 40rem;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.39);
+  box-shadow: 3px 18px 27px 8px rgba(9, 1, 17, 0.101);
+}
+
+.card {
+  box-shadow: 3px 10px 15px 2px rgba(18, 2, 34, 0.108);
+}
+
+.detailName {
+  font-family: 'Pacifico', cursive;
+}
+
+.detail-box {
+  background-color: rgba(255, 255, 255, 0.522);
+  width: 40rem;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.39);
+  box-shadow: 3px 18px 27px 8px rgba(9, 1, 17, 0.101);
+}

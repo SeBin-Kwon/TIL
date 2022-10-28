@@ -1,0 +1,61 @@
+{% load django_bootstrap5 %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+  <title>Document</title>
+  {% bootstrap_css %}
+</head>
+<body class="body bg-light">
+  <!-- 네브바 -->
+  <nav class="shadow-sm sticky-top navbar navbar-expand-lg border-bottom" style="background-color: rgba(255, 255, 255, 0.871);">
+    <div class="container">
+      <a class="navbar-brand" href="{% url 'articles:index' %}"><h1 class="logo">Binstagram</h1></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="btn btn-outline-primary me-3 my-2" href="{% url 'articles:create' %}">write</a>
+          </li>
+          <li class="nav-item me-3 my-2">
+            <a class="btn btn-primary" href="{% url 'accounts:detail' request.user.pk %}">{{ request.user }}</a>
+          </li>
+          <li class="nav-item me-3 my-2">
+            <a class="btn btn-outline-danger" href="{% url 'accounts:logout' %}">Log out</a>
+          </li>
+          {% else %}
+          <li class="nav-item me-3 my-2">
+            <a class="btn btn-primary" href="{% url 'accounts:login' %}">Log in</a>
+          </li>
+          <li class="nav-item my-2">
+            <a class="btn text-primary" href="{% url 'accounts:signup' %}">Sing up</a>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  {% if messages %}
+  {% for message in messages %}
+  <div class="alert alert-{{ message.tags }}">
+    {{ message }}
+  </div>
+  {% endfor %}
+  {% endif %}  
+
+  <div class="container d-flex justify-content-center mt-5">
+  {% block content %}
+  {% endblock %}
+  {% bootstrap_javascript %}
+  </div>
+</body>
+</html>

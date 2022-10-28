@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% load static %}
+
+{% block content %}
+<div>
+<h1>login</h1>
+<form method="POST">
+  {% csrf_token %}
+  {% bootstrap_form form %}
+  <a class="btn btn-outline-secondary" href="{% url 'articles:index' %}">Back</a>
+  <input class="btn btn-outline-primary" type="submit" value="Submit">
+</form>
+</div>
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% load static %}
+
+{% block content %}
+<div class="d-flex flex-column">
+<div class="detail text-center rounded-3 p-5">
+  {% if article.image %}
+  <img src="{{ article.image.url }}" style="width: 100%;">
+  {% endif %}
+  <div class="mt-4 d-flex justify-content-between">
+    <h1 class="fw-light">{{article.title}}</h1>
+    <div class="d-flex">
+      <a class="me-3 fw-bold text-decoration-none" href="{% url 'accounts:detail' article.user.pk %}">{{ article.user }}</a>
+      <p>{{ article.created_at }}</p>
+    </div>
+  </div>
+    <p>{{ article.content }}</p>
+  {% if request.user == article.user %}
+    <a class="btn btn-outline-danger" href="{% url 'articles:delete' article.pk %}">Delete</a>
+    <a class="btn btn-outline-success" href="{% url 'articles:update' article.pk %}">Edit</a>
+  {% endif %}
+  <!-- 좋아요 -->
+  {% if request.user.is_authenticated %}
+    {% if request.user in article.like_users.all %}
+    <a class="btn btn-danger" href="{% url 'articles:like' article.pk %}"><i class="bi bi-heart-fill"></i> {{ article.like_users.count }}</a>
+    {% else %}
+      <a class="btn btn-outline-danger" href="{% url 'articles:like' article.pk %}"><i class="bi bi-heart"></i> {{ article.like_users.count }}</a>
+    {% endif %}
+  {% endif %}
+</div>
+
+<div class="comment">
+  <a class="btn btn-outline-secondary" href="{% url 'articles:index' %}">Back</a>
+  <h2>댓글</h2>
+  <p>{{ comments|length }}</p>
+  {% if request.user.is_authenticated %}
+  <form action="{% url 'articles:comments' article.pk %}" method="POST">
+    {% bootstrap_form comments_form %}
+    {% csrf_token %}
+    <input class="btn btn-outline-primary" type="submit" value="Submit">
+  </form>
+  {% endif %}
+  
+  {% for comment in comments %}
+  <div class="d-flex">
+    <p>{{ comment.user.username }} {{ comment.content }}</p>
+    <!-- 댓글 삭제 버튼 -->
+    {% if request.user == comment.user %}
+      <form action="{% url 'articles:comment_delete' article.pk comment.pk %}" method="POST"> 
+        {% csrf_token %}
+        <input class="ms-3 btn btn-sm btn-outline-danger" type="submit" value="Delete">
+      </form>
+    {% endif %}
+  </div>
+    {% empty %}
+    <p>댓글이 없어요..</p>
+  {% endfor %}
+</div>
+</div>
+{% endblock %}

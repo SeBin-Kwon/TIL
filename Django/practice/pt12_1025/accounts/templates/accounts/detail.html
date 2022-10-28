@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% load static %}
+
+{% block content %}
+<div class="detail-box rounded-4 p-5">
+  <h1><span class="detailName">{{ user.username }}'s</span> profile</h1>
+  <p>Name: {{ user.first_name }} {{ user.last_name }}</p>
+  <p>email: {{ user.email }}</p>
+  {{ user.followings.count}} {{ user.followers.count}}
+  {% if request.user != username %}
+    <a href="{% url 'accounts:follow' user.pk %}">
+    {% if request.user in user.followers.all %}
+      팔로우 취소
+      {% else %}
+      팔로우
+    {% endif %}
+    </a>
+    {% endif %}
+  <div class="d-flex flex-row">
+    <div class="me-4">
+      <h3 class="fw-light">My articles</h3>
+      <p class="text-muted">{{ user.article_set.count }}개를 작성하였습니다.</p>
+      <ul>
+      {% for article in user.article_set.all %}
+       <li><a href="{% url 'articles:detail' article.pk %}">{{ article.title }}</a> <i class="bi bi-heart-fill"></i> {{ article.like_users.count }}</li>
+      {% endfor %}
+      </ul>
+    </div>
+    <div>
+      <h3 class="fw-light">My comments</h3>
+      <p class="text-muted">{{ user.comment_set.count }}개를 작성하였습니다.</p>
+      <ul>
+      {% for comment in user.comment_set.all %}
+      <li><a href="{% url 'articles:detail' comment.article.pk %}">{{ comment.content }}</a></li>
+      {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <a class="btn btn-outline-secondary" href="{% url 'articles:index' %}">Back</a>
+  <a class="btn btn-outline-success" href="{% url 'accounts:update' user.pk %}">Edit</a>
+</div>
+{% endblock %}
+
