@@ -83,6 +83,7 @@
 - [Graph](./Algorithm/graph.md)
 - [DFS](./Algorithm/dfs.md)
 - [Coding test 2](./Algorithm/codingtest2.md)
+- [Backtracking](./Algorithm/backtracking.md)
 
 ## 📝 Coding test
 
