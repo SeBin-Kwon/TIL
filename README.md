@@ -32,6 +32,10 @@
 - [JavaScript DOM](./JavaScript/js.md)
 - [JavaScript Syntax / Function](./JavaScript/js2.md)
 
+## 🧩 Vue
+
+- [Vue basics](./Vue/vue.md)
+
 ## 📘 Python
 
 - [Python basics](./Python/python_basics.md)
