@@ -11,13 +11,13 @@ for t in range(T):
     if n == 0:
         arr = []
     
-    cnt = 0
+    flag = True
     for i in p:
         if i == 'R':
-            cnt += 1
+            flag = not flag
         else:
             if arr:
-                if cnt % 2 != 0:
+                if not flag:
                     arr.pop()
                 else:
                     arr.popleft()
@@ -25,8 +25,8 @@ for t in range(T):
                 print('error')
                 break
     else:
-        if cnt % 2 != 0:
+        if not flag:
             arr.reverse()
-            print('['+','.join(arr)+']')
+            print(f'[{",".join(arr)}]')
         else:
-            print('['+','.join(arr)+']')
+            print(f'[{",".join(arr)}]')
