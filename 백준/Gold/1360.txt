@@ -1,0 +1,5 @@
+4
+type a 1
+type b 2
+type c 3
+undo 3 5

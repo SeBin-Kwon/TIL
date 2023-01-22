@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+nav {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 6px 15px 0px rgba(29, 38, 78, 0.108);
+}
+
+.nav-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-links {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  padding-right: 2rem;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  padding-right: 1rem;
+}
+
+h4 {
+  padding-left: 2rem;
+  font-size: 20px;
+  margin: 0;
+}
+
+main {
+  /* height: 100%; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  text-align: center;
+  margin-top: 10rem;
+}
+
+.btn {
+  background-color: transparent;
+  border: 1px solid rgba(27, 27, 27, 0.288);
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 10px;
+}
