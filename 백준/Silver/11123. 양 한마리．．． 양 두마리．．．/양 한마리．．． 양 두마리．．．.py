@@ -30,6 +30,4 @@ for t in range(T):
             if grid[i][j] == '#' and not visited[i][j]:
                 bfs(i,j)
                 cnt += 1
-            else:
-                continue
     print(cnt)
