@@ -1,18 +1,13 @@
 import sys
-from collections import deque
+sys.setrecursionlimit(10**5)
 input = sys.stdin.readline
 
-def bfs(x,y):
-    queue = deque([(x,y)])
+def dfs(x, y):
     visited[x][y] = 1
-    while queue:
-        x, y = queue.popleft()
-        if grid[x][y] == '#':
-            for i in range(4):
-                nx, ny = x + dx[i], y + dy[i]
-                if 0 <= nx < h and 0 <= ny < w and grid[nx][ny] == '#' and not visited[nx][ny]:
-                    visited[nx][ny] = 1
-                    queue.append((nx,ny))
+    for i in range(4):
+        nx, ny = x + dx[i], y + dy[i]
+        if 0 <= nx < h and 0 <= ny < w and grid[nx][ny] == '#' and not visited[nx][ny]:
+            dfs(nx, ny)
 
 dx = [-1,1,0,0]
 dy = [0,0,-1,1]
@@ -28,6 +23,6 @@ for t in range(T):
     for i in range(h):
         for j in range(w):
             if grid[i][j] == '#' and not visited[i][j]:
-                bfs(i,j)
+                dfs(i,j)
                 cnt += 1
     print(cnt)
