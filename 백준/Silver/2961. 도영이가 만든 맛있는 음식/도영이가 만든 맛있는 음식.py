@@ -16,6 +16,5 @@ for i in range(1,n+1):
         for k in j:
             s *= k[0]
             b += k[1]
-            if abs(s - b) < result:
-                result = abs(s - b)
+        result = min(abs(s - b),result)
 print(result)
