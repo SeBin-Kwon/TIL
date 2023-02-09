@@ -2,30 +2,35 @@ import sys
 input = sys.stdin.readline
 
 n = int(input())
-arr = list(map(int, input().split(' ')))
-arr.sort()
+nums = list(map(int,input().split()))
+# 오름차순 정렬
+nums.sort()
 
-left = 0
-right = n-1
+def twoPointer(n, nums):
+    # 배열의 양 끝단 인덱스 설정
+    left = 0
+    right = n - 1
+    min_ = sys.maxsize
 
-answer = abs(arr[left] + arr[right])
-final = [arr[left], arr[right]]
+    while left < right:
+        # 현재 지점의 합
+        current = nums[left] + nums[right]
 
+        # 만약 현재 지점의 합이 더 0에 가깝다면
+        if abs(current) < min_:
+            # 갱신하기
+            min_ = abs(current)
+            min_left = nums[left]
+            min_right = nums[right]
+        
+        # 현재 지점의 합이 음수라면 
+        if current < 0:
+            # 왼쪽을 오른쪽으로 한 칸 옮겨서 0에 가깝게 만들기
+            left += 1
+        else:
+            right -= 1
 
-while left < right:
-    left_val = arr[left]
-    right_val = arr[right]
+    return min_left, min_right
 
-    sum = left_val + right_val
-  
-    if abs(sum) < answer:
-        answer = abs(sum)
-        final = [left_val, right_val]
-        if answer == 0:
-          break
-    if sum < 0:
-        left += 1
-    else:
-        right -= 1
-
-print(final[0], final[1])
+left, right = twoPointer(n, nums)
+print(left, right)
