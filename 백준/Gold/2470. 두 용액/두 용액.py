@@ -6,7 +6,7 @@ nums = list(map(int,input().split()))
 # 오름차순 정렬
 nums.sort()
 
-def twoPointer(n, nums):
+def twoPointer():
     # 배열의 양 끝단 인덱스 설정
     left = 0
     right = n - 1
@@ -32,5 +32,4 @@ def twoPointer(n, nums):
 
     return min_left, min_right
 
-left, right = twoPointer(n, nums)
-print(left, right)
+print(*twoPointer())
