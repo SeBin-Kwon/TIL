@@ -20,9 +20,10 @@ for i in range(m):
     a, b = map(int, input().split())
     friend[a].append(b)
     friend[b].append(a)
-
-answer = []
+min_ = 1e9
 for i in range(1,n+1):
-    answer.append(bfs(i))
-
-print(answer.index(min(answer)) + 1)
+    temp = bfs(i)
+    if min_ > temp:
+        min_ = temp
+        min_num = i
+print(min_num)
