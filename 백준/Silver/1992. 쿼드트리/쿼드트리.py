@@ -2,20 +2,21 @@ import sys
 input = sys.stdin.readline
 
 n = int(input())
-mtx = [list(map(int, list(input().strip()))) for _ in range(n)]
+arr = [input().rstrip() for _ in range(n)]
 
-def check(x, y, n):
-    for i in range(x, x + n):
-        for j in range(y, y + n):
-            if mtx[x][y] != mtx[i][j]:
-                print("(", end="")
-                check(x, y, n // 2)
-                check(x, y + n // 2, n // 2)
-                check(x + n // 2, y, n // 2)
-                check(x + n // 2, y + n // 2, n // 2)
-                print(")", end="")
+def quadtree(x, y, n):
+    check = arr[x][y]
+    for i in range(x, x+n):
+        for j in range(y, y+n):
+            if arr[i][j] != check:
+                print('(', end='')
+                quadtree(x, y, n//2)
+                quadtree(x, y+n//2, n//2)
+                quadtree(x+n//2, y, n//2)
+                quadtree(x+n//2, y+n//2, n//2)
+                print(')', end='')
                 return
 
-    print(1 if mtx[x][y] == 1 else 0, end="")
+    print(1 if check == '1' else '0', end='')
 
-check(0, 0, n)
+quadtree(0, 0, n)
