@@ -1,8 +1,8 @@
 import sys
 input = sys.stdin.readline
 
-s = input().rstrip('\n')
-f = input().rstrip('\n')
+s = input().rstrip()
+f = input().rstrip()
 l = []
 
 for i in s:
