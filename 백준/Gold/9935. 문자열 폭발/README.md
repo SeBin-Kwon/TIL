@@ -8,7 +8,7 @@
 
 ### 분류
 
-자료 구조(data_structures), 스택(stack), 문자열(string)
+자료 구조, 문자열, 스택
 
 ### 문제 설명
 
