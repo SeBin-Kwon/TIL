@@ -14,10 +14,18 @@
 - [Git branch](./Git/Git_Branch.md)
 - [Git Summary](./Git/git_summary.md)
 
+## 🖥 Swift
+
+- [Swift basics](./Swift/SwiftBasic.md)
+
+## 🖥 SwiftUI
+
+- [SwiftUI practice](./SwiftUI/practice)
+
 ## 👚 HTML / CSS
 
 - [HTML & CSS](./HTML_CSS/web1.md)
-- [HTML & CSS parctice](./HTML_CSS/practice)
+- [HTML & CSS practice](./HTML_CSS/practice)
 - [CSS basics](./HTML_CSS/css1.md)
 - [CSS flaxbox](./HTML_CSS/css_flex.md)
 - [Semantic tag](./HTML_CSS/semantic.md)
