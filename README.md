@@ -14,11 +14,12 @@
 - [Git branch](./Git/Git_Branch.md)
 - [Git Summary](./Git/git_summary.md)
 
-## 🖥 Swift
+## 🦜 Swift
 
 - [Swift basics](./Swift/SwiftBasic.md)
+- [Collection types](./Swift/CollectionTypes.md)
 
-## 🖥 SwiftUI
+## 🦢 SwiftUI
 
 - [SwiftUI practice](./SwiftUI/practice)
 
