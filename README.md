@@ -19,6 +19,7 @@
 - [Swift basics](./Swift/SwiftBasic.md)
 - [Collection types](./Swift/CollectionTypes.md)
 - [Function](./Swift/Function.md)
+- [Control flow](./Swift/ControlFlow.md)
 
 ## 🦢 SwiftUI
 
