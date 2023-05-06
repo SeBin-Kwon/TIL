@@ -20,6 +20,7 @@
 - [Collection types](./Swift/CollectionTypes.md)
 - [Function](./Swift/Function.md)
 - [Control flow](./Swift/ControlFlow.md)
+- [Optional](./Swift/Optional.md)
 
 ## 🦢 SwiftUI
 
