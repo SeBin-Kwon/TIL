@@ -22,6 +22,7 @@
 - [Control flow](./Swift/ControlFlow.md)
 - [Optional](./Swift/Optional.md)
 - [Struct](./Swift/Struct.md)
+- [Class](./Swift/Class.md)
 
 ## 🦢 SwiftUI
 
