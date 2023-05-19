@@ -23,6 +23,7 @@
 - [Optional](./Swift/Optional.md)
 - [Struct](./Swift/Struct.md)
 - [Class](./Swift/Class.md)
+- [Enum](./Swift/Enum.md)
 
 ## 🦢 SwiftUI
 
