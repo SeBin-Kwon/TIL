@@ -24,6 +24,7 @@
 - [Struct](./Swift/Struct.md)
 - [Class](./Swift/Class.md)
 - [Enum](./Swift/Enum.md)
+- [Closure](./Swift/Closure.md)
 
 ## 🦢 SwiftUI
 
