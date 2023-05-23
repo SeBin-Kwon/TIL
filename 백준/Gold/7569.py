@@ -3,9 +3,42 @@ from collections import deque
 sys.stdin = open('7569.txt','r')
 input = sys.stdin.readline
 
-# 익은 토마토와 인접한 토마토는 익음
-# 위, 아래, 왼쪽, 오른쪽, 앞, 뒤 여섯 방향
-# 며칠 지나면 모두 익는지 최소 일수 구하기
+def bfs():
+    while queue:
+        z, x, y = queue.popleft()
+        for l in range(6):
+            nz = z + dh[l]
+            nx = x + dx[l]
+            ny = y + dy[l]
+            if 0 <= nz < h and 0 <= nx < n and 0 <= ny < m:
+                if box[nz][nx][ny] == 0:
+                    box[nz][nx][ny] = box[z][x][y] + 1
+                    queue.append((nz,nx,ny))
 
-m, n, h = map(int, input())
-graph = [list(map(int, input())) for _ in range(n)]
+m, n, h = map(int, input().split())
+box = [[list(map(int, input().split())) for _ in range(n)] for _ in range(h)]
+queue = deque()
+
+dh = [0, 0, 0, 0, 1, -1]
+dx = [-1, 1, 0, 0, 0, 0]
+dy = [0, 0, -1, 1, 0, 0]
+
+for k in range(h):
+    for i in range(n):
+        for j in range(m):
+            if box[k][i][j] == 1:
+                queue.append((k, i, j))
+bfs()
+flag = 0
+max_num = -2
+for k in range(h):
+    for i in range(n):
+        for j in range(m):
+            if box[k][i][j] == 0:
+                flag = 1
+            max_num = max(max_num, box[k][i][j])
+
+if flag:
+    print(-1)
+else:
+    print(max_num - 1)
