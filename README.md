@@ -26,6 +26,7 @@
 - [Enum](./Swift/Enum.md)
 - [Closure](./Swift/Closure.md)
 - [Property](./Swift/Property.md)
+- [Property observer](./Swift/Property_observer.md)
 
 ## 🦢 SwiftUI
 
