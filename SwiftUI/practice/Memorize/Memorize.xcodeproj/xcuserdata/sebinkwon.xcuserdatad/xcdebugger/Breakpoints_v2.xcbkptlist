@@ -7,49 +7,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D2B87B73-D08E-4721-A123-34232FDEB9F2"
+            uuid = "467400FF-7137-4E17-B701-A23D53CF5AFC"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Memorize/ContentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "ContentView"
-            landmarkType = "14">
-            <Locations>
-               <Location
-                  uuid = "D2B87B73-D08E-4721-A123-34232FDEB9F2 - e820912557dbed83"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Memorize.ContentView.add.getter : some"
-                  moduleName = "Memorize"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sebinkwon/Desktop/developer/SwiftUI/Memorize/Memorize/ContentView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "48"
-                  endingLineNumber = "48"
-                  offsetFromSymbolStart = "56">
-               </Location>
-               <Location
-                  uuid = "D2B87B73-D08E-4721-A123-34232FDEB9F2 - 9aa49bc4704a8a8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in Memorize.ContentView.add.getter : some"
-                  moduleName = "Memorize"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sebinkwon/Desktop/developer/SwiftUI/Memorize/Memorize/ContentView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "49"
-                  endingLineNumber = "49"
-                  offsetFromSymbolStart = "52">
-               </Location>
-            </Locations>
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "body"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
