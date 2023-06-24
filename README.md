@@ -28,6 +28,7 @@
 - [Property](./Swift/Property.md)
 - [Property observer](./Swift/Property_observer.md)
 - [Inheritance](./Swift/Inheritance.md)
+- [Extension](./Swift/Extension.md)
 
 ## 🦢 SwiftUI
 
