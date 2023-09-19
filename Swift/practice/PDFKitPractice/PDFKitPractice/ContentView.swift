@@ -8,13 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
-    let pdfStore = PDFKitStore()
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationView {
+            VStack {
+                NavigationLink {
+                    WriteFormView()
+                } label: {
+                    Text("신청서 작성하기")
+                }
+                NavigationLink {
+                    PDFViewer()
+                } label: {
+                    Text("PDF 보기")
+                }.padding()
+            }
         }
     }
 }
