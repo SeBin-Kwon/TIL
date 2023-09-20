@@ -13,7 +13,7 @@
 		AE3B7A642AB8957200EB8F02 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE3B7A632AB8957200EB8F02 /* Preview Assets.xcassets */; };
 		AE3B7A6D2AB899D900EB8F02 /* form.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AE3B7A6C2AB899D900EB8F02 /* form.pdf */; };
 		AE57B9E62AB9B5C100F71B34 /* PDFViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE57B9E52AB9B5C100F71B34 /* PDFViewer.swift */; };
-		AE57B9E82AB9BED300F71B34 /* Utilites.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE57B9E72AB9BED300F71B34 /* Utilites.swift */; };
+		AE57B9E82AB9BED300F71B34 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE57B9E72AB9BED300F71B34 /* Utilities.swift */; };
 		AE57B9EA2AB9C02A00F71B34 /* WriteFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE57B9E92AB9C02A00F71B34 /* WriteFormView.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,7 +25,7 @@
 		AE3B7A632AB8957200EB8F02 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AE3B7A6C2AB899D900EB8F02 /* form.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = form.pdf; sourceTree = "<group>"; };
 		AE57B9E52AB9B5C100F71B34 /* PDFViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewer.swift; sourceTree = "<group>"; };
-		AE57B9E72AB9BED300F71B34 /* Utilites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilites.swift; sourceTree = "<group>"; };
+		AE57B9E72AB9BED300F71B34 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		AE57B9E92AB9C02A00F71B34 /* WriteFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteFormView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,7 +63,7 @@
 				AE3B7A5E2AB8957100EB8F02 /* ContentView.swift */,
 				AE57B9E92AB9C02A00F71B34 /* WriteFormView.swift */,
 				AE57B9E52AB9B5C100F71B34 /* PDFViewer.swift */,
-				AE57B9E72AB9BED300F71B34 /* Utilites.swift */,
+				AE57B9E72AB9BED300F71B34 /* Utilities.swift */,
 				AE3B7A6C2AB899D900EB8F02 /* form.pdf */,
 				AE3B7A602AB8957200EB8F02 /* Assets.xcassets */,
 				AE3B7A622AB8957200EB8F02 /* Preview Content */,
@@ -150,7 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE57B9E82AB9BED300F71B34 /* Utilites.swift in Sources */,
+				AE57B9E82AB9BED300F71B34 /* Utilities.swift in Sources */,
 				AE3B7A5F2AB8957100EB8F02 /* ContentView.swift in Sources */,
 				AE57B9EA2AB9C02A00F71B34 /* WriteFormView.swift in Sources */,
 				AE57B9E62AB9B5C100F71B34 /* PDFViewer.swift in Sources */,

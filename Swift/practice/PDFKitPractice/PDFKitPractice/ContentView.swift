@@ -17,7 +17,7 @@ struct ContentView: View {
                     Text("신청서 작성하기")
                 }
                 NavigationLink {
-                    PDFViewer()
+                    PDFViewer(documentURL: formURL)
                 } label: {
                     Text("PDF 보기")
                 }.padding()

@@ -9,15 +9,29 @@ import SwiftUI
 
 struct WriteFormView: View {
     @State var name = ""
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
-        TextField("이름을 작성하세요", text: $name)
-            .padding()
-            .background() {
-                Capsule()
-                    .stroke(lineWidth: 1)
-                    .foregroundColor(.gray)
+        VStack {
+            TextField("이름을 작성하세요", text: $name)
+                .padding()
+                .background() {
+                    Capsule()
+                        .stroke(lineWidth: 1)
+                        .foregroundColor(.gray)
+                }
+                .padding()
+            Button("완료") {
+                addText()
             }
-            .padding()
+        }
+    }
+    
+    func addText() {
+        if !name.isEmpty {
+            modifyPDF(documentURL: formURL, newText: name, at: CGRect(x: 150, y: 650, width: 140, height: 20))
+            presentationMode.wrappedValue.dismiss()
+        }
     }
 }
 
