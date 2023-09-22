@@ -7,15 +7,9 @@
 
 import Foundation
 
-struct Patient {
-    let id: UUID = UUID()
-    let name: String
-    let phoneNumber: String
-    let address: String
-    
-    init(name: String, phoneNumber: String, address: String) {
-        self.name = name
-        self.phoneNumber = phoneNumber
-        self.address = address
-    }
+struct FormQuestion: Identifiable {
+    let id = UUID()
+    var question: String
+    var answer: String
 }
+

@@ -8,40 +8,51 @@
 import SwiftUI
 
 struct WriteFormView: View {
-    @State var name = ""
-    @State var phoneNumber = ""
-    @State var address = ""
-    @EnvironmentObject var pdfManager: PDFManager
+    enum Step {
+        case one
+        case two
+    }
+    
     @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var pdfManager: PDFManager
+    @State var name = ""
+    @State var address = ""
+    @State var phoneNumber = ""
+    @State var idNumber = ""
+    @State var currentStep: Step = .one
+//    @State var formQuestions: [FormQuestion] = [
+//        FormQuestion(question: "이름", answer: ""),
+//        FormQuestion(question: "주민등록번호", answer: ""),
+//        FormQuestion(question: "주소", answer: ""),
+//        FormQuestion(question: "핸드폰 번호", answer: ""),
+//    ]
+    
     
     var body: some View {
         VStack {
-            TextField("이름을 작성하세요", text: $name)
-                .padding()
-                .background() {
-                    Capsule()
-                        .stroke(lineWidth: 1)
-                        .foregroundColor(.gray)
+            HStack {
+                Button("<") {
+                    currentStep = .one
+                }.padding()
+                Spacer()
+            }
+            switch currentStep {
+            case .one:
+                VStack {
+                    OnbomTextField(question: "이름",content: $name)
+                    OnbomTextField(question: "주민등록번호",content: $idNumber)
+                    Button("다음") {
+                        currentStep = .two
+                    }
                 }
-                .padding()
-//            TextField("핸드폰 번호를 작성하세요", text: $phoneNumber)
-//                .padding()
-//                .background() {
-//                    Capsule()
-//                        .stroke(lineWidth: 1)
-//                        .foregroundColor(.gray)
-//                }
-//                .padding()
-//            TextField("주소를 작성하세요", text: $address)
-//                .padding()
-//                .background() {
-//                    Capsule()
-//                        .stroke(lineWidth: 1)
-//                        .foregroundColor(.gray)
-//                }
-//                .padding()
-            Button("완료") {
-                addText()
+            case .two:
+                VStack {
+                    OnbomTextField(question: "주소",content: $address)
+                    OnbomTextField(question: "핸드폰 번호",content: $phoneNumber)
+                    Button("완료") {
+                        addText()
+                    }
+                }
             }
         }
     }

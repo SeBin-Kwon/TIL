@@ -8,13 +8,30 @@
 import SwiftUI
 
 struct QuestionView: View {
+    @State private var answer = ""
+    @Binding var formQuestion: [FormQuestion]
+    let question: FormQuestion
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text(question.question)
+                .padding()
+            
+            TextField("Enter your answer", text: $answer)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
+            
+            Spacer()
+        }
+        .padding()
+        //        .navigationBarTitle("Question", displayMode: .inline)
+        //        .navigationBarItems(trailing: Button("Submit") {
+        //            saveAnswer()
+        //        })
     }
 }
-
-struct QuestionView_Previews: PreviewProvider {
-    static var previews: some View {
-        QuestionView()
-    }
-}
+//struct QuestionView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        QuestionView()
+//    }
+//}

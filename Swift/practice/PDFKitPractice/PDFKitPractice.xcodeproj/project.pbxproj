@@ -17,6 +17,8 @@
 		AE57B9EA2AB9C02A00F71B34 /* WriteFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE57B9E92AB9C02A00F71B34 /* WriteFormView.swift */; };
 		AE57B9EC2ABC4D2F00F71B34 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE57B9EB2ABC4D2F00F71B34 /* Data.swift */; };
 		AE57B9F02ABC5D2D00F71B34 /* PDFManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE57B9EF2ABC5D2D00F71B34 /* PDFManager.swift */; };
+		AE57BA1B2ABD7A9500F71B34 /* TextFieldComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE57BA1A2ABD7A9500F71B34 /* TextFieldComponent.swift */; };
+		AE57BA1F2ABD81CF00F71B34 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE57BA1E2ABD81CF00F71B34 /* QuestionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		AE57B9E92AB9C02A00F71B34 /* WriteFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteFormView.swift; sourceTree = "<group>"; };
 		AE57B9EB2ABC4D2F00F71B34 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		AE57B9EF2ABC5D2D00F71B34 /* PDFManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFManager.swift; sourceTree = "<group>"; };
+		AE57BA1A2ABD7A9500F71B34 /* TextFieldComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldComponent.swift; sourceTree = "<group>"; };
+		AE57BA1E2ABD81CF00F71B34 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,8 +71,10 @@
 				AE57B9EB2ABC4D2F00F71B34 /* Data.swift */,
 				AE3B7A5E2AB8957100EB8F02 /* ContentView.swift */,
 				AE57B9E92AB9C02A00F71B34 /* WriteFormView.swift */,
+				AE57BA1E2ABD81CF00F71B34 /* QuestionView.swift */,
 				AE57B9EF2ABC5D2D00F71B34 /* PDFManager.swift */,
 				AE57B9E52AB9B5C100F71B34 /* PDFViewer.swift */,
+				AE57BA1A2ABD7A9500F71B34 /* TextFieldComponent.swift */,
 				AE57B9E72AB9BED300F71B34 /* Utilities.swift */,
 				AE3B7A6C2AB899D900EB8F02 /* form.pdf */,
 				AE3B7A602AB8957200EB8F02 /* Assets.xcassets */,
@@ -163,6 +169,8 @@
 				AE57B9EA2AB9C02A00F71B34 /* WriteFormView.swift in Sources */,
 				AE57B9E62AB9B5C100F71B34 /* PDFViewer.swift in Sources */,
 				AE3B7A5D2AB8957100EB8F02 /* PDFKitPracticeApp.swift in Sources */,
+				AE57BA1F2ABD81CF00F71B34 /* QuestionView.swift in Sources */,
+				AE57BA1B2ABD7A9500F71B34 /* TextFieldComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
