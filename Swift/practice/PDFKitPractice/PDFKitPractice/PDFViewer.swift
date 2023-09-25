@@ -7,7 +7,6 @@
 
 import SwiftUI
 import PDFKit
-import UIKit
 
 struct PDFViewer: UIViewRepresentable {
 //    let documentURL: URL
@@ -23,7 +22,7 @@ struct PDFViewer: UIViewRepresentable {
 //            pdfView.document = PDFDocument(url: self.documentURL)
             pdfView.document = PDFDocument(data: pdfData)
             pdfView.autoScales = true
-            pdfView.displayDirection = .horizontal
+//            pdfView.displayDirection = .horizontal
             pdfView.minScaleFactor = 0.6
             pdfView.maxScaleFactor = 5.0
         }

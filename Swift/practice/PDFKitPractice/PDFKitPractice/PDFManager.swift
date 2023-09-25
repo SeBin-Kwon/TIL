@@ -11,25 +11,27 @@ import PDFKit
 class PDFManager: ObservableObject {
     @Published var PDFDatas: [Data] = []
     
-    func addPDFData(_ pdfData: Data) {
-        PDFDatas.append(pdfData)
-        }
+//    func addPDFData(_ pdfData: Data) {
+//        PDFDatas.append(pdfData)
+//        }
     
-    func createPDF(documentURL: URL, newText: String, at rect: CGRect) {
+    func createPDF(documentURL: URL, newText: [String], at rect: [CGRect]) {
         guard let pdfDocument = PDFDocument(url: documentURL) else { return }
         
         if let firstPage = pdfDocument.page(at: 0) {
-            let textAnnotation = PDFAnnotation(bounds: rect, forType: .freeText, withProperties: nil)
-            textAnnotation.contents = newText
-            //        textAnnotation.font = UIFont.systemFont(ofSize: 12.0)
-            textAnnotation.font = UIFont(name: "Helvetica", size: 12.0)
-            textAnnotation.interiorColor = UIColor.clear
-            
-            firstPage.addAnnotation(textAnnotation)
+            for index in 0..<newText.count {
+                let textAnnotation = PDFAnnotation(bounds: rect[index], forType: .freeText, withProperties: nil)
+                textAnnotation.contents = newText[index]
+//                textAnnotation.font = UIFont.systemFont(ofSize: 12.0)
+                textAnnotation.font = UIFont(name: "Helvetica", size: 12.0)
+//                textAnnotation.color = .clear
+                firstPage.addAnnotation(textAnnotation)
+            }
         }
         
         guard let newData = pdfDocument.dataRepresentation() else { return }
-        addPDFData(newData)
+        PDFDatas.append(newData)
+//        addPDFData(newData)
         
         //    let newURL = 서버 URL이 들어갈 예정
         //    do {

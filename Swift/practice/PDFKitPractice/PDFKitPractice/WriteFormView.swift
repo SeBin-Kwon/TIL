@@ -19,7 +19,10 @@ struct WriteFormView: View {
     @State var address = ""
     @State var phoneNumber = ""
     @State var idNumber = ""
+    @State private var questionInputs: [String] = ["이름", "주민등록번호", "주소", "핸드폰 번호"]
+    @State private var answerInputs: [String] = Array(repeating: "", count: 4)
     @State var currentStep: Step = .one
+    let cgRectArray: [CGRect] = [CGRect(x: 150, y: 650, width: 140, height: 20),CGRect(x: 350, y: 650, width: 140, height: 20),CGRect(x: 150, y: 600, width: 140, height: 20),CGRect(x: 350, y: 565, width: 140, height: 20)]
 //    @State var formQuestions: [FormQuestion] = [
 //        FormQuestion(question: "이름", answer: ""),
 //        FormQuestion(question: "주민등록번호", answer: ""),
@@ -39,16 +42,22 @@ struct WriteFormView: View {
             switch currentStep {
             case .one:
                 VStack {
-                    OnbomTextField(question: "이름",content: $name)
-                    OnbomTextField(question: "주민등록번호",content: $idNumber)
+//                    OnbomTextField(question: "이름",content: $answerInputs[0])
+//                    OnbomTextField(question: "주민등록번호",content: $answerInputs[1])
+                    ForEach(0..<questionInputs.count - 2, id: \.self) { index in
+                        OnbomTextField(question: questionInputs[index],content: $answerInputs[index])
+                    }
                     Button("다음") {
                         currentStep = .two
                     }
                 }
             case .two:
                 VStack {
-                    OnbomTextField(question: "주소",content: $address)
-                    OnbomTextField(question: "핸드폰 번호",content: $phoneNumber)
+                    ForEach(2..<questionInputs.count, id: \.self) { index in
+                        OnbomTextField(question: questionInputs[index],content: $answerInputs[index])
+                    }
+//                    OnbomTextField(question: "주소",content: $answerInputs[2])
+//                    OnbomTextField(question: "핸드폰 번호",content: $answerInputs[3])
                     Button("완료") {
                         addText()
                     }
@@ -58,10 +67,9 @@ struct WriteFormView: View {
     }
     
     func addText() {
-        if !name.isEmpty {
-            pdfManager.createPDF(documentURL: formURL, newText: name, at: CGRect(x: 150, y: 650, width: 140, height: 20))
-            presentationMode.wrappedValue.dismiss()
-        }
+        guard !answerInputs.contains(where: { $0.isEmpty }) else { return }
+        pdfManager.createPDF(documentURL: formURL, newText: answerInputs, at: cgRectArray)
+        presentationMode.wrappedValue.dismiss()
     }
 }
 

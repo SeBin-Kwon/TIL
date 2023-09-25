@@ -12,6 +12,7 @@ struct PDFKitPracticeApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(PDFManager())
         }
     }
 }
