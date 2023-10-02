@@ -11,6 +11,7 @@
 		AEB33E892AC2C8CA0082A3E7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB33E882AC2C8CA0082A3E7 /* ContentView.swift */; };
 		AEB33E8B2AC2C8CC0082A3E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEB33E8A2AC2C8CC0082A3E7 /* Assets.xcassets */; };
 		AEB33E8E2AC2C8CC0082A3E7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEB33E8D2AC2C8CC0082A3E7 /* Preview Assets.xcassets */; };
+		AEB33E952AC2CF270082A3E7 /* DotsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB33E942AC2CF270082A3E7 /* DotsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		AEB33E882AC2C8CA0082A3E7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AEB33E8A2AC2C8CC0082A3E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AEB33E8D2AC2C8CC0082A3E7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AEB33E942AC2CF270082A3E7 /* DotsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				AEB33E862AC2C8CA0082A3E7 /* DynamicTypePracticeApp.swift */,
 				AEB33E882AC2C8CA0082A3E7 /* ContentView.swift */,
+				AEB33E942AC2CF270082A3E7 /* DotsView.swift */,
 				AEB33E8A2AC2C8CC0082A3E7 /* Assets.xcassets */,
 				AEB33E8C2AC2C8CC0082A3E7 /* Preview Content */,
 			);
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEB33E892AC2C8CA0082A3E7 /* ContentView.swift in Sources */,
+				AEB33E952AC2CF270082A3E7 /* DotsView.swift in Sources */,
 				AEB33E872AC2C8CA0082A3E7 /* DynamicTypePracticeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

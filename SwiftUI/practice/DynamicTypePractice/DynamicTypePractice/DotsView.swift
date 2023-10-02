@@ -8,8 +8,22 @@
 import SwiftUI
 
 struct DotsView: View {
+    let datas = Array(repeating: "f", count: 9)
+    let columns = [
+            GridItem(.adaptive(minimum: 100)),
+        ]
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text("A")
+                .font(.title)
+                .fontWeight(.black)
+//            Spacer()
+            LazyVGrid(columns: columns, spacing: 20) {
+                ForEach(datas, id: \.self) { data in
+                    Text(data)
+                }
+            }
+        }
     }
 }
 

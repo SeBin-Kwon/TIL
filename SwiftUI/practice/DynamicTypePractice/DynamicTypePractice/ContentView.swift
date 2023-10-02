@@ -9,13 +9,80 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationStack {
+            List {
+                Section {
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text("QR코드 스캔")
+                                .font(.title3)
+                                .fontWeight(.semibold)
+                                .padding(0.5)
+                            Text("결제, 본인확인, 로그인")
+                                .font(.callout)
+                                .foregroundColor(Color.gray)
+                        }
+                        Spacer()
+                        Image(systemName: "gear")
+                    }
+                    .padding(1)
+                }
+                Section {
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text("숫자코드 입력")
+                                .font(.title3)
+                                .fontWeight(.semibold)
+                                .padding(0.5)
+                            Text("결제, 본인확인, 로그인")
+                                .font(.callout)
+                                .foregroundColor(Color.gray)
+                        }
+                        Spacer()
+                        Image(systemName: "gear")
+                    }
+                    .padding(1)
+                }
+                Section {
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text("바코드 결제")
+                                .font(.title3)
+                                .fontWeight(.semibold)
+                                .padding(0.5)
+                            Text("결제, 본인확인, 로그인")
+                                .font(.callout)
+                                .foregroundColor(Color.gray)
+                        }
+                        Spacer()
+                        Image(systemName: "gear")
+                    }
+                    .padding(1)
+                }
+                Section {
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text("QR코드 스캔")
+                                .font(.title2)
+                                .bold()
+                                .padding(0.5)
+                            Text("결제, 본인확인, 로그인")
+                                .font(.callout)
+                                .foregroundColor(Color.secondary)
+                        }
+                        Spacer()
+                        Image(systemName: "gear")
+                    }
+                    .padding(1)
+                }
+            }
+            .navigationTitle("Card")
+            .toolbar {
+                Image(systemName: "gear")
+                    .foregroundColor(.gray)
+            }
         }
-        .padding()
+        
     }
 }
 
