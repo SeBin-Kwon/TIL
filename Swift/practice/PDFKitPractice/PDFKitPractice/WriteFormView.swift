@@ -15,20 +15,13 @@ struct WriteFormView: View {
     
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var pdfManager: PDFManager
-    @State var name = ""
-    @State var address = ""
-    @State var phoneNumber = ""
-    @State var idNumber = ""
-    @State private var questionInputs: [String] = ["이름", "주민등록번호", "주소", "핸드폰 번호"]
-    @State private var answerInputs: [String] = Array(repeating: "", count: 4)
+    @EnvironmentObject var dictClass: DictClass
+ 
+    @State private var patientQuestionInputs: [String] = ["신청인 성명", "신청인 주민등록번호", "신청인 주민등록지", "신청인 실제 거주지", "신청인 전화번호"]
+    @State private var agentQuestionInputs: [String] = ["대리인 성명", "대리인 주민등록번호", "대리인 주소", "대리인 전화번호", "대리인 유형"]
+    @State private var patientAnswerInputs: [String] = ["김순옥", "370627-2345678", "경기 성남시 분당구 판교역로 4 (백현동) 행복아파트 104호 310호", "경기 성남시 분당구 판교역로 4 (백현동) 행복아파트 104호 310호", "010-2918-3515"]
+    @State private var agentAnswerInputs: [String] = ["김유진", "901203-2345678", "경기 성남시 분당구 서현로 237번길 27 (서현동) 403동 130호", "010-1234-5678", "친족"]
     @State var currentStep: Step = .one
-    let cgRectArray: [CGRect] = [CGRect(x: 150, y: 650, width: 140, height: 20),CGRect(x: 350, y: 650, width: 140, height: 20),CGRect(x: 150, y: 600, width: 140, height: 20),CGRect(x: 350, y: 565, width: 140, height: 20)]
-//    @State var formQuestions: [FormQuestion] = [
-//        FormQuestion(question: "이름", answer: ""),
-//        FormQuestion(question: "주민등록번호", answer: ""),
-//        FormQuestion(question: "주소", answer: ""),
-//        FormQuestion(question: "핸드폰 번호", answer: ""),
-//    ]
     
     
     var body: some View {
@@ -42,19 +35,26 @@ struct WriteFormView: View {
             switch currentStep {
             case .one:
                 VStack {
-//                    OnbomTextField(question: "이름",content: $answerInputs[0])
+                    OnbomTextField(question: "이름",content: $dictClass.name)
+                    OnbomTextField(question: "핸폰",content: $dictClass.phoneNumber)
+                    OnbomTextField(question: "민증",content: $dictClass.idCard)
+                    OnbomTextField(question: "주소",content: $dictClass.adress)
+                    OnbomTextField(question: "실주소",content: $dictClass.realAdress)
 //                    OnbomTextField(question: "주민등록번호",content: $answerInputs[1])
-                    ForEach(0..<questionInputs.count - 2, id: \.self) { index in
-                        OnbomTextField(question: questionInputs[index],content: $answerInputs[index])
-                    }
+//                    OnbomTextField(question: "핸폰",content: $answerInputs[0])
+//                    OnbomTextField(question: "주소",content: $answerInputs[1])
+//                    OnbomTextField(question: "실주소",content: $answerInputs[1])
+//                    ForEach(0..<patientQuestionInputs.count, id: \.self) { index in
+//                        OnbomTextField(question: patientQuestionInputs[index],content: $patientAnswerInputs[index])
+//                    }
                     Button("다음") {
                         currentStep = .two
                     }
                 }
             case .two:
                 VStack {
-                    ForEach(2..<questionInputs.count, id: \.self) { index in
-                        OnbomTextField(question: questionInputs[index],content: $answerInputs[index])
+                    ForEach(0..<agentQuestionInputs.count, id: \.self) { index in
+                        OnbomTextField(question: agentQuestionInputs[index],content: $agentAnswerInputs[index])
                     }
 //                    OnbomTextField(question: "주소",content: $answerInputs[2])
 //                    OnbomTextField(question: "핸드폰 번호",content: $answerInputs[3])
@@ -67,8 +67,11 @@ struct WriteFormView: View {
     }
     
     func addText() {
-        guard !answerInputs.contains(where: { $0.isEmpty }) else { return }
-        pdfManager.createPDF(documentURL: formURL, newText: answerInputs, at: cgRectArray)
+//        guard !answerInputs.contains(where: { $0.isEmpty }) else { return }
+//        pdfManager.createPDF(documentURL: formURL, patientNewText: patientAnswerInputs, agentNewText:agentAnswerInputs)
+        dictClass.updateDictionary()
+        pdfManager.createPDF(documentURL: formURL, patientNewText: dictClass.patientDictionary, agentNewText:dictClass.agentDictionary)
+        
         presentationMode.wrappedValue.dismiss()
     }
 }
@@ -76,5 +79,6 @@ struct WriteFormView: View {
 struct WriteFormView_Previews: PreviewProvider {
     static var previews: some View {
         WriteFormView()
+            .environmentObject(DictClass())
     }
 }

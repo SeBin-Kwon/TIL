@@ -18,7 +18,9 @@
 		AE57B9EC2ABC4D2F00F71B34 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE57B9EB2ABC4D2F00F71B34 /* Data.swift */; };
 		AE57B9F02ABC5D2D00F71B34 /* PDFManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE57B9EF2ABC5D2D00F71B34 /* PDFManager.swift */; };
 		AE57BA1B2ABD7A9500F71B34 /* TextFieldComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE57BA1A2ABD7A9500F71B34 /* TextFieldComponent.swift */; };
-		AE57BA1F2ABD81CF00F71B34 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE57BA1E2ABD81CF00F71B34 /* QuestionView.swift */; };
+		AE70A42A2ADFF8F10006125E /* LTCIForm.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AE70A4292ADFF8F10006125E /* LTCIForm.pdf */; };
+		AE71D52A2AE00AE500CE9214 /* DictPracticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE71D5292AE00AE500CE9214 /* DictPracticeView.swift */; };
+		AEB33EB12ACFEE4D0082A3E7 /* FindStringTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB33EB02ACFEE4D0082A3E7 /* FindStringTestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,7 +36,9 @@
 		AE57B9EB2ABC4D2F00F71B34 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		AE57B9EF2ABC5D2D00F71B34 /* PDFManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFManager.swift; sourceTree = "<group>"; };
 		AE57BA1A2ABD7A9500F71B34 /* TextFieldComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldComponent.swift; sourceTree = "<group>"; };
-		AE57BA1E2ABD81CF00F71B34 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
+		AE70A4292ADFF8F10006125E /* LTCIForm.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = LTCIForm.pdf; sourceTree = "<group>"; };
+		AE71D5292AE00AE500CE9214 /* DictPracticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictPracticeView.swift; sourceTree = "<group>"; };
+		AEB33EB02ACFEE4D0082A3E7 /* FindStringTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindStringTestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,12 +74,14 @@
 				AE3B7A5C2AB8957100EB8F02 /* PDFKitPracticeApp.swift */,
 				AE57B9EB2ABC4D2F00F71B34 /* Data.swift */,
 				AE3B7A5E2AB8957100EB8F02 /* ContentView.swift */,
+				AEB33EB02ACFEE4D0082A3E7 /* FindStringTestView.swift */,
 				AE57B9E92AB9C02A00F71B34 /* WriteFormView.swift */,
-				AE57BA1E2ABD81CF00F71B34 /* QuestionView.swift */,
 				AE57B9EF2ABC5D2D00F71B34 /* PDFManager.swift */,
 				AE57B9E52AB9B5C100F71B34 /* PDFViewer.swift */,
 				AE57BA1A2ABD7A9500F71B34 /* TextFieldComponent.swift */,
 				AE57B9E72AB9BED300F71B34 /* Utilities.swift */,
+				AE71D5292AE00AE500CE9214 /* DictPracticeView.swift */,
+				AE70A4292ADFF8F10006125E /* LTCIForm.pdf */,
 				AE3B7A6C2AB899D900EB8F02 /* form.pdf */,
 				AE3B7A602AB8957200EB8F02 /* Assets.xcassets */,
 				AE3B7A622AB8957200EB8F02 /* Preview Content */,
@@ -149,6 +155,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE70A42A2ADFF8F10006125E /* LTCIForm.pdf in Resources */,
 				AE3B7A642AB8957200EB8F02 /* Preview Assets.xcassets in Resources */,
 				AE3B7A612AB8957200EB8F02 /* Assets.xcassets in Resources */,
 				AE3B7A6D2AB899D900EB8F02 /* form.pdf in Resources */,
@@ -164,13 +171,14 @@
 			files = (
 				AE57B9E82AB9BED300F71B34 /* Utilities.swift in Sources */,
 				AE57B9F02ABC5D2D00F71B34 /* PDFManager.swift in Sources */,
+				AE71D52A2AE00AE500CE9214 /* DictPracticeView.swift in Sources */,
 				AE57B9EC2ABC4D2F00F71B34 /* Data.swift in Sources */,
 				AE3B7A5F2AB8957100EB8F02 /* ContentView.swift in Sources */,
 				AE57B9EA2AB9C02A00F71B34 /* WriteFormView.swift in Sources */,
 				AE57B9E62AB9B5C100F71B34 /* PDFViewer.swift in Sources */,
 				AE3B7A5D2AB8957100EB8F02 /* PDFKitPracticeApp.swift in Sources */,
-				AE57BA1F2ABD81CF00F71B34 /* QuestionView.swift in Sources */,
 				AE57BA1B2ABD7A9500F71B34 /* TextFieldComponent.swift in Sources */,
+				AEB33EB12ACFEE4D0082A3E7 /* FindStringTestView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

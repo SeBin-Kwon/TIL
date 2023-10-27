@@ -13,6 +13,7 @@ struct PDFKitPracticeApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(PDFManager())
+                .environmentObject(DictClass())
         }
     }
 }
