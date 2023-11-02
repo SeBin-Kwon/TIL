@@ -11,6 +11,7 @@
 		AE754D022AF3C04C00E0EDD4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE754D012AF3C04C00E0EDD4 /* ContentView.swift */; };
 		AE754D042AF3C04D00E0EDD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE754D032AF3C04D00E0EDD4 /* Assets.xcassets */; };
 		AE754D072AF3C04D00E0EDD4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE754D062AF3C04D00E0EDD4 /* Preview Assets.xcassets */; };
+		AE754D0E2AF3C12100E0EDD4 /* MainAlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE754D0D2AF3C12100E0EDD4 /* MainAlarmView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		AE754D012AF3C04C00E0EDD4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AE754D032AF3C04D00E0EDD4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE754D062AF3C04D00E0EDD4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AE754D0D2AF3C12100E0EDD4 /* MainAlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAlarmView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +54,7 @@
 			isa = PBXGroup;
 			children = (
 				AE754CFF2AF3C04C00E0EDD4 /* AlarmApp.swift */,
+				AE754D0D2AF3C12100E0EDD4 /* MainAlarmView.swift */,
 				AE754D012AF3C04C00E0EDD4 /* ContentView.swift */,
 				AE754D032AF3C04D00E0EDD4 /* Assets.xcassets */,
 				AE754D052AF3C04D00E0EDD4 /* Preview Content */,
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE754D022AF3C04C00E0EDD4 /* ContentView.swift in Sources */,
+				AE754D0E2AF3C12100E0EDD4 /* MainAlarmView.swift in Sources */,
 				AE754D002AF3C04C00E0EDD4 /* AlarmApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
