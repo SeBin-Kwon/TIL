@@ -1,25 +1,24 @@
 //
-//  AddAlarmView.swift
+//  EditAlarmView.swift
 //  Alarm
 //
-//  Created by Sebin Kwon on 11/4/23.
+//  Created by Sebin Kwon on 11/6/23.
 //
 
 import SwiftUI
 
-
-struct AddAlarmView: View {
+struct EditAlarmView: View {
     @EnvironmentObject var viewModel: AlarmViewModel
-    @Binding var isAdd: Bool
+    @Binding var alarm: Alarm?
+    @Binding var isEdit: Bool
     @State private var lable = ""
     @State private var isRestart = true
-    @State private var currentTime = Date()
+    @State private var newTime = Date()
     var body: some View {
         NavigationStack {
-            DatePicker("", selection: $currentTime, displayedComponents: .hourAndMinute)
+            DatePicker("", selection: $newTime, displayedComponents: .hourAndMinute)
                         .labelsHidden()
                         .datePickerStyle(WheelDatePickerStyle())
-            
             List {
                 NavigationLink {
                     RepeatWeekView()
@@ -51,52 +50,34 @@ struct AddAlarmView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button("취소") {
-                        isAdd = false
+                        isEdit = false
                     }
                 }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("저장") {
-                        addAlarm()
+                        UpdateAlarm()
                     }
                 }
                 
             }
         }
-
-    }
-    
-    private func addAlarm() {
-        if lable == "" {
-            lable = "알람"
-        }
-        viewModel.createAlarm(repeatWeek: nil, lable: lable, time: currentTime, sound: nil, isRestart: isRestart)
-        isAdd = false
-    }
-}
-
-struct RepeatWeekView: View {
-    @EnvironmentObject var viewModel: AlarmViewModel
-    @State private var isSelected: [Bool] = Array(repeating: false, count: 7)
-    var body: some View {
-        List {
-            ForEach(RepeatWeek.allCases, id: \.self) { item in
-                HStack {
-                    Text(item.rawValue)
-                    Spacer()
-                }
+        .onAppear {
+            if let alarm {
+                lable = alarm.lable
+                isRestart = alarm.isRestart
+                newTime = alarm.time
             }
         }
     }
-}
-
-struct SoundView: View {
-    @EnvironmentObject var viewModel: AlarmViewModel
-    var body: some View {
-        Text("안녕")
-    }
+    
+        private func UpdateAlarm() {
+            alarm?.lable = lable
+            alarm?.isRestart = isRestart
+            alarm?.time = newTime
+            isEdit = false
+        }
 }
 
 #Preview {
-    AddAlarmView(isAdd: .constant(true))
-        .environmentObject(AlarmViewModel())
+    EditAlarmView(alarm: .constant(Alarm()), isEdit: .constant(true))
 }

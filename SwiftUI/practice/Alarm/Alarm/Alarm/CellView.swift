@@ -12,34 +12,69 @@ struct Cell: View {
         case basic
         case etc
     }
+   
     var type: CellType
-    var time = "오전 10:35"
-    var lable = "레이블"
-    @Binding var isOn : Bool
-    
+    @State var alarm: Alarm?
+    @State var isOn = true
+    @State var isEdit = false
+
     var body: some View {
         switch type {
         case .basic:
             VStack(alignment: .leading) {
                 HStack {
-                    Text(time)
-                    Toggle("온오프", isOn: $isOn)
+                    Text("알람 없음")
+                        .font(.title)
+                    Spacer()
+                    Button {} label: {
+                        Text("변경")
+                            .padding(5)
+                            .background {
+                                Capsule()
+                                    .foregroundStyle(.gray)
+                            }
+                    }
+                       
                 }
-                Text(lable)
+                Text("내일 아침")
             }
         default:
-            VStack(alignment: .leading) {
-                HStack {
-                    Text(time)
-                    Toggle("온오프", isOn: $isOn)
+            if let alarm {
+                VStack(alignment: .leading) {
+                    HStack {
+                        Text(dateFormatter(date: alarm.time))
+                            .font(.title)
+                        Toggle("", isOn: $isOn)
+                    }
+                    Text(alarm.lable)
                 }
-                Text("etc")
+                .background {
+                    Rectangle().foregroundStyle(Color.black)
+                        .onTapGesture {
+                            isEdit.toggle()
+                        }
+                }
+                .sheet(isPresented: $isEdit) {
+                    EditAlarmView(alarm: $alarm, isEdit: $isEdit)
+                }
             }
         }
-        
+    }
+    
+    func dateFormatter(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "a h:mm"
+        let dateFormat = dateFormatter.string(from: date)
+        return dateFormat
     }
 }
 
+
+
 #Preview {
-    Cell(type: .basic, isOn: .constant(false))
+    VStack {
+        Cell(type: .basic)
+        Cell(type: .etc, alarm: Alarm())
+    }
+    .environmentObject(AlarmViewModel())
 }

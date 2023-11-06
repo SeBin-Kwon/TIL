@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE3921752AF86A9C00239FD8 /* EditAlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3921742AF86A9C00239FD8 /* EditAlarmView.swift */; };
 		AE754D002AF3C04C00E0EDD4 /* AlarmApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE754CFF2AF3C04C00E0EDD4 /* AlarmApp.swift */; };
 		AE754D022AF3C04C00E0EDD4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE754D012AF3C04C00E0EDD4 /* ContentView.swift */; };
 		AE754D042AF3C04D00E0EDD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE754D032AF3C04D00E0EDD4 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AE3921742AF86A9C00239FD8 /* EditAlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAlarmView.swift; sourceTree = "<group>"; };
 		AE754CFC2AF3C04C00E0EDD4 /* Alarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE754CFF2AF3C04C00E0EDD4 /* AlarmApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmApp.swift; sourceTree = "<group>"; };
 		AE754D012AF3C04C00E0EDD4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 				AE754D0D2AF3C12100E0EDD4 /* AlarmView.swift */,
 				AE754D132AF63E4400E0EDD4 /* CellView.swift */,
 				AE754D112AF63E2600E0EDD4 /* AddAlarmView.swift */,
+				AE3921742AF86A9C00239FD8 /* EditAlarmView.swift */,
 				AE754D0F2AF50CB600E0EDD4 /* AlarmModel.swift */,
 				AE754D032AF3C04D00E0EDD4 /* Assets.xcassets */,
 				AE754D052AF3C04D00E0EDD4 /* Preview Content */,
@@ -151,6 +154,7 @@
 			files = (
 				AE754D122AF63E2600E0EDD4 /* AddAlarmView.swift in Sources */,
 				AE754D022AF3C04C00E0EDD4 /* ContentView.swift in Sources */,
+				AE3921752AF86A9C00239FD8 /* EditAlarmView.swift in Sources */,
 				AE754D142AF63E4400E0EDD4 /* CellView.swift in Sources */,
 				AE754D102AF50CB600E0EDD4 /* AlarmModel.swift in Sources */,
 				AE754D0E2AF3C12100E0EDD4 /* AlarmView.swift in Sources */,
@@ -296,6 +300,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -325,6 +330,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

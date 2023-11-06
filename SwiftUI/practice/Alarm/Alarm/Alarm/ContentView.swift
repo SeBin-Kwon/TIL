@@ -15,51 +15,35 @@ enum SelectedTab {
 }
 
 struct ContentView: View {
+    @StateObject private var viewModel = AlarmViewModel()
     @State private var selection = SelectedTab.alarm
-    @State private var isAddAlarm = false
-    
+
     var body: some View {
         NavigationStack {
             TabView(selection: $selection) {
                 Text("세계 시계")
                     .tabItem {
-                        Image(systemName: "2.square.fill")
+                        Image(systemName: "globe")
                         Text("세계 시계")
                     }.tag(SelectedTab.worldClock)
-                AlarmView(selection: $selection, isAdd: $isAddAlarm)
+                AlarmView(selection: $selection)
                     .tabItem {
-                        Image(systemName: "1.square.fill")
+                        Image(systemName: "alarm.fill")
                         Text("알람")
                     }.tag(SelectedTab.alarm)
+                    .environmentObject(viewModel)
                 Text("스톱워치")
                     .tabItem {
-                        Image(systemName: "2.square.fill")
+                        Image(systemName: "stopwatch.fill")
                         Text("스톱워치")
                     }.tag(SelectedTab.stopWatch)
                 Text("타이머")
                     .tabItem {
-                        Image(systemName: "3.square.fill")
+                        Image(systemName: "timer")
                         Text("타이머")
                     }.tag(SelectedTab.timer)
             }
             .navigationTitle(selection == .alarm ? "알람" : "")
-            .padding()
-            .toolbar {
-                if selection == .alarm {
-                    ToolbarItemGroup(placement: .topBarLeading) {
-                        Button("편집") {
-                            print("tap first button")
-                        }
-                    }
-                    ToolbarItemGroup(placement: .topBarTrailing) {
-                        Button {
-                            isAddAlarm.toggle()
-                        } label: {
-                            Label("Add a Alarm", systemImage: "plus")
-                        }
-                    }
-                }
-            }
         }
     }
 }
