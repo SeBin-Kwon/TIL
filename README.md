@@ -33,7 +33,7 @@
 ## 🦢 SwiftUI
 
 - [SwiftUI practice](./SwiftUI/practice)
-- [@StateObject](./SwiftUI/@StateObject)
+- [@StateObject](./SwiftUI/@StateObject.md)
 
 ## 👚 HTML / CSS
 
