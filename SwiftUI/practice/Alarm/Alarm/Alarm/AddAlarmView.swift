@@ -34,8 +34,6 @@ struct AddAlarmView: View {
                     Text("레이블")
                     TextField("알람", text: $lable)
                         .multilineTextAlignment(.trailing)
-//                        .fixedSize()
-//                        .border(.pink)
                 }
                 NavigationLink {
                     SoundView()
