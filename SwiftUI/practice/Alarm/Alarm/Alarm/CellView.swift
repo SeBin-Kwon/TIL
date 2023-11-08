@@ -13,7 +13,7 @@ struct Cell: View {
         case etc
     }
    
-    var type: CellType
+    let type: CellType
     @State var alarm: Alarm?
     @State var isOn = true
     @State var isEdit = false
@@ -32,6 +32,7 @@ struct Cell: View {
                             .background {
                                 Capsule()
                                     .foregroundStyle(.gray)
+                                    .opacity(0.4)
                             }
                     }
                        

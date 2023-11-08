@@ -25,7 +25,7 @@ struct Alarm: Identifiable {
     var isRestart = true
 }
 
-enum RepeatWeek: String, CaseIterable, Hashable {
+enum RepeatWeek: String, CaseIterable {
     case 일요일마다
     case 월요일마다
     case 화요일마다
