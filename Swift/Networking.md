@@ -7,7 +7,7 @@ HTML: HyperText Markup Language
 
 **HTTP: HyperText Transfer Protocol**
 하이퍼 문서를 전송하는 것에서 시작, 모든 형태의 데이터 전송가능
-==**인터넷의 모든 것은 HTTP로 이루어져있다.**==
+인터넷의 모든 것은 HTTP로 이루어져있다.
 HTTP 1.1 여전히 현재도 사용
 
 #### APP
@@ -32,16 +32,6 @@ HTTP 보안 과정 필요함
 
 클라이언트 Request(요청) - **query** ->
  <- Response(응답) 서버 - **data**
-
-### HTTP 메시지 형태
-#### HTTP 요청 메세지
-시작라인 - GET, POST .. 메소드, 요청대상, HTTP 버전
-header(헤더 필드) - 부가 정보
-message body(메세지 본문) - 실제 전송할 데이터
-#### HTTP 응답 메세지
-시작라인 - HTTP 버전, 상태코드, 문구
-header(헤더 필드) - 부가 정보
-message body(메세지 본문) - 실제 전송할 데이터
 
 ## HTTP 프로토콜 요청 메소드
 - **GET** - 조회 (게시글 읽어오기)
@@ -113,3 +103,6 @@ session.dataTask(with: structUrl) { data, response, error in
 ```
 
 - **세션**: 브라우저에서 서버와 연결된 탭, 연결된 상태
+
+
+
