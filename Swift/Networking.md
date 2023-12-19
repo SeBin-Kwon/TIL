@@ -106,3 +106,34 @@ session.dataTask(with: structUrl) { data, response, error in
 
 
 
+## JSON Parsing
+
+> https://app.quicktype.io/
+
+위 사이트에서 알아서 JSON 데이터를 Swift 코드로 변환해준다. 그 코드를 그냥 복붙해서 사용하면 된다. -> 서버에서 받아온 데이터
+
+서버에서 받아온 데이터를 **쓰기 좋게 변환하는 과정이 필요하다.**
+
+```swift
+func parseJSON1(_ movieData: Data) -> [DailyBoxOfficeList]? {
+    do {
+        let decoder = JSONDecoder()
+        let decodedData = try decoder.decode(MovieData.self, from: movieData)
+        return decodedData.boxOfficeResult.dailyBoxOfficeList
+    } catch {
+        return nil
+    }
+}
+```
+
+- `JSONDecoder()` : JSON 데이터를 코드로 변형해준다.
+- MovieData 형식으로 decode 한 후, dailyBoxOfficeList를 리턴한다.
+
+
+
+
+
+
+
+
+
