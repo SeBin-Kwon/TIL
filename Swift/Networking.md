@@ -112,7 +112,29 @@ session.dataTask(with: structUrl) { data, response, error in
 
 위 사이트에서 알아서 JSON 데이터를 Swift 코드로 변환해준다. 그 코드를 그냥 복붙해서 사용하면 된다. -> 서버에서 받아온 데이터
 
-서버에서 받아온 데이터를 **쓰기 좋게 변환하는 과정이 필요하다.**
+```swift
+struct MovieData: Codable {
+    let boxOfficeResult: BoxOfficeResult
+}
+
+// MARK: - BoxOfficeResult
+struct BoxOfficeResult: Codable {
+    let dailyBoxOfficeList: [DailyBoxOfficeList]
+}
+
+// MARK: - DailyBoxOfficeList
+struct DailyBoxOfficeList: Codable {
+    let rank: String
+    let movieNm: String
+    let audiCnt: String
+    let audiAcc: String
+    let openDt: String
+}
+```
+
+
+
+위와 같은 서버에서 받아온 데이터를 **쓰기 좋게 변환하는 과정이 필요하다.**
 
 ```swift
 func parseJSON1(_ movieData: Data) -> [DailyBoxOfficeList]? {
@@ -126,10 +148,30 @@ func parseJSON1(_ movieData: Data) -> [DailyBoxOfficeList]? {
 }
 ```
 
-- `JSONDecoder()` : JSON 데이터를 코드로 변형해준다.
+- `JSONDecoder()` : JSON 데이터를 분석하고 코드로 변형해준다.
 - MovieData 형식으로 decode 한 후, dailyBoxOfficeList를 리턴한다.
+- decoder의 `decode` 메소드는 에러를 내보낼 수 있기 때문에 앞에 `try`를 붙여야 하고 `try`를 캐치하기 위해선 `do-catch` 블록을 사용해야한다.
 
 
+
+### Codable
+
+> Decodable 프로토콜과 Encodable 프로토콜 둘 다 채택하고 있는 프로토콜이다.
+
+JSONDecoder를 사용하려면 Decodable 프로토콜을 채택해야한다.
+
+
+
+이제 `parseJSON1` 함수를 `session.dataTask(with: structUrl)` 안에서 사용해주면 된다.
+
+```swift
+guard let safeData = data else {
+  return
+}
+var movieArray = parseJSON1(safeData)
+dump(movieArray!)
+// print보다 더 보기 좋게, 자세히 출력해준다.
+```
 
 
 
