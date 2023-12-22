@@ -103,6 +103,9 @@ session.dataTask(with: structUrl) { data, response, error in
 ```
 
 - **세션**: 브라우저에서 서버와 연결된 탭, 연결된 상태
+- 위 코드는 비동기적으로 동작하므로, 함수로 만들 때 콜백 함수 형태로 설계해야 한다.
+  - `func performRequest(with urlString: String, completion: @escaping([Movie]?) -> Void)`
+
 
 
 
@@ -173,9 +176,5 @@ dump(movieArray!)
 // print보다 더 보기 좋게, 자세히 출력해준다.
 ```
 
-
-
-
-
-
+`print(#function)` -> 함수 이름을 출력해준다.
 
