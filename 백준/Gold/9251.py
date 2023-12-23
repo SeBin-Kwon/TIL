@@ -17,3 +17,6 @@ for i in range(a_len):
         elif a[i] == b[j]:
             answer[j] = cnt + 1
 print(max(answer))
+
+# 동적 계획법 
+# 누적합
