@@ -140,3 +140,168 @@ extension Person: Certificate {
 
 
 
+## 프로토콜은 타입이다.
+> 스위프트는 프로토콜을 **일급 객체**로 취급
+> **일급 객체** -> **타입으로 사용 가능하다는 의미**
+
+- 프로토콜을 변수에 할당 가능
+- 함수 호출할 때, 프로토콜을 파라미터로 전달 가능
+- 함수에서 프로토콜로 반환 가능
+
+```swift
+protocol Remote {
+    func turnOn()
+    func turnOff()
+}
+struct SetTopBox: Remote {
+    func turnOn() {
+        print("셋톱박스켜기")
+    }
+    
+    func turnOff() {
+        print("셋톱박스끄기")
+    }
+    
+    func doNetflix() {
+        print("넷플릭스 하기")
+    }
+}
+let sbox = SetTopBox()
+sbox.turnOn()
+sbox.turnOff()
+//sbox.doNetflix() // 사용할 수 없음
+```
+
+프로토콜로 업캐스팅이 가능하지만 그러면 **프로토콜이 가진 메서드만 호출 가능**
+
+
+
+### 프로토콜 타입 취급의 장점
+1. 공통된 타입으로 쓸 수 있음.
+1. 파라미터로 사용 가능
+3. is, as 연산자 사용 가능
+   - `is` : 타입 체크, 동일한 타입 혹은 서브클래스인 경우 `true`
+   - `as` : 업 캐스팅 or 다운 캐스팅
+
+```swift
+let electronic: [Remote] = [tv, sbox]
+func turnOnSomeElectronics(item: Remote) {
+    item.turnOn()
+}
+electronic[0] is TV // true
+let sbox2: SetTopBox? = electronic[1] as? SetTopBox
+sbox2?.doNetflix()
+```
+
+
+
+### 프로토콜의 상속
+
+- 프로토콜 간에 상속이 가능
+- 다중 상속 가능
+
+```swift
+protocol SuperRemoteProtocol: Remote, AirConRemote {
+    // func turnOn()     // 채택한 프로토콜 요구사항 모두 상속 받음 
+    // func turnOff()
+    // func Up()
+    // func Down()
+    func doSomething()
+}
+```
+
+
+
+### 클래스 전용 프로토콜
+> `AnyObject`프로토콜을 상속함으로써 **클래스 전용 프로토콜로 선언 가능**
+- `AnyObject` : 어떤 **클래스** 타입의 인스턴스도 표현할 수 있는 프로토콜 타입
+
+
+
+### 프로토콜 합성
+> 프로토콜을 합성하여 임시 타입으로 활용 가능
+- `&`를 사용하여 연결함.
+
+```swift
+func wishHappyBirthday(to celebrator: Named & Aged) {  // 임시 타입으로 인식
+    print("생일축하해, \(celebrator.name), 넌 이제 \(celebrator.age)살이 되었구나!")
+}
+```
+
+
+
+### 프로토콜의 선택적 요구사항의 구현 (Optional Protocol Requirements)
+> 요구사항 구현을 해도 되고 안해도 됨.
+- 어트리뷰트 (Attribute)
+	- `@available, @objc, @escaping, @IBOutlet, @IBAction 등등`
+	- 1. 선언에 대한 추가정보 제공 `@available`
+	- 2. 타입에 대한 추가정보 제공 `@escaping`
+
+### 선택적인 멤버 선언하기
+```swift
+@objc protocol Remote {
+    @objc optional var isOn: Bool { get set }
+    func turnOn()
+    func turnOff()
+    @objc optional func doNeflix()
+}
+```
+- 프로토콜 앞에 `@objc` 키워드를 붙여야함.
+	- `@objc`: Objective-C에서도 사용할 수 있게 하는 어트리뷰트
+- 속성이나 메서드 앞에 `@objc optional` 키워드를 붙여야함.
+- **클래스 전용 프로토콜임**
+	- Objective-C는 구조체나 열거형에서 프로토콜 채택을 지원하지 않음.
+
+
+
+## 프로토콜의 확장 (Protocol Extension)
+### 기존 문제점
+> 프로토콜을 반복해서 구현해야 하는 불편함이 있음.
+```swift
+protocol Remote {
+    func turnOn()
+    func turnOff()
+}
+class TV1: Remote {
+    func turnOn() { print("리모콘 켜기") }
+    func turnOff() { print("리모콘 끄기") }
+}
+struct Aircon1: Remote {
+    func turnOn() { print("리모콘 켜기") }
+    func turnOff() { print("리모콘 끄기") }
+}
+```
+
+### 프로토콜 확장
+> 기본(디폴트) 구현 제공 -> 코드 중복을 피할 수 있음
+```swift
+extension Remote {
+    func turnOn() { print("리모콘 켜기") }    
+    func turnOff() { print("리모콘 끄기") }   
+    func doAnotherAction() {               
+        print("TV 또 다른 동작") 
+    }
+}
+class TV1: Remote {
+    func turnOn() { print("TV 켜기") }
+    func doAnotherAction() { print("리모콘 또 다른 동작") }
+}
+var tv1 = TV1()
+tv1.turnOn() // TV 켜기
+tv1.turnff() // 리모콘 끄기
+tv1.doAnotherAction() // TV 또 다른 동작
+
+var tv2: Remote = TV1()
+tv2.doAnotherAction() // 리모콘 또 다른 동작
+```
+- 요구사항의 메서드도 구현하고 확장으로 기본 메서드도 구현했다면?
+	- **1. 본체의 요구사항 메서드 -> 2. 기본 메서드** 순으로 적용
+- 요구사항은 아니지만 본체와 확장 둘다 같은 메서드를 구현했다면?
+	- **인스턴스의 타입에 따라 달라짐**
+
+### 프로토콜의 확장을 통한 다형성 제공 - 프로토콜 지향 프로그래밍
+**다형성:** 객체지향 프로그래밍에서의 중요한 개념으로, 여러 타입이나 객체가 동일한 인터페이스를 통해 동작할 수 있는 능력을 의미
+**프로토콜 지향 프로그래밍:** 객체지향 프로그래밍에서의 상속 대신 프로토콜을 통해 다형성을 구현하는 개념
+
+- 프로토콜로 정의되고 클래스로 구현하면 메서드가 클래스 테이블과 프로토콜 테이블에 저장됨. 그래서 인스턴스가 클래스면 클래스 테이블을, 프로토콜이면 프로토콜 테이블을 찾아가 실행함.
+
