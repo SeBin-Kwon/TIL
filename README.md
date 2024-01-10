@@ -30,6 +30,7 @@
 - [Inheritance](./Swift/Inheritance.md)
 - [Extension](./Swift/Extension.md)
 - [Protocols](./Swift/Protocols.md)
+- [Method Dispatch](./Swift/MethodDispatch.md)
 - [Networking](./Swift/Networking.md)
 
 ## 🦢 SwiftUI
