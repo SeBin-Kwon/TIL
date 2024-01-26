@@ -32,6 +32,7 @@
 - [Protocols](./Swift/Protocols.md)
 - [Method Dispatch](./Swift/MethodDispatch.md)
 - [Nested Types](./Swift/NestedTypes.md)
+- [Highter-orderFunction](./Swift/Highter-orderFunction.md)
 - [Networking](./Swift/Networking.md)
 
 ## 🦢 SwiftUI
