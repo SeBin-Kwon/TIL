@@ -101,37 +101,131 @@ printName(yourName)
 
 > Swift 3 버전부터 `"\(email)"`과 같이 문자열 포맷팅할 때, 암시적 추출 옵셔널과 일반 옵셔널을 거의 동일하게 취급해서 `sbkwon98@gmail.com`이 아닌 `Optional("sbkwon98@gmail.com")`로 포맷팅이 되니 주의해야 한다.
 
-# 옵셔널 체이닝 (Optional Chaining)
-
-> 어떤 배열이 `nil`이 아니면서 **빈 배열인지 확인**할 때, 유용하게 쓸 수 있다.
+## 옵셔널 체이닝(Optional Chaining) 문법
+> 옵셔널 타입에 `.` 접근 연산자를 사용할 때, `nil`일수도 있음을 알리기 위해서 반드시 앞에 `?`를 붙여야함
 
 ```swift
-let array: [String]? = []
-var isEmptyArray = false
-
-// 배열이 있으면서(true), 비어있을 때(true)
-if let array = array, array.isEmpty {
-  isEmptyArray = true
-} else {
-  isEmptyArray = false
+class Dog {
+    var name: String?
+    var weight: Int
+    init(name: String, weight: Int) {
+        self.name = name
+        self.weight = weight
+    }
+    func sit() {
+        print("\(self.name)가 앉았습니다.")
+    }
+    func layDown() {
+        print("누웠습니다.")
+    }
 }
 
-isEmptyArray
-```
+class Human {
+    var dog: Dog?
+}
 
-위 코드를 옵셔널 체이닝을 사용하면 더 간결하게 쓸 수 있다.
+var human = Human()
+human.dog = choco
+human.dog?.name
+print(human.dog?.name)     // Optional("초코얌")
+
+var human2: Human? = Human()
+human2?.dog = choco
+human2?.dog?.name
+print(human2?.dog?.name)      // Optional("초코얌")
+```
+- **옵셔널 체이닝의 결과는 항상 옵셔널이다.** 
+- 옵셔널체이닝에 값 중에서 하나라도 nil을 리턴한다면, 이어지는 표현식을 평가하지 않고 nil을 리턴
+- 마지막은 옵셔널이어도 `?`를 안붙여도 된다. 하지만 앞부분이 옵셔널이라면 반드시 붙여야 한다.
+
+### 옵셔널 체이닝 Unwrapping
+```swift
+// 1) 앞의 옵셔널타입에 값이 있다는 것이 확실한 경우
+print(human2!.dog!.name)     // name 자체가 옵셔널타입이기 때문에 Optional("초코얌")
+print(human2!.dog!.name!)
+print(human2!.dog!.weight)   // weight 자체는 옵셔널타입이 아니기 때문에   15
+
+// 2) if let 바인딩
+if let name = human2?.dog?.name {    // Optional("초코얌")
+    print(name)                      // 초코얌
+}
+
+// 3) Nil-Coalescing 연산자
+var defaultName = human2?.dog?.name ?? "멍탱구리"
+print(defaultName)
+```
+- Nil-Coalescing 연산자는 기본값을 부여함으로써 if let 바인딩과 같은 효과이다.
+
+### 함수 관련 표기법
+```swift
+class Cat {
+    var name: String?
+    var myMaster: (() -> Person?)?
+    // 함수를 변수에 저장하므로 @escaping 키워드가 필요함.
+    init(aFunction: @escaping () -> Person?) {
+        self.myMaster = aFunction
+    }
+}
+
+class Person {
+    var name: String?
+}
+
+// 함수를 정의
+func meowmeow() -> Person? {
+    let person = Person()
+    person.name = "Jobs"
+    return person
+}
+
+var cat: Cat? = Cat(aFunction: meowmeow) // 정의한 함수를 할당
+var name = cat?.myMaster?()?.name
+print(name) // Optional("Jobs")
+```
+- `cat?.myMaster?()?.name`
+	- `cat?` : `Cat`이 없을 수도 있음.
+	- `myMaster?` : `myMaster`함수가 없을 수도 있음.
+	- `myMaster?()?`: `myMaster`함수의 결과값 `Person`이 없을 수도 있음.
+
+### 딕셔너리 관련 표기법
+```swift
+class Library1 {
+    var books: [String: Person]?
+}
+
+var person1 = Person()
+person1.name = "Jobs"
+print(person1.name)
+
+var person2 = Person()
+person2.name = "Musk"
+print(person2.name)
+
+var library = Library1()
+library.books = ["Apple": person1, "Tesla": person2]
+
+library.books?["Apple"]?.name
+library.books?["Tesla"]?.name
+```
+- `books?` : 딕셔너리 자체가 없을 수도 있음.
+- `books?["Apple"]?` : 딕셔너리의 결과값이 없을 수도 있음.
+	- **딕셔너리는 접근할 때 항상 옵셔널임**
+
+### 옵셔널 체이닝에서 함수의 실행
+> 옵셔널 타입에 접근해서 실행하는 함수는 그냥 실행됨. 앞의 타입을 벗기지 않아도 된다.
 
 ```swift
-let isEmptyArray = array?.isEmpty == true
+var bori: Dog? = Dog(name: "보리", weight: 20)
+
+bori?.layDown()  // 앞의 타입이 옵셔널이라고 해서 메서드가 실행이 안되는 것은 아님
+bori?.sit()  // Optional("보리")가 앉았습니다.
+
+bori = nil
+bori?.layDown()     
 ```
-- array가 `nil`인 경우
-`array?`까지만 실행되고 `nil`을 반환
-
-- array가 빈 배열인 경우
-`array?.isEmpty`가 실행되고 `true`를 반환
-
-- array에 요소가 있는 경우
-`array?.isEmpty`가 실행되고 `false`를 반환
-
-옵셔널 체이닝으로 인해 `Bool?`을 반환하도록 바뀌어서 값이 `nil`, `true`, `false`가 결과로 나올 수 있게 된다.
-값이 실제로 `true` 인지를 확인하려면 `== true`를 해줘야 한다.
+1. 함수가 리턴형이 없는 경우
+	- 타입에 값이 있으면 함수 실행
+	- 타입에 값이 없으면 nil
+2. 함수가 리턴형이 있는 경우
+	- 타입에 값이 있으면 **옵셔널 리턴 타입으로 반환 (원래 리턴형이 옵셔널이 아니더라도)**
+	- 타입에 값이 없으면 nil
