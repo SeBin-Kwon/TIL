@@ -45,5 +45,16 @@ Write an ***\*efficient\**** algorithm for the following assumptions:
 ## 풀이
 
 ```swift
+public func solution(_ A : inout [Int]) -> Int {
+    var front = 0
+    var back = A.reduce(0) { $0 + $1 }
+    var answer = [Int]()
+    for i in A {
+        front += i
+        back -= i
+        answer.append(Int(abs(front - back)))
+    }
+    return answer.min()!
+}
 ```
 
