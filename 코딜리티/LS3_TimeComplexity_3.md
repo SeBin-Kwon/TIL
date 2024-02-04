@@ -46,15 +46,18 @@ Write an ***\*efficient\**** algorithm for the following assumptions:
 
 ```swift
 public func solution(_ A : inout [Int]) -> Int {
-    var front = 0
-    var back = A.reduce(0) { $0 + $1 }
-    var answer = [Int]()
-    for i in A {
-        front += i
-        back -= i
-        answer.append(Int(abs(front - back)))
+    var leftT = 0
+    var rightT = A.reduce(0,+)
+    var minDif = Int.max
+    for i in 0 ..< A.count-1 {
+        leftT += A[i]
+        rightT -= A[i]
+        
+        let dif = abs(leftT - rightT)
+        minDif = min(minDif, dif)
     }
-    return answer.min()!
+    return minDif
 }
+
 ```
 
