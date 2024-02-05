@@ -34,6 +34,7 @@
 - [Nested Types](./Swift/NestedTypes.md)
 - [Highter-orderFunction](./Swift/Highter-orderFunction.md)
 - [Functional Programming](./Swift/FunctionalProgramming.md)
+- [ARC](./Swift/ARC.md)
 - [Networking](./Swift/Networking.md)
 
 ## 🦢 SwiftUI
