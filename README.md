@@ -35,6 +35,7 @@
 - [Highter-orderFunction](./Swift/Highter-orderFunction.md)
 - [Functional Programming](./Swift/FunctionalProgramming.md)
 - [ARC](./Swift/ARC.md)
+- [Error Handling](./Swift/ErrorHandling.md)
 - [Networking](./Swift/Networking.md)
 
 ## 🦢 SwiftUI
