@@ -37,6 +37,7 @@
 - [ARC](./Swift/ARC.md)
 - [Error Handling](./Swift/ErrorHandling.md)
 - [Networking](./Swift/Networking.md)
+- [Concurrency Programming](./Swift/ConcurrencyProgramming.md)
 
 ## 🦢 SwiftUI
 
