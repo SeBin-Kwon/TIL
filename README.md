@@ -38,6 +38,7 @@
 - [Error Handling](./Swift/ErrorHandling.md)
 - [Networking](./Swift/Networking.md)
 - [Concurrency Programming](./Swift/ConcurrencyProgramming.md)
+- [Generics](./Swift/Generics.md)
 
 ## 🦢 SwiftUI
 
