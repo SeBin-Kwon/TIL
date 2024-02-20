@@ -45,7 +45,6 @@
 
 - [SwiftUI practice](./SwiftUI/practice)
 - [@StateObject](./SwiftUI/@StateObject.md)
-- [API](./Swift/API)
 
 ## 👚 HTML / CSS
 
