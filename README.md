@@ -39,8 +39,9 @@
 - [Networking](./Swift/Networking.md)
 - [Concurrency Programming](./Swift/ConcurrencyProgramming.md)
 - [Generics](./Swift/Generics.md)
-- [Result Type](./Swift/ResultType.md)
 - [Date](./Swift/Date.md)
+- [Result Type](./Swift/ResultType.md)
+- [Access Control](./Swift/AccessControl.md)
 
 ## 🦢 SwiftUI
 
