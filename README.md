@@ -42,6 +42,7 @@
 - [Date](./Swift/Date.md)
 - [Result Type](./Swift/ResultType.md)
 - [Access Control](./Swift/AccessControl.md)
+- [String & Characters](./Swift/StringAndCharacters.md)
 
 ## 🦢 SwiftUI
 
