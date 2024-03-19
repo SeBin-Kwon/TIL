@@ -43,6 +43,7 @@
 - [Result Type](./Swift/ResultType.md)
 - [Access Control](./Swift/AccessControl.md)
 - [String & Characters](./Swift/StringAndCharacters.md)
+- [Advanced Operators](./Swift/AdvancedOperators.md)
 
 ## 🦢 SwiftUI
 
