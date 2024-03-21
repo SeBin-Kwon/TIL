@@ -44,6 +44,7 @@
 - [Access Control](./Swift/AccessControl.md)
 - [String & Characters](./Swift/StringAndCharacters.md)
 - [Advanced Operators](./Swift/AdvancedOperators.md)
+- [Memory Safety](./Swift/MemorySafety.md)
 
 ## 🦢 SwiftUI
 
