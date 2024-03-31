@@ -45,6 +45,7 @@
 - [String & Characters](./Swift/StringAndCharacters.md)
 - [Advanced Operators](./Swift/AdvancedOperators.md)
 - [Memory Safety](./Swift/MemorySafety.md)
+- [Never Type](./Swift/NeverType.md)
 
 ## 🦢 SwiftUI
 
