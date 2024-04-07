@@ -1,15 +1,16 @@
 import Foundation
 
 func solution(_ number:String, _ k:Int) -> String {
-    var count = k
-    var stack = [Character]()
-    
-    for num in number{
-        while !stack.isEmpty && stack.last! < num && count != 0{
+    var stack:[Character] = []
+    var k = k
+
+    for i in number {
+        while let last = stack.last, last < i, k > 0 {
+            k -= 1
             stack.removeLast()
-            count -= 1
         }
-        stack.append(num)
+        stack.append(i)
     }
-    return String(String(stack).prefix(stack.count - count))
+
+    return String(String(stack).prefix(stack.count - k))
 }
