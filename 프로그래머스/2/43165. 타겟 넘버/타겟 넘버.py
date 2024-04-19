@@ -1,17 +1,14 @@
-from collections import deque
 def solution(numbers, target):
+    global answer
     answer = 0
-    queue = deque()
-    n = len(numbers)
-    queue.append([numbers[0],0])
-    queue.append([-1*numbers[0],0])
-    while queue:
-        temp, idx = queue.popleft()
-        idx += 1
-        if idx < n:
-            queue.append([temp+numbers[idx], idx])
-            queue.append([temp-numbers[idx], idx])
-        else:
-            if temp == target:
+    def dfs(i, total):        
+        global answer
+        if i == len(numbers):
+            if total == target:
                 answer += 1
+            return
+        dfs(i+1, total+numbers[i])
+        dfs(i+1, total-numbers[i])
+        return
+    dfs(0,0)
     return answer
