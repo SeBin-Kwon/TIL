@@ -1,19 +1,17 @@
 import Foundation
 
 func solution(_ n:Int, _ lost:[Int], _ reserve:[Int]) -> Int {
-    var lostSet:Set<Int> = Set(lost).subtracting(reserve)
+    var lostSet = Set(lost).subtracting(reserve)
     var reserveArray = Array(Set(reserve).subtracting(lost)).sorted(by: <)
 
-    for i in reserveArray {
-
-        if lostSet.contains(i - 1) {
-            lostSet.remove(i - 1)
+    for reserve in reserveArray {
+        if lostSet.contains(reserve - 1) {
+            lostSet.remove(reserve - 1)
             continue
         }
-        if lostSet.contains(i + 1) {
-            lostSet.remove(i + 1)
+        if lostSet.contains(reserve + 1) {
+            lostSet.remove(reserve + 1)
         }
     }
-
     return (n - lostSet.count)
 }
