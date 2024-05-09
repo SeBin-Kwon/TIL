@@ -141,5 +141,6 @@
 ## 🔩 CS
 
 - [HTTP](./CS/HTTP.md)
-- [ComputerArchitecture](./CS/ComputerArchitecture.md)
+- [Computer Architecture](./CS/ComputerArchitecture.md)
+- [Operating System](./CS/OperatingSystem.md)
 
