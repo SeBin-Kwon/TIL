@@ -125,3 +125,40 @@ jina.selfIntroduce() // 저는 Swift반 unknown입니다
 2. 다른 객체 또는 함수 등으로 전달될 때 참조가 아니라 복사(값 복사) 할 경우
 
 3. 자신을 상속할 필요가 없거나, 다른 타입을 상속 받을 필요가 없는 경우
+
+
+
+## 생성자
+> 기본 생성자 `init()` 제공 + **멤버와이즈 이니셜라이저도 기본 제공**
+
+```swift
+struct Dog {
+	var name: String
+	var weight: Int
+	var height: Int
+}
+```
+- `class`와 달리 **에러가 발생하지 않는다.**
+- `Dog(name: String, weight: Int ...` -> 알아서 제공해줌
+	- 이게 **멤버와이즈 이니셜라이저**임
+
+
+```swift
+struct Dog {
+	var name: String = ""
+	var weight: Int = 0
+	var height: Int = 0
+}
+
+extension Dog {
+	init(name: String) {
+		self.name = name
+	}
+}
+
+Dog() // 기본 생성자
+Dog(name: String, weight: Int, height: Int) // 멤버와이즈 이니셜라이저
+Dog(name: String) // 익스텐션으로 확장한 init
+```
+- 생성자를 **본체에 직접 구현**하게 되면 **기본 생성자와 멤버와이즈를 제공하지 않는다.**
+- 하지만 **`extension`으로 생성자를 구현하면 기본 생성자 + 멤버와이즈 + 생성자 다 쓸 수 있다.**
