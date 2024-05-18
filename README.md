@@ -46,7 +46,7 @@
 - [Advanced Operators](./Swift/AdvancedOperators.md)
 - [Memory Safety](./Swift/MemorySafety.md)
 - [Never Type](./Swift/NeverType.md)
-- [keyPath](./Swift/keyPath.md)
+- [KeyPath & Selector](./Swift/keyPathAndselector.md)
 - [Tuple](./Swift/tuple.md)
 
 ## 🦢 SwiftUI
