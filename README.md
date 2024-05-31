@@ -18,6 +18,7 @@
 
 - [Swift basics](./Swift/SwiftBasic.md)
 - [Collection types](./Swift/CollectionTypes.md)
+- [Tuple](./Swift/tuple.md)
 - [Function](./Swift/Function.md)
 - [Control flow](./Swift/ControlFlow.md)
 - [Optional](./Swift/Optional.md)
@@ -47,7 +48,7 @@
 - [Memory Safety](./Swift/MemorySafety.md)
 - [Never Type](./Swift/NeverType.md)
 - [KeyPath & Selector](./Swift/keyPathAndselector.md)
-- [Tuple](./Swift/tuple.md)
+- [Metatype](./Swift/Metatype.md)
 
 ## 🦢 SwiftUI
 
