@@ -1,4 +1,4 @@
 func solution(_ s:String) -> String {
-    let answer = String(Array(s).sorted(by: > ))
+    let answer = String(s.sorted(by: > ))
     return answer
 }
