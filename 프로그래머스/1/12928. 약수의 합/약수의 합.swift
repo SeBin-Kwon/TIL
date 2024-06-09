@@ -1,7 +1,7 @@
 func solution(_ n:Int) -> Int {
-    var answer = 0
-    guard n != 0 else { return 0 }
-    for i in 1...n {
+    guard n > 1 else { return n }
+    var answer = 1 + n
+    for i in 2..<n {
         if n % i == 0 {
             answer += i
         }
