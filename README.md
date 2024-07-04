@@ -49,6 +49,7 @@
 - [Never Type](./Swift/NeverType.md)
 - [KeyPath & Selector](./Swift/keyPathAndselector.md)
 - [Metatype](./Swift/Metatype.md)
+- [Read File](./Swift/ReadFile.md)
 
 ## 🦢 SwiftUI
 
