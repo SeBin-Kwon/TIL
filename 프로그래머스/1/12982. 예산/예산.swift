@@ -5,7 +5,7 @@ func solution(_ d:[Int], _ budget:Int) -> Int {
     var cnt = 0 
     var sum = 0
     for a in array {
-        guard budget >= sum + a else { continue }
+        guard budget >= sum + a else { break }
         sum += a
         cnt += 1
     }
