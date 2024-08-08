@@ -1,22 +1,12 @@
+import Foundation
+
 func solution(_ N:Int, _ stages:[Int]) -> [Int] {
-    var failure = [Int: Double]()
-    var total = Double(stages.count) // 8.0
-    var countArr = Array(repeating: 0, count: N+2) // [0, 0, 0, 0, 0, 0]
+    var rate = [Int:Float]()
+    let dic = stages.reduce(into: [Int:Int]()) { $0[$1, default: 0] += 1 }
 
-    for num in stages {
-        countArr[num] += 1 // [0, 1, 3, 2, 1, 0, 1]
+    for n in 1...N {
+        rate[n] = Float(dic[n] ?? 0) / Float(dic.filter { n < $0.key }.map { $0.value }.reduce(0, +))
     }
 
-    for i in 1..<N+1 {
-        if countArr[i] == 0 {
-            failure[i] = 0.0
-        } else {
-            total = total - Double(countArr[i])
-            failure[i] = Double(countArr[i]) / total
-        }
-    }
-    let sortArr = failure.sorted(by: <).sorted(by: { $0.1 > $1.1 })
-    let result = sortArr.map{ $0.key }
-
-    return result
+    return rate.sorted(by: <).sorted { $0.value > $1.value }.map { $0.key }
 }
