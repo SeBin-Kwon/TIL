@@ -12,17 +12,11 @@ func solution(_ board:[[Int]], _ moves:[Int]) -> Int {
             gameBoard[i][move-1] = 0
             break
         }
-        if stack.count > 1 {
-            guard let first = stack.popLast() else { continue }
-            guard let second = stack.popLast() else { continue }
-            guard first == second else {
-                stack.append(second)
-                stack.append(first)
-                continue 
-            }
+        if stack.count > 1, stack[stack.count-1] == stack[stack.count-2] {
+            stack.popLast()
+            stack.popLast()
             answer += 2
         }
     }
-    
     return answer
 }
