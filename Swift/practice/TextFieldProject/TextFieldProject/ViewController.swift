@@ -24,6 +24,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
         textField.borderStyle = .roundedRect
         textField.clearButtonMode = .always
         textField.returnKeyType = .next
+        textField.becomeFirstResponder()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+        // textField.resignFirstResponder()
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
@@ -42,9 +48,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        print(#function)
-        print(string)
-        return true
+//        print(#function)
+        if Int(string) != nil {
+            return false
+        } else {
+            guard let text = textField.text else { return true }
+            let newLength = text.count + string.count - range.length
+            return newLength <= 10
+        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -65,9 +76,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         print(#function)
         print("유저가 텍스트필드의 입력을 끝냄.")
+        textField.text = ""
     }
 
     @IBAction func doneButtonTapped(_ sender: UIButton) {
+        textField.resignFirstResponder()
     }
     
 }
