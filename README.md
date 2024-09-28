@@ -60,6 +60,7 @@
 
 - [UIKit practice](./UIKit/practice)
 - [Auto Layout](./UIKit/AutoLayout.md)
+- [Delegate Pattern](./UIKit/DelegatePattern.md)
 
 ## 👚 HTML / CSS
 
