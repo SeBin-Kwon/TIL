@@ -141,6 +141,15 @@ anyDictionary.isEmpty
 // true
 ```
 
+### grouping
+> 그룹화할 기준을 키값으로 만들고 이에 해당하는 값을 밸류로 묶어준다.
+
+```swift
+X = "1255"
+var dictX = Dictionary(grouping: X, by: {$0})
+// ["2": ["2"], "5": ["5", "5"], "1": ["1"]]
+```
+
 [딕셔너리 관련 함수 참고](https://babbab2.tistory.com/113)
 
 ## Set
