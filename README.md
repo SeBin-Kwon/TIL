@@ -62,6 +62,7 @@
 - [Auto Layout](./UIKit/AutoLayout.md)
 - [Delegate Pattern](./UIKit/DelegatePattern.md)
 - [TextField](./UIKit/TextField.md)
+- [Timer](./UIKit/Timer.md)
 
 ## 👚 HTML / CSS
 
