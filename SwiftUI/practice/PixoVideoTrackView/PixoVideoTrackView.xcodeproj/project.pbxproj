@@ -1,0 +1,411 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AE5983882CBD569500238D92 /* 9.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = AE59837E2CBD569500238D92 /* 9.mp4 */; };
+		AE5983892CBD569500238D92 /* 5.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = AE59837F2CBD569500238D92 /* 5.mp4 */; };
+		AE59838A2CBD569500238D92 /* 8.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = AE5983802CBD569500238D92 /* 8.mp4 */; };
+		AE59838B2CBD569500238D92 /* 1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = AE5983812CBD569500238D92 /* 1.mp4 */; };
+		AE59838C2CBD569500238D92 /* 4.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = AE5983822CBD569500238D92 /* 4.mp4 */; };
+		AE59838D2CBD569500238D92 /* 6.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = AE5983832CBD569500238D92 /* 6.mp4 */; };
+		AE59838E2CBD569500238D92 /* 10.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = AE5983842CBD569500238D92 /* 10.mp4 */; };
+		AE59838F2CBD569500238D92 /* 3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = AE5983852CBD569500238D92 /* 3.mp4 */; };
+		AE5983902CBD569500238D92 /* 7.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = AE5983862CBD569500238D92 /* 7.mp4 */; };
+		AE5983912CBD569500238D92 /* 2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = AE5983872CBD569500238D92 /* 2.mp4 */; };
+		AE74DC4D2CB45E470086A344 /* PixoVideoTrackViewApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE74DC4C2CB45E470086A344 /* PixoVideoTrackViewApp.swift */; };
+		AE74DC4F2CB45E470086A344 /* TrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE74DC4E2CB45E470086A344 /* TrackView.swift */; };
+		AE74DC512CB45E4A0086A344 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE74DC502CB45E4A0086A344 /* Assets.xcassets */; };
+		AE74DC542CB45E4A0086A344 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE74DC532CB45E4A0086A344 /* Preview Assets.xcassets */; };
+		AE74DC802CBD34680086A344 /* Videos.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE74DC7F2CBD34680086A344 /* Videos.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AE59837E2CBD569500238D92 /* 9.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 9.mp4; sourceTree = "<group>"; };
+		AE59837F2CBD569500238D92 /* 5.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 5.mp4; sourceTree = "<group>"; };
+		AE5983802CBD569500238D92 /* 8.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 8.mp4; sourceTree = "<group>"; };
+		AE5983812CBD569500238D92 /* 1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1.mp4; sourceTree = "<group>"; };
+		AE5983822CBD569500238D92 /* 4.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 4.mp4; sourceTree = "<group>"; };
+		AE5983832CBD569500238D92 /* 6.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 6.mp4; sourceTree = "<group>"; };
+		AE5983842CBD569500238D92 /* 10.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 10.mp4; sourceTree = "<group>"; };
+		AE5983852CBD569500238D92 /* 3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 3.mp4; sourceTree = "<group>"; };
+		AE5983862CBD569500238D92 /* 7.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 7.mp4; sourceTree = "<group>"; };
+		AE5983872CBD569500238D92 /* 2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 2.mp4; sourceTree = "<group>"; };
+		AE74DC492CB45E470086A344 /* PixoVideoTrackView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PixoVideoTrackView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE74DC4C2CB45E470086A344 /* PixoVideoTrackViewApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixoVideoTrackViewApp.swift; sourceTree = "<group>"; };
+		AE74DC4E2CB45E470086A344 /* TrackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackView.swift; sourceTree = "<group>"; };
+		AE74DC502CB45E4A0086A344 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AE74DC532CB45E4A0086A344 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AE74DC7F2CBD34680086A344 /* Videos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Videos.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AE74DC462CB45E470086A344 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AE74DC402CB45E470086A344 = {
+			isa = PBXGroup;
+			children = (
+				AE74DC4B2CB45E470086A344 /* PixoVideoTrackView */,
+				AE74DC4A2CB45E470086A344 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AE74DC4A2CB45E470086A344 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AE74DC492CB45E470086A344 /* PixoVideoTrackView.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AE74DC4B2CB45E470086A344 /* PixoVideoTrackView */ = {
+			isa = PBXGroup;
+			children = (
+				AE74DC5C2CB5540B0086A344 /* VideoAssets */,
+				AE74DC4C2CB45E470086A344 /* PixoVideoTrackViewApp.swift */,
+				AE74DC4E2CB45E470086A344 /* TrackView.swift */,
+				AE74DC7F2CBD34680086A344 /* Videos.swift */,
+				AE74DC502CB45E4A0086A344 /* Assets.xcassets */,
+				AE74DC522CB45E4A0086A344 /* Preview Content */,
+			);
+			path = PixoVideoTrackView;
+			sourceTree = "<group>";
+		};
+		AE74DC522CB45E4A0086A344 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				AE74DC532CB45E4A0086A344 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AE74DC5C2CB5540B0086A344 /* VideoAssets */ = {
+			isa = PBXGroup;
+			children = (
+				AE5983812CBD569500238D92 /* 1.mp4 */,
+				AE5983872CBD569500238D92 /* 2.mp4 */,
+				AE5983852CBD569500238D92 /* 3.mp4 */,
+				AE5983822CBD569500238D92 /* 4.mp4 */,
+				AE59837F2CBD569500238D92 /* 5.mp4 */,
+				AE5983832CBD569500238D92 /* 6.mp4 */,
+				AE5983862CBD569500238D92 /* 7.mp4 */,
+				AE5983802CBD569500238D92 /* 8.mp4 */,
+				AE59837E2CBD569500238D92 /* 9.mp4 */,
+				AE5983842CBD569500238D92 /* 10.mp4 */,
+			);
+			path = VideoAssets;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AE74DC482CB45E470086A344 /* PixoVideoTrackView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE74DC572CB45E4A0086A344 /* Build configuration list for PBXNativeTarget "PixoVideoTrackView" */;
+			buildPhases = (
+				AE74DC452CB45E470086A344 /* Sources */,
+				AE74DC462CB45E470086A344 /* Frameworks */,
+				AE74DC472CB45E470086A344 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PixoVideoTrackView;
+			productName = PixoVideoTrackView;
+			productReference = AE74DC492CB45E470086A344 /* PixoVideoTrackView.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AE74DC412CB45E470086A344 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					AE74DC482CB45E470086A344 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+				};
+			};
+			buildConfigurationList = AE74DC442CB45E470086A344 /* Build configuration list for PBXProject "PixoVideoTrackView" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AE74DC402CB45E470086A344;
+			productRefGroup = AE74DC4A2CB45E470086A344 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AE74DC482CB45E470086A344 /* PixoVideoTrackView */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AE74DC472CB45E470086A344 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE5983902CBD569500238D92 /* 7.mp4 in Resources */,
+				AE5983882CBD569500238D92 /* 9.mp4 in Resources */,
+				AE5983892CBD569500238D92 /* 5.mp4 in Resources */,
+				AE59838D2CBD569500238D92 /* 6.mp4 in Resources */,
+				AE59838F2CBD569500238D92 /* 3.mp4 in Resources */,
+				AE59838C2CBD569500238D92 /* 4.mp4 in Resources */,
+				AE5983912CBD569500238D92 /* 2.mp4 in Resources */,
+				AE74DC542CB45E4A0086A344 /* Preview Assets.xcassets in Resources */,
+				AE59838B2CBD569500238D92 /* 1.mp4 in Resources */,
+				AE59838A2CBD569500238D92 /* 8.mp4 in Resources */,
+				AE59838E2CBD569500238D92 /* 10.mp4 in Resources */,
+				AE74DC512CB45E4A0086A344 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AE74DC452CB45E470086A344 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE74DC4F2CB45E470086A344 /* TrackView.swift in Sources */,
+				AE74DC802CBD34680086A344 /* Videos.swift in Sources */,
+				AE74DC4D2CB45E470086A344 /* PixoVideoTrackViewApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		AE74DC552CB45E4A0086A344 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AE74DC562CB45E4A0086A344 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AE74DC582CB45E4A0086A344 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"PixoVideoTrackView/Preview Content\"";
+				DEVELOPMENT_TEAM = HFR7W36699;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sebin.identifier.PixoVideoTrackView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		AE74DC592CB45E4A0086A344 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"PixoVideoTrackView/Preview Content\"";
+				DEVELOPMENT_TEAM = HFR7W36699;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sebin.identifier.PixoVideoTrackView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AE74DC442CB45E470086A344 /* Build configuration list for PBXProject "PixoVideoTrackView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE74DC552CB45E4A0086A344 /* Debug */,
+				AE74DC562CB45E4A0086A344 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE74DC572CB45E4A0086A344 /* Build configuration list for PBXNativeTarget "PixoVideoTrackView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE74DC582CB45E4A0086A344 /* Debug */,
+				AE74DC592CB45E4A0086A344 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AE74DC412CB45E470086A344 /* Project object */;
+}
