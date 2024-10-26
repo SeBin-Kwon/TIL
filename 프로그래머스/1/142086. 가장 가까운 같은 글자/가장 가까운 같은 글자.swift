@@ -1,25 +1,16 @@
 import Foundation
 
-func solution(_ s:String) -> [Int] {
+func solution(_ s: String) -> [Int] {
+    var word: [String: Int] = [:]
+    var result = [Int]()
 
-    let arr = Array(s)
-    var answer: [Int] = [-1]
-    
-    for i in 1..<arr.count {
-        let temp = Array(arr[..<i].reversed())
-        
-        guard temp.contains(arr[i]) else { 
-            answer.append(-1) 
-            continue 
+    for (index, val) in Array(s).map { String($0) }.enumerated() {
+        if let beforeIndex = word[val] {
+            result.append(index - beforeIndex)
+        } else {
+            result.append(-1)
         }
-        
-        for j in 0..<temp.count {
-            if temp[j] == arr[i] {
-                answer.append(j+1)
-                break
-            }
-        }
+        word[val] = index
     }
-    
-    return answer
+    return result
 }
