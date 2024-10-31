@@ -183,3 +183,28 @@ override func viewDidLoad() {
 3. 스토리보드와 클래스를 연결시켜 준다.
 	1. 스토리보드 오른쪽 패널 네번째 탭에서 해당 클래스 이름을 넣어준다.
 4. 레이블과 버튼 등을 컨트롤로 끌어다 연결시켜 준다.
+
+이때, 코드로 단순히 뷰컨트롤러 인스턴스 생성하는 것으로는 연결되지 않는다.
+```swift
+@IBAction func codeNextButtonTapped(_ sender: UIButton) {
+	let secondVC = SecondViewController()
+}
+```
+- 이건 메모리에 올라간 인스턴스
+- 스토리보드에서 만든 UI들은 힙 영역에 인스턴스가 따로 존재한다.
+
+그 둘을 따로 연결해줘야한다. (`@IBOutlet`과 비슷하다.)
+이때 필요한게 `storyboard?.instantiateViewController(withIdentifier: "")`
+
+`withIdentifier`는 적당히 지어서 스토리보드에서 클래스 이름 연결시킨 곳 밑에 
+`StoryBoard ID`에 똑같이 써서 연결해준다.
+
+그 후 **타입캐스팅을 통해 `SecondViewController`로 타입을 바꿔야 한다.**
+- `storyboard?.instantiateViewController(withIdentifier: "")`의 반환 타입은 `UIViewController`이기 때문. 구체적이지 않다.
+```swift
+@IBAction func storyboardWithCodeButtonTapped(_ sender: UIButton) {
+	guard let secondVC = storyboard?.instantiateViewController(withIdentifier: "secondVC") as? SecondViewController else { return }
+	// (스토리보드 객체가 나중에 생김)
+	present(secondVC, animated: true, completion: nil)
+}
+```
