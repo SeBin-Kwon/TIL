@@ -9,7 +9,7 @@ class FirstViewController: UIViewController {
 }
 ```
 
-## 코드 흐름
+## 1. 코드로 화면 이동
 
 ### 글씨 올리기
 1. 레이블 선언 (메모리에 올리기)
@@ -177,7 +177,7 @@ override func viewDidLoad() {
 	- 코드랑 스토리보드랑 연결지음
 - 이 과정에서 아직 연결중이라 메모리에 없어서 접근할 수 없다며 에러 발생함
 
-# 스토리보드에서 새로운 화면 만들기
+## 2. 코드로 스토리보드 객체를 생성해서 화면 이동
 1. 스토리보드에서 `ViewController`를 올려둔다.
 2. 새로운 Swift 파일 혹은 Cocoa Touch Class 파일을 만들어준다.
 3. 스토리보드와 클래스를 연결시켜 준다.
@@ -204,7 +204,12 @@ override func viewDidLoad() {
 ```swift
 @IBAction func storyboardWithCodeButtonTapped(_ sender: UIButton) {
 	guard let secondVC = storyboard?.instantiateViewController(withIdentifier: "secondVC") as? SecondViewController else { return }
-	// (스토리보드 객체가 나중에 생김)
+	secondVC.someString = "안녕하세요"
+	// secondVC.mainLabel.text = "안녕하세요" (스토리보드 객체가 나중에 생김)
 	present(secondVC, animated: true, completion: nil)
 }
 ```
+- ViewController 인스턴스와 Storyboard 인스턴스가 따로따로 생김
+- 이 둘을 이어주는게 viewDidLoad 함수임
+- 서로 연결되기 전에 접근하면 에러가 발생
+- 그렇기 때문에 직접 접근하는게 아니라 따로 속성을 만들어서 인스턴스가 만들어진 뒤에 접근해야하는 것임
