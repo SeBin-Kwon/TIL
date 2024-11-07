@@ -213,3 +213,100 @@ override func viewDidLoad() {
 - 이 둘을 이어주는게 viewDidLoad 함수임
 - 서로 연결되기 전에 접근하면 에러가 발생
 - 그렇기 때문에 직접 접근하는게 아니라 따로 속성을 만들어서 인스턴스가 만들어진 뒤에 접근해야하는 것임
+
+
+
+## 3. 스토리보드로 화면 이동 (간접 세그웨이)
+
+### Segue(세그웨이)
+> 화면이동을 담당하는 객체
+
+| ![스크린샷 2024-11-05 오전 1.26.02](/Users/sebinkwon/Library/Mobile Documents/iCloud~md~obsidian/Documents/My Brain/Asets/스크린샷 2024-11-05 오전 1.26.02.png) | ![스크린샷 2024-11-05 오전 1.25.38](/Users/sebinkwon/Library/Mobile Documents/iCloud~md~obsidian/Documents/My Brain/Asets/스크린샷 2024-11-05 오전 1.25.38.png) |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+- 스토리보드에서 화면을 보면 3가지 점 중 맨 왼쪽 노란색 버튼이 있다.
+- 그것을 **컨트롤을 누른채** 이동하려는 화면으로 드래그하면
+- 어떤 화면으로 띄울지 선택창이 뜬다. 이 중 `Present Modally`를 선택한다.
+
+| ![스크린샷 2024-11-05 오전 1.27.55](/Users/sebinkwon/Library/Mobile Documents/iCloud~md~obsidian/Documents/My Brain/Asets/스크린샷 2024-11-05 오전 1.27.55.png) | ![스크린샷 2024-11-05 오전 1.30.24](/Users/sebinkwon/Library/Mobile Documents/iCloud~md~obsidian/Documents/My Brain/Asets/스크린샷 2024-11-05 오전 1.30.24.png) |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+- 그러면 두 화면을 잇는 선이 생기는데 이것이 바로 **세그웨이**이다.
+- 이것도 식별자(identifier)을 설정할 수 있다.
+
+그 다음 버튼을 눌렀을 때 화면이 이동하도록 설정해야하므로 코드로 돌아간다.
+화면을 이동하도록 하는건 세그웨이가 담당하고 있으므로 세그웨이를 활성화 해야한다.
+
+```swift
+@IBAction func storyboardWithSegueButtonTapped(_ sender: UIButton) {
+	performSegue(withIdentifier: "toThirdVC", sender: self)
+}
+```
+- `performSegue`는 세그웨이를 실행한다는 의미의 메서드 호출
+- 세그웨이의 identifier를 정확히 입력하고
+- sender는 `nil`을 써도 무방하지만 보통 `self`를 입력한다.
+	- 보내는 요소가 `self` 즉 `ViewController`를 의미해서 일반적으로 이런식으로 많이 쓴다.
+
+이 이후에는 어시스턴트를 띄운채 레이블과 버튼을 컨트롤 누르고 드래그하여 연결하고 백버튼을 설정해주면 된다.
+
+```swift
+class ThirdViewController: UIViewController {    
+    @IBOutlet weak var mainLabel: UILabel!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    @IBAction func backButtonTapped(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+}
+```
+
+### 세그웨이 방식으로 데이터 전달하기
+조금 까다로운데 왜냐하면 코드 방식처럼 이전 뷰컨트롤러의 인스턴스를 생성하지 않아서 전달할 수가 없기 때문이다.
+
+따로 `prepare`이라는 메서드를 **재정의**해서 사용해야한다.
+인수로 세그웨이를 사용하기 때문이다.
+
+```swift
+override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+	if segue.identifier == "toThirdVC" {
+		let thirdVC = segue.destination as! ThirdViewController
+		thirdVC.someString = "안녕하세요"
+		// thirdVC.mainLabel.text = "안녕하세요"    // 에러발생 (스토리보드 객체가 나중에 생김)
+	}
+}
+```
+- 이때 해당 세그웨이에 접근해서 데이터를 전달해줄 수 있다.
+- 먼저 identifier를 확인한다.
+- 세그웨이의 `destination`은 종착지를 뜻하는데 이것이 바로 thirdVC로 사용할 수 있다.
+- 단, 타입이 `UIViewController`이기 때문에 `ThirdViewController`로 타입캐스팅을 해야한다.
+
+그 후, ThirdVC에서 someString이라는 옵셔널 변수로 데이터를 받으면 된다.
+```swift
+class ThirdViewController: UIViewController {
+    @IBOutlet weak var mainLabel: UILabel!
+    
+    var someString: String?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        mainLabel.text = someString
+    }
+    
+    @IBAction func backButtonTapped(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+}
+```
+
+
+앞서
+```swift
+@IBAction func storyboardWithSegueButtonTapped(_ sender: UIButton) {
+	performSegue(withIdentifier: "toThirdVC", sender: self)
+}
+```
+`performSegue`로 세그웨이가 활성화 될텐데, 
+**이때 내부에서 자동적으로 `prepare` 메서드가 실행된다.**
+그래서 세그웨이를 통해 데이터 전달이 가능해진다.
+
+세그웨이 방식은 복잡해서 보통 코드로 구현하긴 한다.
