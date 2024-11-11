@@ -310,3 +310,46 @@ class ThirdViewController: UIViewController {
 그래서 세그웨이를 통해 데이터 전달이 가능해진다.
 
 세그웨이 방식은 복잡해서 보통 코드로 구현하긴 한다.
+
+## 4. 스토리보드에서의 화면 이동(직접 세그웨이)
+
+![5](assets/5.png)
+- 이번엔 3번째와 다르게 **버튼을 컨트롤을 누른채 드래그하여 4번째 화면에 연결해준다.** 똑같이  `Present Modally`를 선택한다.
+
+차이점은 3번째는 화면 자체에서 세그웨이를 연결했다면,
+**4번째는 버튼에서 직접적으로 세그웨이를 연결했다. 그래서 `performSegue`메서드를 호출하지 않아도 4번째 화면으로 이동이 된다.**
+
+### 데이터 전달하기
+3번째와 마찬가지로 `prepare` 메서드를 재정의하여 사용하면 된다.
+
+```swift
+override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+	if segue.identifier == "toThirdVC" {
+		let thirdVC = segue.destination as! ThirdViewController
+		thirdVC.someString = "안녕하세요"
+	}
+	
+	if segue.identifier == "toFourthVC" {
+		let fourthVC = segue.destination as! FourthViewController
+		fourthVC.someString = "안녕하세요"
+	}
+}
+```
+
+### 직접 세그웨이 방식에서만 호출되는 메서드
+> 어떤 조건에 따라 다음화면으로 이동할지 말지 결정하는 메서드이다.
+
+`shouldPerformSegue` 메서드는 버튼을 직접 연결하는 방식인 **직접 세그웨이 방식에서만 내부적으로 호출된다.**
+```swift
+override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+	if identifier == "toFourthVC" {
+		return false
+	}
+	return true
+}
+```
+
+#### 왜 간접 세그웨이 방식에서는 호출되지 않나?
+> 간접 세그웨이는 **`performSegue` 메서드를 호출해야지만 다음화면으로 이동할 수 있는데 이때 조건 설정이 가능하기 때문에** 굳이 `shouldPerformSegue` 메서드를 호출하지 않는다.
+
+가장 추천하는 방식은 2번째, 코드로 스토리보드 객체를 생성해서 화면 이동하는 방식이다. 이게 가장 간편하다.
