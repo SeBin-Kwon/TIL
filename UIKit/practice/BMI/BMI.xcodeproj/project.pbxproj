@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE3323E62CF1FDEC00854264 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3323E52CF1FDEC00854264 /* SecondViewController.swift */; };
 		AE74DC2D2C9488580086A344 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE74DC2C2C9488580086A344 /* AppDelegate.swift */; };
 		AE74DC2F2C9488580086A344 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE74DC2E2C9488580086A344 /* SceneDelegate.swift */; };
 		AE74DC312C9488580086A344 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE74DC302C9488580086A344 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AE3323E52CF1FDEC00854264 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		AE74DC292C9488580086A344 /* BMI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BMI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE74DC2C2C9488580086A344 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE74DC2E2C9488580086A344 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				AE74DC2C2C9488580086A344 /* AppDelegate.swift */,
 				AE74DC2E2C9488580086A344 /* SceneDelegate.swift */,
 				AE74DC302C9488580086A344 /* ViewController.swift */,
+				AE3323E52CF1FDEC00854264 /* SecondViewController.swift */,
 				AE74DC322C9488580086A344 /* Main.storyboard */,
 				AE74DC352C94885A0086A344 /* Assets.xcassets */,
 				AE74DC372C94885A0086A344 /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE3323E62CF1FDEC00854264 /* SecondViewController.swift in Sources */,
 				AE74DC312C9488580086A344 /* ViewController.swift in Sources */,
 				AE74DC2D2C9488580086A344 /* AppDelegate.swift in Sources */,
 				AE74DC2F2C9488580086A344 /* SceneDelegate.swift in Sources */,

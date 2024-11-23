@@ -87,6 +87,9 @@
                                 <state key="normal" title="Button">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="calculateButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LdM-u4-0YF"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -100,15 +103,21 @@
                             <constraint firstItem="78J-f1-GRa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="130" id="xoL-ye-SDr"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="calculateButton" destination="t4y-IY-Kej" id="Rgh-RE-m67"/>
+                        <outlet property="heightTextField" destination="gRT-je-nOu" id="s0m-so-QDN"/>
+                        <outlet property="mainLabel" destination="XHk-jr-IQM" id="tCZ-TS-9ot"/>
+                        <outlet property="weightTextField" destination="7IW-3D-27x" id="R2s-gU-0Qk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="140" y="4"/>
         </scene>
-        <!--View Controller-->
+        <!--Second View Controller-->
         <scene sceneID="ewA-Hr-8hg">
             <objects>
-                <viewController id="sTB-cF-Zgm" sceneMemberID="viewController">
+                <viewController id="sTB-cF-Zgm" customClass="SecondViewController" customModule="BMI" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dzx-wl-YZh">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -165,6 +174,7 @@
                             <constraint firstItem="vE8-Rh-Udt" firstAttribute="trailing" secondItem="xC1-YD-C1H" secondAttribute="trailing" constant="20" id="oQf-4R-i8b"/>
                         </constraints>
                     </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="393" height="852"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9jp-KW-XJi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
