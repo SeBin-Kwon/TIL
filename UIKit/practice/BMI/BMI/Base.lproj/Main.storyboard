@@ -89,6 +89,7 @@
                                 </state>
                                 <connections>
                                     <action selector="calculateButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LdM-u4-0YF"/>
+                                    <segue destination="sTB-cF-Zgm" kind="presentation" modalPresentationStyle="fullScreen" id="eKL-as-ovg"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -123,7 +124,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="3xj-Pe-Cmr">
-                                <rect key="frame" x="96.666666666666686" y="189" width="200" height="128"/>
+                                <rect key="frame" x="96.666666666666686" y="130" width="200" height="128"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BMI 결과값" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h2I-zi-gAL">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="24"/>
@@ -152,7 +153,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xC1-YD-C1H">
-                                <rect key="frame" x="20" y="743" width="353" height="45"/>
+                                <rect key="frame" x="20" y="777" width="353" height="45"/>
                                 <color key="backgroundColor" name="AccentColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="crb-uY-Eh8"/>
@@ -162,6 +163,9 @@
                                 <state key="normal" title="Button">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="sTB-cF-Zgm" eventType="touchUpInside" id="whc-Ph-0ZT"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vE8-Rh-Udt"/>
@@ -175,6 +179,11 @@
                         </constraints>
                     </view>
                     <value key="contentSizeForViewInPopover" type="size" width="393" height="852"/>
+                    <connections>
+                        <outlet property="adviceLabel" destination="B5j-zs-LRO" id="gd6-72-jFB"/>
+                        <outlet property="backButton" destination="xC1-YD-C1H" id="Oq2-7h-LFe"/>
+                        <outlet property="bmiNumberLabel" destination="qlq-6C-HER" id="RzC-xQ-90d"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9jp-KW-XJi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
