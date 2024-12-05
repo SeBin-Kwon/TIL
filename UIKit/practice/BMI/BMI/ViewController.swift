@@ -36,5 +36,14 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if Int(string) != nil || string == "" {
+            return true
+        }
+        return false
+    }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        <#code#>
+    }
 }
