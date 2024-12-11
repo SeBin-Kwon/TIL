@@ -44,6 +44,18 @@ extension ViewController: UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        <#code#>
+        if heightTextField.text != "", weightTextField.text != "" {
+            weightTextField.resignFirstResponder()
+            return true
+        } else if heightTextField.text != "" {
+            weightTextField.becomeFirstResponder()
+            return true
+        }
+        return false
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        heightTextField.resignFirstResponder()
+        weightTextField.resignFirstResponder()
     }
 }
