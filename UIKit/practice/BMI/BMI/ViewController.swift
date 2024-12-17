@@ -33,6 +33,25 @@ class ViewController: UIViewController {
     @IBAction func calculateButtonTapped(_ sender: UIButton) {
     }
     
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if heightTextField.text == "" || weightTextField.text == "" {
+            mainLabel.text = "키와 몸무게를 입력하셔야 합니다!"
+            mainLabel.textColor = UIColor.red
+            return false
+        }
+        mainLabel.text = "키와 몸무게를 입력해주세요"
+        mainLabel.textColor = UIColor.black
+        return true
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toSecondVC" {
+            let secondVC = segue.destination as! SecondViewController
+        }
+        heightTextField.text = ""
+        weightTextField.text = ""
+    }
+    
 }
 
 extension ViewController: UITextFieldDelegate {
