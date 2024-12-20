@@ -31,6 +31,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func calculateButtonTapped(_ sender: UIButton) {
+        
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
@@ -50,6 +51,14 @@ class ViewController: UIViewController {
         }
         heightTextField.text = ""
         weightTextField.text = ""
+    }
+    
+    func calculateBMI(height: String, weight: String) -> Double {
+        guard let h = Double(height), let w = Double(weight) else { return 0.0 }
+        var bmi = w / (h * h) * 10000
+        bmi = round(bmi * 10) / 10
+        print("BMI 결과값: \(bmi)")
+        return bmi
     }
     
 }
