@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var weightTextField: UITextField!
     @IBOutlet weak var calculateButton: UIButton!
     
+    var bmi: Double?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         makeUI()
@@ -32,6 +34,10 @@ class ViewController: UIViewController {
 
     @IBAction func calculateButtonTapped(_ sender: UIButton) {
         
+        guard let height = heightTextField.text,
+              let weight = weightTextField.text else { return }
+        
+        bmi = calculateBMI(height: height, weight: weight)
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
@@ -48,6 +54,7 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toSecondVC" {
             let secondVC = segue.destination as! SecondViewController
+            secondVC.bmi = self.bmi
         }
         heightTextField.text = ""
         weightTextField.text = ""
