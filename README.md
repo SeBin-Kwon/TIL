@@ -68,6 +68,7 @@
 - [Data Flow](./UIKit/DataFlow.md)
 - [BMI](./UIKit/BMI.md)
 - [Entry Point](./UIKit/EntryPoint.md)
+- [Appearance](./UIKit/Appearance.md)
 
 ## 👚 HTML / CSS
 
