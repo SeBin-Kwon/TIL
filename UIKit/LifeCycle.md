@@ -1,4 +1,4 @@
-# 앱의 생명주기란?
+# 👽 앱의 생명주기란?
 > 말 그대로 앱이 켜지고 꺼지는 그 과정을 말한다.
 
 정확히는 앱의 실행/종료 및 앱이 Foreground/Background 상태에 있을 때, 
@@ -43,13 +43,6 @@
 ### 4. Suspend
 - 앱이 곧 종료될 상태
 - AppDelegate가 담당한다
-
-
-    - **Foreground** - 앱이 실행된 상태 → **SceneDelegate**
-        - **active** - 
-        - **inactive** -
-
-
 
 ## AppDelegate.swift
 
