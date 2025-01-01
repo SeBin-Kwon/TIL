@@ -69,7 +69,8 @@
 - [BMI](./UIKit/BMI.md)
 - [Entry Point](./UIKit/EntryPoint.md)
 - [Appearance](./UIKit/Appearance.md)
-- [Life Cycle](./UIKit/LifeCycle.md)
+- [App's Life Cycle](./UIKit/AppLifeCycle.md)
+- [View’s Life Cycle](./UIKit/ViewLifeCycle.md)
 
 ## 👚 HTML / CSS
 
