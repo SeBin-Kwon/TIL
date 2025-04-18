@@ -1,18 +1,18 @@
 import Foundation
 
-let input = readLine()!.map { Int(String($0))! }
-var count = Array(repeating: 0, count: 10)
+let input = Array(readLine()!)
+var dict : [Character:Int] = [:]
 
 for i in input {
-    if i == 6 || i == 9 {
-        if count[6] < count[9] {
-            count[6] += 1
-        } else {
-            count[9] += 1
-        }
+    if i == "6" || i == "9" {
+        dict["6", default: 0] += 1
     } else {
-        count[i] += 1
+        dict[i, default: 0] += 1
     }
 }
 
-print(count.max()!)
+if let sixCnt = dict["6"] {
+    dict["6"] = (sixCnt / 2) + (sixCnt % 2)
+}
+
+print(dict.values.max()!)
