@@ -1,14 +1,18 @@
-# [Silver V] 지뢰 찾기 - 4396 
+# [Silver IV] 지뢰 찾기 - 4396 
 
 [문제 링크](https://www.acmicpc.net/problem/4396) 
 
 ### 성능 요약
 
-메모리: 30840 KB, 시간: 68 ms
+메모리: 79512 KB, 시간: 8 ms
 
 ### 분류
 
-구현(implementation), 파싱(parsing), 문자열(string)
+구현
+
+### 제출 일자
+
+2025년 4월 21일 14:56:19
 
 ### 문제 설명
 
