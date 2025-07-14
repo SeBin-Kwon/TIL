@@ -1,9 +1,5 @@
 import Foundation
-
 let n = Int(readLine()!)!
-var answer = ""
-for i in stride(from: n, through: 2, by: -1) {
-    answer += String(repeating: "*", count: i) + "\n"
+for i in stride(from: n, through: 1, by: -1) {
+    print(String(repeating: "*", count: i))
 }
-answer += "*"
-print(answer)
